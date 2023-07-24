@@ -131,12 +131,15 @@ clear
     print_success "Domain Random Done"
 	elif test $dns -eq 2; then
     read -rp "Enter Your Domain / masukan domain : " dom
+    read -rp "Input ur ns-domain : " -e nsdomen
     echo "IP=$dom" > /var/lib/SIJA/ipvps.conf
     echo "$dom" > /root/scdomain
 	echo "$dom" > /etc/xray/scdomain
 	echo "$dom" > /etc/xray/domain
 	echo "$dom" > /etc/v2ray/domain
 	echo "$dom" > /root/domain
+        echo "$nsdomen" > /etc/xray/nsdomain
+        echo "$nsdomen" > /root/nsdomain
     else 
     echo "Not Found Argument"
     exit 1
