@@ -203,7 +203,7 @@ gg="AM"
 fi
 curl -sS ifconfig.me > /etc/myipvps
 echo " "
-echo "=====================-[ SCRIPT ARTA MAULANA ]-===================="
+echo "=====================-[ SCRIPT ]-===================="
 echo ""
 echo "------------------------------------------------------------"
 echo ""
@@ -243,7 +243,7 @@ echo ""
 echo ""
 echo "------------------------------------------------------------"
 echo ""
-echo "===============-[ Script Created By ARTA MAULANA ]-==============="
+echo "===============-[ Script Created By  ]-==============="
 echo -e ""
 echo ""
 echo "" | tee -a log-install.txt
