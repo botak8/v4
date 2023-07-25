@@ -325,7 +325,7 @@ wget -O jam "https://raw.githubusercontent.com/Sandhj/v4/main/jam.sh"
 wget -q -O /usr/bin/xolpanel "https://raw.githubusercontent.com/Andyyuda/xolpanel/main/xolpanel.sh"
 wget -q -O /usr/bin/lock "https://raw.githubusercontent.com/Sandhj/v5/main/user-lock.sh"
 wget -q -O /usr/bin/unlock "https://raw.githubusercontent.com/Sandhj/v5/main/user-unlock.sh"
-wget -q -O /usr/bin/update "https://raw.githubusercontent.com/Andyyuda/update/main/update.sh"
+wget -q -O /usr/bin/update "https://raw.githubusercontent.com/Sandhj/v4/main/update.sh"
 
 chmod +x menu
 chmod +x menu-trial
