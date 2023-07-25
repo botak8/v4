@@ -366,7 +366,7 @@ chmod +x xp
 chmod +x acs-set
 chmod +x sshws
 chmod +x status
-chmod +x menu-bckp
+chmod +x menu-backup
 chmod +x backup
 chmod +x restore
 chmod +x jam
