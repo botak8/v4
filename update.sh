@@ -118,6 +118,8 @@ wget -q -O /usr/bin/menu-set "https://raw.githubusercontent.com/Sandhj/v4/main/m
 wget -q -O /usr/bin/about "https://raw.githubusercontent.com/Sandhj/v4/main/menu/about.sh"
 wget -q -O /usr/bin/add4 "https://raw.githubusercontent.com/Andyyuda/permission/main/add4.sh"
 wget -q -O /usr/bin/menu-backup "https://raw.githubusercontent.com/Sandhj/v4/main/backup/menu-backup.sh"
+wget -q -O /usr/bin/trial "https://raw.githubusercontent.com/Sandhj/v4/main/ssh/trial.sh"
+wget -q -O /usr/bin/usernew "https://raw.githubusercontent.com/Sandhj/v4/main/ssh/usernew.sh"
 chmod +x /usr/bin/usernew
 chmod +x /usr/bin/auto-reboot
 chmod +x /usr/bin/restart
@@ -140,6 +142,8 @@ chmod +x /usr/bin/menu-set
 chmod +x /usr/bin/about
 chmod +x /usr/bin/add4
 chmod +x /usr/bin/menu-backup
+chmod +x /usr/bin/trial
+chmod +x /usr/bin/usernew
 clear
 echo -e ""
 echo -e "\e[0;32mDownloaded successfully!\e[0m"
