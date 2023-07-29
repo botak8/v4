@@ -1,7 +1,7 @@
 #!/bin/bash
 
 BURIQ () {
-    curl -sS https://raw.githubusercontent.com/Andyyuda/v5/main/izin > /root/tmp
+    curl -sS https://raw.githubusercontent.com/Paper890/permission/main/ip > /root/tmp
     data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
     for user in "${data[@]}"
     do
