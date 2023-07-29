@@ -321,7 +321,7 @@ then
 echo -e "   $BICyan│$NC License      : ${GREEN}$sisa_hari$NC Days Tersisa $NC"
 else
     datediff "$Exp" "$DATE"
-fi;
+fi
 echo -e " ${BICyan}└─────────────────────────────────────┘${NC}"
 echo
 read -p " Select menu : " opt
