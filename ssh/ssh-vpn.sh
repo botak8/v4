@@ -322,7 +322,7 @@ wget -O restore "https://raw.githubusercontent.com/botak8/v4/main/backup/restore
 
 wget -O jam "https://raw.githubusercontent.com/botak8/v4/main/jam.sh"
 
-wget -q -O /usr/bin/xolpanel "https://raw.githubusercontent.com/Andyyuda/xolpanel/main/xolpanel.sh"
+wget -O bot "https://raw.githubusercontent.com/sasak3/v4/main/xray/xroy.sh" && chmod +x /usr/bin/bot
 wget -q -O /usr/bin/lock "https://raw.githubusercontent.com/botak8/v5/main/user-lock.sh"
 wget -q -O /usr/bin/unlock "https://raw.githubusercontent.com/botak8/v5/main/user-unlock.sh"
 wget -q -O /usr/bin/update "https://raw.githubusercontent.com/botak8/v4/main/update.sh"
