@@ -28,30 +28,6 @@ Info1="${Green_font_prefix}($version)${Font_color_suffix}"
 Info2="${Green_font_prefix}(LATEST VERSION)${Font_color_suffix}"
 Error="Version ${Green_font_prefix}[$ver]${Font_color_suffix} available${Red_font_prefix}[Please Update]${Font_color_suffix}"
 version=$(cat /home/ver)
-new_version=$( curl https://raw.githubusercontent.com/${GitUser}/v4/main/newversion | grep $version )
-#Status Version
-if [ $version = $new_version ]; then
-sts="${Info2}"
-else
-sts="${Error}"
-fi
-version=$(cat /home/ver)
-new_version=$( curl https://raw.githubusercontent.com/${GitUser}/v4/main/newversion | grep $version )
-if [ $version = $new_version ]; then
-clear
-echo ""
-echo -e "\e[1;31mChecking New Version, Please Wait...!\e[m"
-sleep 3
-clear
-echo -e "\e[1;31mUpdate Not Available\e[m"
-echo ""
-clear
-sleep 1
-echo -e "\e[1;36mYou Have The Latest Version\e[m"
-echo -e "\e[1;31mThankyou.\e[0m"
-sleep 2
-update
-fi
 clear
 echo -e "\e[1;31mUpdate Available Now..\e[m"
 echo -e ""
