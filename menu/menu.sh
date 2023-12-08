@@ -249,81 +249,52 @@ echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
 }
-export sem=$( curl -s https://raw.githubusercontent.com/artanodrop/permission/main/versions)
+export sem=$( curl -s https://raw.githubusercontent.com/botak8/v4/main/versions)
 export pak=$( cat /home/.ver)
 IPVPS=$(curl -s ipinfo.io/ip )
 clear
-echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "\E[44;1;39m                     ⇱ INFORMASI VPS ⇲                        \E[0m"
-echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-
-echo -e "${BIYellow}□ Server Uptime       = ${GREEN}$( uptime -p  | cut -d " " -f 2-10000 ) ${NC}"
-echo -e "${BIYellow}□ Current Time        = ${GREEN}$( date -d "0 days" +"%d-%m-%Y | %X" )${NC}"
-echo -e "${BIYellow}□ Operating System    = ${GREEN}$( cat /etc/os-release | grep -w PRETTY_NAME | sed 's/PRETTY_NAME//g' | sed 's/=//g' | sed 's/"//g' ) ( $( uname -m) )${NC}"
-echo -e "${BIYellow}□ Current Domain      = ${GREEN}$( cat /etc/xray/domain )${NC}"
-echo -e "${BIYellow}□ NS Domain           = ${GREEN}$(cat /root/nsdomain)${NC}"
-echo -e "${BIYellow}□ Jumlah Ram          = ${GREEN}${totalram}MB"
-echo -e "${BIYellow}□ Server Resource     = $uram / $tram"
-echo -e "${BIYellow}□ CPU Usage           = $cpu_usage"
-echo -e "${BIYellow}□ Clients Name        = ${GREEN}$Name${NC}"
-echo -e "${BIYellow}□ Expired Script VPS  = ${GREEN}$Exp${NC}"
-echo -e "${BIYellow}□ Time Reboot VPS     = 00:00 ${GREEN}( Jam 12 Malam )${NC}"
-echo -e "${BIYellow}□ License Limit       = ORDER ${GREEN}( NULL )${NC}"
-echo -e "${BIYellow}□ AutoScript By Dev   = Wak ${GREEN}( BROTHERTUNNEL )${NC}"
-echo -e "\e[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "${BICyan} │                  ${BIWhite}${UWhite}BROTHER TUNELING${NC}"
-echo -e "${BICyan} │"
-echo -e " ${BICyan}│  ${BICyan}Use Core        :  ${BIPurple}XRAY${NC}"
-echo -e " ${BICyan}│  ${BICyan}IP-VPS          :  ${BIYellow}$IPVPS${NC}"
-echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
-
-echo -e "${GREEN}  INGATLAH KAWAN DILANGIT MASIH ADA LANGIT JAGAN LUPA DIRI${NC}" 
-
-echo -e "${GREEN}┌──────────────────────────────────────────────────┐${NC}" 
-echo -e "${GREEN}│  \033[0m ${BOLD}${YELLOW}SSH     VMESS       VLESS      TROJAN $NC" 
-echo -e "${GREEN}│  \033[0m ${Blue} $ssh1        $vma          $vla          $tra $NC" 
-echo -e "${GREEN}└──────────────────────────────────────────────────┘${NC}" 
-  
-echo -e "     ${BICyan} SSH ${NC}: $ressh"" ${BICyan} NGINX ${NC}: $resngx"" ${BICyan}  XRAY ${NC}: $resv2r"" ${BICyan} TROJAN ${NC}: $resv2r"
-echo -e "   ${BICyan}     STUNNEL ${NC}: $resst" "${BICyan} DROPBEAR ${NC}: $resdbr" "${BICyan} SSH-WS ${NC}: $ressshws"
-echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "     ${BICyan}[${BIWhite}01${BICyan}] SSH     ${BICyan}[${BIYellow}Menu${BICyan}]${NC}"    "     ${BICyan}[${BIWhite}06${BICyan}] TRIALL    ${BICyan}[${BIYellow}Menu${BICyan}]${NC}" "${BICyan}   │"
-echo -e "     ${BICyan}[${BIWhite}02${BICyan}] VMESS   ${BICyan}[${BIYellow}Menu${BICyan}]${NC}" "     ${BICyan}[${BIWhite}07${BICyan}] BACKUP    ${BICyan}[${BIYellow}Menu${BICyan}]${NC}" "${BICyan}   │"
-echo -e "     ${BICyan}[${BIWhite}03${BICyan}] VLESS   ${BICyan}[${BIYellow}Menu${BICyan}]${NC}"  "     ${BICyan}[${BIWhite}08${BICyan}] ADD-HOST      ${NC}" "${BICyan}     │"
-echo -e "     ${BICyan}[${BIWhite}04${BICyan}] TROJAN  ${BICyan}[${BIYellow}Menu${BICyan}]${NC}" "     ${BICyan}[${BIWhite}09${BICyan}] RUNNING             │"
-echo -e "     ${BICyan}[${BIWhite}05${BICyan}] SETING  ${BICyan}[${BIYellow}Menu${BICyan}]${NC}"  "     ${BICyan}[${BIWhite}10${BICyan}] INSTAL UDP${BICyan}[${BIYellow}INSTAL${BICyan}]${NC}" "${BICyan} │${NC}"
-echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
-echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "     ${BICyan}[${BIWhite}11${BICyan}] Panel BOT     ${BICyan}[${BIYellow}Install${BICyan}]${NC}"
-echo -e "     ${BICyan}[${BIWhite}12${BICyan}] lock ssh "
-echo -e "     ${BICyan}[${BIWhite}13${BICyan}] unlock ssh "
-echo -e "     ${BICyan}[${BIWhite}14${BICyan}] Update Script "
-echo -e "     ${BICyan}[${BIWhite}16${BICyan}] install bot "
-echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
-echo -e "\E[44;1;39m                     ⇱ BROTHER Store ⇲                         \E[0m"
-echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-
-echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "${BICyan} │$NC ${BICyan}HARI ini${NC}: ${red}$ttoday$NC ${BICyan}KEMARIN${NC}: ${red}$tyest$NC ${BICyan}BULAN${NC}: ${red}$tmon$NC $NC"
-echo -e "${BICyan} └─────────────────────────────────────────────────────┘${NC}"
 DATE=$(date +'%d %B %Y')
 datediff() {
     d1=$(date -d "$1" +%s)
     d2=$(date -d "$2" +%s)
-    echo -e " ${BICyan}│$NC  Expiry In     : $(( (d1 - d2) / 86400 )) Days $NC"
+    echo -e " ${BIYellow}    □Expiry In     = $(( (d1 - d2) / 86400 )) Days $NC"
 }
 mai="datediff "$Exp" "$DATE""
-echo -e " ${BICyan}┌─────────────────────────────────────┐${NC}"
-echo -e " ${BICyan}│  Version       :  Last Update ${NC}"
-echo -e " ${BICyan}│  User       ${NC}   :\033[1;36m $Name \e[0m"
+echo -e ""
+echo -e "${BIYellow}  ┌┌┌┌───────────────────────────────────────────────┐┐┐┐${NC}"
+echo -e "${BIYellow}  ││││ ${BICyan}          .::::.  SKY-TUNNEL  .::::. ${BIRed}        ││││${NC}"
+echo -e "${BIYellow}  └└└└───────────────────────────────────────────────┘┘┘┘ ${NC}"
+echo -e "${BIYellow}  ┌─────────────────────────────────────────────────────┐${NC}"
+echo -e "${BIYellow}    □ Server Uptime       = ${GREEN}$( uptime -p  | cut -d " " -f 2-10000 ) ${NC}"
+echo -e "${BIYellow}    □ Operating System    = ${GREEN}$( cat /etc/os-release | grep -w PRETTY_NAME | sed 's/PRETTY_NAME//g' | sed 's/=//g' | sed 's/"//g' ) ( $( uname -m) )${NC}"
+echo -e "${BIYellow}    □ ISP VPS             = ${GREEN}${ISP} ${NC}"           
+echo -e "${BIYellow}    □ CITY                =  ${GREEN}${CITY} ${NC}"
+echo -e "${BIYellow}    □ IP-VPS              = ${GREEN}$IPVPS${NC}"           
+echo -e "${BIYellow}    □ Jumlah Ram          = ${GREEN}${totalram}MB, usg $cpu_usage"
+echo -e "${BIYellow}    □ Current Domain      = ${GREEN}$( cat /etc/xray/domain )${NC}"
+echo -e "${BIYellow}    □ NS Domain           = ${GREEN}$(cat /root/nsdomain)${NC}"
 if [ $Exp \< 1000 ];
 then
-echo -e " $BICyan│$NC  License       : ${GREEN}$sisa_hari$NC Days Tersisa $NC"
+echo -e " $BIYellow   License        = ${GREEN}$sisa_hari$NC Days Tersisa $NC"
 else
     datediff "$Exp" "$DATE"
 fi
-echo -e " ${BICyan}└─────────────────────────────────────┘${NC}"
+echo -e "${BIYellow}  └─────────────────────────────────────────────────────┘${NC}"
+echo -e "${BIYellow}  ┌─────────────────────────────────────────────────────┐${NC}" 
+echo -e "${BIYellow}  │\033[0m ${BOLD}${YELLOW} ---- SSH ---- VMESS ---- VLESS ---- TROJAN ----$NC" 
+echo -e "${BIYellow}  │\033[0m ${BIWhite}       $ssh1        $vma          $vla         $tra $NC" 
+echo -e "${BIYellow}  └─────────────────────────────────────────────────────┘${NC}"  
+echo -e "${BICyan}      SSH ${NC}: $ressh"" ${BICyan} NGINX ${NC}: $resngx"" ${BICyan}  XRAY ${NC}: $resv2r"" ${BICyan} TROJAN ${NC}: $resv2r"
+echo -e "${BICyan}                  STUNNEL ${NC}: $resst" "${BICyan} DROPBEAR ${NC}: $resdbr" "${BICyan} SSH-WS ${NC}: $ressshws"
+echo -e "${BIYellow}  ┌─────────────────────────────────────────────────────┐${NC}"
+echo -e "${BIYellow}  │ ${BICyan}[${BIWhite}01${BICyan}] SSH OPVN      "          "     ${BICyan}[${BIWhite}05${BICyan}] CHECK RUNNING    ${NC}" "${BICyan}     │"
+echo -e "${BIYellow}  │ ${BICyan}[${BIWhite}02${BICyan}] VMESS MANAGER "          "     ${BICyan}[${BIWhite}06${BICyan}] MENU BACKUP      ${NC}" "${BICyan}     │"
+echo -e "${BIYellow}  │ ${BICyan}[${BIWhite}03${BICyan}] VLESS MANAGER "          "     ${BICyan}[${BIWhite}07${BICyan}] BOT TELEGRAM     ${NC}" "${BICyan}     │"
+echo -e "${BIYellow}  │ ${BICyan}[${BIWhite}04${BICyan}] TROJAN MANAGER"          "     ${BICyan}[${BIWhite}08${BICyan}] OTHER SETING     ${NC}" "${BICyan}     │"
+echo -e "${BIYellow}  └─────────────────────────────────────────────────────┘${NC}"
+echo -e "${BIYellow}  ┌─────────────────────────────────────────────────────┐${NC}"
+echo -e "${BIYellow}  │$NC ${BICyan}HARI ini${NC}: ${red}$ttoday$NC ${BICyan}KEMARIN${NC}: ${red}$tyest$NC ${BICyan}BULAN${NC}: ${red}$tmon$NC $NC"
+echo -e "${BIYellow}  └─────────────────────────────────────────────────────┘${NC}"
 echo
 read -p " Select menu : " opt
 echo -e ""
@@ -332,18 +303,11 @@ case $opt in
 2) clear ; menu-vmess ;;
 3) clear ; menu-vless ;;
 4) clear ; menu-trojan ;;
-5) clear ; menu-set ;;
-6) clear ; menu-trial ;;
-7) clear ; menu-backup ;;
-8) clear ; add-host ;;
-9) clear ; running ;;
-10) clear ; clear ; wget --load-cookies /tmp/cookies.txt ${UDPX} -O install-udp && rm -rf /tmp/cookies.txt && chmod +x install-udp && ./install-udp ;;
-11) clear ; bot ;;
-12) clear ; lock ;;
-13) clear ; unlock ;;
-14) clear ; update ;;
-15) clear ; addv4 ;;
-16) clear ; wget https://raw.githubusercontent.com/sasak3/v4/main/xray/xroy.sh && chmod +x xroy.sh && ./xroy.sh ;;
+5) clear ; running ;;
+6) clear ; menu-backup ;;
+7) clear ; bot ;;
+8) clear ; add-set ;;
+9) clear ; wget https://raw.githubusercontent.com/sasak3/v4/main/xray/xroy.sh && chmod +x xroy.sh && ./xroy.sh ;;
 0) clear ; menu ;;
 x) exit ;;
 *) echo -e "" ; echo "Press any key to back exit" ; sleep 1 ; exit ;;
