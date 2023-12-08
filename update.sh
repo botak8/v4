@@ -94,6 +94,33 @@ clear
 echo ""
 echo -e "\e[0;32mNew Version Downloading started!\e[0m"
 sleep 2
+fun_bar() {
+    CMD[0]="$1"
+    CMD[1]="$2"
+    (
+        [[ -e $HOME/fim ]] && rm $HOME/fim
+        ${CMD[0]} -y >/dev/null 2>&1
+        ${CMD[1]} -y >/dev/null 2>&1
+        touch $HOME/fim
+    ) >/dev/null 2>&1 &
+    tput civis
+    echo -ne "  \033[0;33mPlease Wait Loading \033[1;37m- \033[0;33m["
+    while true; do
+        for ((i = 0; i < 18; i++)); do
+            echo -ne "\033[0;32m#"
+            sleep 0.1s
+        done
+        [[ -e $HOME/fim ]] && rm $HOME/fim && break
+        echo -e "\033[0;33m]"
+        sleep 1s
+        tput cuu1
+        tput dl1
+        echo -ne "  \033[0;33mPlease Wait Loading \033[1;37m- \033[0;33m["
+    done
+    echo -e "\033[0;33m]\033[1;37m -\033[1;32m OK !\033[1;37m"
+    tput cnorm
+}
+res1() {
 cd /usr/bin
 wget -q -O /usr/bin/usernew "https://raw.githubusercontent.com/botak8/v4/main/ssh/usernew.sh"
 wget -q -O /usr/bin/auto-reboot "https://raw.githubusercontent.com/botak8/v4/main/menu/auto-reboot.sh"
@@ -114,7 +141,6 @@ wget -q -O /usr/bin/update "https://raw.githubusercontent.com/botak8/v4/main/upd
 wget -q -O /usr/bin/certv2ray "https://raw.githubusercontent.com/botak8/v4/main/xray/certv2ray.sh"
 wget -q -O /usr/bin/menu-set "https://raw.githubusercontent.com/botak8/v4/main/menu/menu-set.sh"
 wget -q -O /usr/bin/about "https://raw.githubusercontent.com/botak8/v4/main/menu/about.sh"
-wget -q -O /usr/bin/add4 "https://raw.githubusercontent.com/Andyyuda/permission/main/add4.sh"
 wget -q -O /usr/bin/menu-backup "https://raw.githubusercontent.com/botak8/v4/main/backup/menu-backup.sh"
 wget -q -O /usr/bin/trial "https://raw.githubusercontent.com/botak8/v4/main/ssh/trial.sh"
 wget -q -O /usr/bin/usernew "https://raw.githubusercontent.com/botak8/v4/main/ssh/usernew.sh"
@@ -129,7 +155,6 @@ chmod +x /usr/bin/menu-vless
 chmod +x /usr/bin/menu-vmess
 chmod +x /usr/bin/menu-trojan
 chmod +x /usr/bin/menu-ssh
-chmod +x /usr/bin/menu-backup
 chmod +x /usr/bin/menu
 chmod +x /usr/bin/menu-webmin
 chmod +x /usr/bin/xp
@@ -137,10 +162,12 @@ chmod +x /usr/bin/update
 chmod +x /usr/bin/certv2ray
 chmod +x /usr/bin/menu-set
 chmod +x /usr/bin/about
-chmod +x /usr/bin/add4
 chmod +x /usr/bin/menu-backup
 chmod +x /usr/bin/trial
 chmod +x /usr/bin/usernew
+}
+netfilter-persistent
+clear
 clear
 echo -e ""
 echo -e "\e[0;32mDownloaded successfully!\e[0m"
@@ -161,6 +188,7 @@ clear
 echo ""
 echo -e "\033[0;34m----------------------------------------\033[0m"
 echo -e "\E[44;1;39m            SCRIPT UPDATED              \E[0m"
+fun_bar 'res1'
 echo -e "\033[0;34m----------------------------------------\033[0m"
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
