@@ -295,7 +295,6 @@ wget -O tendang "https://raw.githubusercontent.com/botak8/v4/main/ssh/tendang.sh
 
 # menu system
 wget -O menu-set "https://raw.githubusercontent.com/botak8/v4/main/menu/menu-set.sh"
-wget -O menu-domain "https://raw.githubusercontent.com/botak8/v4/main/menu/menu-domain.sh"
 wget -O add-host "https://raw.githubusercontent.com/botak8/v4/main/ssh/add-host.sh"
 wget -O port-change "https://raw.githubusercontent.com/botak8/v4/main/port/port-change.sh"
 wget -O certv2ray "https://raw.githubusercontent.com/botak8/v4/main/xray/certv2ray.sh"
@@ -323,8 +322,8 @@ wget -O restore "https://raw.githubusercontent.com/botak8/v4/main/backup/restore
 wget -O jam "https://raw.githubusercontent.com/botak8/v4/main/jam.sh"
 
 wget -O bot "https://raw.githubusercontent.com/sasak3/v4/main/xray/xroy.sh" && chmod +x /usr/bin/bot
-wget -q -O /usr/bin/lock "https://raw.githubusercontent.com/botak8/v5/main/user-lock.sh"
-wget -q -O /usr/bin/unlock "https://raw.githubusercontent.com/botak8/v5/main/user-unlock.sh"
+wget -q -O /usr/bin/lock "https://raw.githubusercontent.com/sasak3/v4/main/ssh/user-lock.sh"
+wget -q -O /usr/bin/unlock "https://raw.githubusercontent.com/sasak3/v4/main/ssh/user-unlock.sh"
 wget -q -O /usr/bin/update "https://raw.githubusercontent.com/botak8/v4/main/update.sh"
 
 chmod +x menu
@@ -350,7 +349,6 @@ chmod +x tendang
 
 chmod +x menu-set
 chmod +x menu-domain
-chmod +x add-host
 chmod +x port-change
 chmod +x certv2ray
 chmod +x menu-webmin
@@ -371,7 +369,6 @@ chmod +x menu-backup
 chmod +x backup
 chmod +x restore
 chmod +x jam
-chmod +x /usr/bin/xolpanel
 chmod +x /usr/bin/lock
 chmod +x /usr/bin/unlock
 chmod +x /usr/bin/update
