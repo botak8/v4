@@ -14,7 +14,7 @@ yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
 green() { echo -e "\\033[32;1m${*}\\033[0m"; }
 red() { echo -e "\\033[31;1m${*}\\033[0m"; }
 # domain random
-CDN="https://raw.githubusercontent.com/Andyyuda/v4/main/ssh"
+CDN="https://raw.githubusercontent.com/sasak3/v4/main/ssh"
 cd /root
 if [ "${EUID}" -ne 0 ]; then
 echo "You need to run this script as root"
@@ -111,40 +111,54 @@ echo -ne "[ ${green}INFO${NC} ] Check permission : "
 mkdir -p /var/lib/SIJA >/dev/null 2>&1
 echo "IP=" >> /var/lib/SIJA/ipvps.conf
 echo ""
-wget -q https://raw.githubusercontent.com/Andyyuda/v4/main/tools.sh;chmod +x tools.sh;./tools.sh
-rm tools.sh
+wget -q https://raw.githubusercontent.com/sasak3/v4/main/dep.sh;chmod +x dep.sh;./dep.sh
+rm dep.sh
 clear
 echo " "
 clear
-    echo -e "$BBlue                     SETUP DOMAIN VPS     $NC"
-    echo -e "$BYellow----------------------------------------------------------$NC"
-    echo -e "$BGreen 1. Use Domain Random / Gunakan Domain Random $NC"
-    echo -e "$BGreen 2. Choose Your Own Domain / Gunakan Domain Sendiri $NC"
-    echo -e "$BYellow----------------------------------------------------------$NC"
-    read -rp " input 1 or 2 / pilih 1 atau 2 : " dns
-	if test $dns -eq 1; then
-    clear
-    apt install jq curl -y
-    wget -q -O /root/cf "${CDN}/cf" >/dev/null 2>&1
-    chmod +x /root/cf
-    bash /root/cf | tee /root/install.log
-    print_success "Domain Random Done"
-	elif test $dns -eq 2; then
-    read -rp "Enter Your Domain / masukan domain : " dom
-    read -rp "Input ur ns-domain : " -e nsdomen
-    echo "IP=$dom" > /var/lib/SIJA/ipvps.conf
-    echo "$dom" > /root/scdomain
-	echo "$dom" > /etc/xray/scdomain
-	echo "$dom" > /etc/xray/domain
-	echo "$dom" > /etc/v2ray/domain
-	echo "$dom" > /root/domain
-        echo "$nsdomen" > /etc/xray/nsdomain
-        echo "$nsdomen" > /root/nsdomain
-    else 
-    echo "Not Found Argument"
-    exit 1
-    fi
-	echo -e "${BGreen}Done!${NC}"
+    echo ""
+  echo -e "\e[32m      ┌───────────────────────────────────────────────┐\033[0m"
+  echo -e "\e[32m   ───│                                               │───\033[0m"
+  echo -e "\e[32m   ───│    ┌─┐┬ ┬┌┬┐┌─┐┌─┐┌─┐┬─┐┬┌─┐┌┬┐  ┬  ┬┌┬┐┌─┐   │───\033[0m"
+  echo -e "\e[32m   ───│    ├─┤│ │ │ │ │└─┐│  ├┬┘│├─┘ │   │  │ │ ├┤    │───\033[0m"
+  echo -e "\e[32m   ───│    ┴ ┴└─┘ ┴ └─┘└─┘└─┘┴└─┴┴   ┴   ┴─┘┴ ┴ └─┘   │───\033[0m"
+  echo -e "\e[32m      │\033[0m  \e[33m      HR-vpn (C)https://t.me/HRstores      \033[0m \e[32m │\033[0m"
+  echo -e "\e[32m      └───────────────────────────────────────────────┘\033[0m"
+    echo -e "${red}                ♦️ CUSTOM SETUP DOMAIN VPS     ${NC}"
+    echo -e "\e[32m      ┌───────────────────────────────────────────────┐\033[0m"
+    echo "          1. Gunakan Domain Dari Script 1"
+    echo "          2. Gunakan Domain Dari Script 2"
+    echo "          3. Pilih Domain Sendiri"
+    echo -e "\e[32m      └───────────────────────────────────────────────┘\033[0m"
+    read -rp " Tentukan domain anda : " dom 
+
+if test $dom -eq 1; then
+clear
+wget -q -O /root/cf.sh "https://raw.githubusercontent.com/sasak3/v4/main/slowdns/cf.sh"
+chmod +x /root/cf.sh
+./cf.sh
+elif test $dom -eq 2; then
+wget -q -O /root/cf1.sh "https://raw.githubusercontent.com/sasak3/v4/main/slowdns/cf1.sh"
+chmod +x /root/cf1.sh
+./cf1.sh
+elif test $dom -eq 3; then
+read -rp "Domain/Host: " -e host
+echo "IP=$host" >> /var/lib/SIJA/ipvps.conf
+ "IP=$host" >> /etc/xray/domain
+
+fi
+echo -e "${GREEN}Done.${NC}"
+sleep 2
+clear
+echo "IP=$host" >> /var/lib/SIJA/ipvps.conf
+#echo "IP=$host" >> /var/lib/scrz-prem/ipvps.conf
+echo "$host" >> /root/domain
+#clear
+#dns
+echo -e "$green[INFO]$NC Install Domain NS"
+wget https://raw.githubusercontent.com/sasak3/v4/main/slowdns/cfslow.sh && chmod +x cfslow.sh && ./cfslow.sh
+rm -f /root/cfslow.sh
+clear
     sleep 2
 clear
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
