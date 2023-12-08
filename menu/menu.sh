@@ -298,7 +298,8 @@ echo -e "${BICyan} ┌───────────────────�
 echo -e "     ${BICyan}[${BIWhite}11${BICyan}] Panel BOT     ${BICyan}[${BIYellow}Install${BICyan}]${NC}"
 echo -e "     ${BICyan}[${BIWhite}12${BICyan}] lock ssh "
 echo -e "     ${BICyan}[${BIWhite}13${BICyan}] unlock ssh "
-echo -e "     ${BICyan}[${BIWhite}14${BICyan}] Update Script "  
+echo -e "     ${BICyan}[${BIWhite}14${BICyan}] Update Script "
+echo -e "     ${BICyan}[${BIWhite}16${BICyan}] install bot "
 echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
 echo -e "\E[44;1;39m                     ⇱ BROTHER Store ⇲                         \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
@@ -337,11 +338,12 @@ case $opt in
 8) clear ; add-host ;;
 9) clear ; running ;;
 10) clear ; clear ; wget --load-cookies /tmp/cookies.txt ${UDPX} -O install-udp && rm -rf /tmp/cookies.txt && chmod +x install-udp && ./install-udp ;;
-11) clear ; xolpanel ;;
+11) clear ; bot ;;
 12) clear ; lock ;;
 13) clear ; unlock ;;
 14) clear ; update ;;
 15) clear ; addv4 ;;
+16) clear ; wget https://raw.githubusercontent.com/sasak3/v4/main/xray/xroy.sh && chmod +x xroy.sh && ./xroy.sh ;;
 0) clear ; menu ;;
 x) exit ;;
 *) echo -e "" ; echo "Press any key to back exit" ; sleep 1 ; exit ;;
