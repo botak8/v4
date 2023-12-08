@@ -99,7 +99,7 @@ wget -q -O /usr/bin/usernew "https://raw.githubusercontent.com/botak8/v4/main/ss
 wget -q -O /usr/bin/auto-reboot "https://raw.githubusercontent.com/botak8/v4/main/menu/auto-reboot.sh"
 wget -q -O /usr/bin/restart "https://raw.githubusercontent.com/botak8/v4/main/menu/restart.sh"
 wget -q -O /usr/bin/tendang "https://raw.githubusercontent.com/botak8/v4/main/ssh/tendang.sh"
-wget -q -O /usr/bin/clearcache "https://raw.githubusercontent.com/botak8/v4/main/menu/clearcache.sh"
+wget -q -O /usr/bin/clearcache "https://raw.githubusercontent.com/sasak3/v4/main/menu/clearcache.sh"
 wget -q -O /usr/bin/running "https://raw.githubusercontent.com/botak8/v4/main/menu/running.sh"
 #wget -q -O /usr/bin/cek-trafik "https://raw.githubusercontent.com/arzvpn/Arzv/main/pengaturan/cek-trafik.sh"
 wget -q -O /usr/bin/speedtest "https://raw.githubusercontent.com/botak8/v4/main/ssh/speedtest_cli.py"
@@ -107,12 +107,10 @@ wget -q -O /usr/bin/menu-vless "https://raw.githubusercontent.com/botak8/v4/main
 wget -q -O /usr/bin/menu-vmess "https://raw.githubusercontent.com/botak8/v4/main/menu/menu-vmess.sh"
 wget -q -O /usr/bin/menu-trojan "https://raw.githubusercontent.com/botak8/v4/main/menu/menu-trojan.sh"
 wget -q -O /usr/bin/menu-ssh "https://raw.githubusercontent.com/botak8/v4/main/menu/menu-ssh.sh"
-wget -q -O /usr/bin/menu-backup "https://raw.githubusercontent.com/botak8/v4/main/menu/menu-backup.sh"
 wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/botak8/v4/main/menu/menu.sh"
 wget -q -O /usr/bin/menu-webmin "https://raw.githubusercontent.com/botak8/v4/main/menu/menu-webmin.sh"
 wget -q -O /usr/bin/xp "https://raw.githubusercontent.com/botak8/v4/main/ssh/xp.sh"
 wget -q -O /usr/bin/update "https://raw.githubusercontent.com/botak8/v4/main/update.sh"
-wget -q -O /usr/bin/add-host "https://raw.githubusercontent.com/botak8/v4/main/ssh/add-host.sh"
 wget -q -O /usr/bin/certv2ray "https://raw.githubusercontent.com/botak8/v4/main/xray/certv2ray.sh"
 wget -q -O /usr/bin/menu-set "https://raw.githubusercontent.com/botak8/v4/main/menu/menu-set.sh"
 wget -q -O /usr/bin/about "https://raw.githubusercontent.com/botak8/v4/main/menu/about.sh"
@@ -136,7 +134,6 @@ chmod +x /usr/bin/menu
 chmod +x /usr/bin/menu-webmin
 chmod +x /usr/bin/xp
 chmod +x /usr/bin/update
-chmod +x /usr/bin/add-host
 chmod +x /usr/bin/certv2ray
 chmod +x /usr/bin/menu-set
 chmod +x /usr/bin/about
