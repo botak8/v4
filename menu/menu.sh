@@ -257,46 +257,48 @@ DATE=$(date +'%d %B %Y')
 datediff() {
     d1=$(date -d "$1" +%s)
     d2=$(date -d "$2" +%s)
-    echo -e " ${BIYellow}    □Expiry In     = $(( (d1 - d2) / 86400 )) Days $NC"
+    echo -e " ${BIWhite}   □ Expiry In           = ${GREEN}$(( (d1 - d2) / 86400 )) Days $NC"
 }
 mai="datediff "$Exp" "$DATE""
 echo -e ""
 echo -e "${BIYellow}  ┌┌┌┌───────────────────────────────────────────────┐┐┐┐${NC}"
-echo -e "${BIYellow}  ││││ ${BICyan}          .::::.  SKY-TUNNEL  .::::. ${BIRed}        ││││${NC}"
+echo -e "${BIYellow}  ││││ ${BICyan}           .::::.  SKY-TUNNEL  .::::. ${BIYellow}        ││││${NC}"
 echo -e "${BIYellow}  └└└└───────────────────────────────────────────────┘┘┘┘ ${NC}"
-echo -e "${BIYellow}  ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "${BIYellow}    □ Server Uptime       = ${GREEN}$( uptime -p  | cut -d " " -f 2-10000 ) ${NC}"
-echo -e "${BIYellow}    □ Operating System    = ${GREEN}$( cat /etc/os-release | grep -w PRETTY_NAME | sed 's/PRETTY_NAME//g' | sed 's/=//g' | sed 's/"//g' ) ( $( uname -m) )${NC}"
-echo -e "${BIYellow}    □ ISP VPS             = ${GREEN}${ISP} ${NC}"           
-echo -e "${BIYellow}    □ CITY                =  ${GREEN}${CITY} ${NC}"
-echo -e "${BIYellow}    □ IP-VPS              = ${GREEN}$IPVPS${NC}"           
-echo -e "${BIYellow}    □ Jumlah Ram          = ${GREEN}${totalram}MB, usg $cpu_usage"
-echo -e "${BIYellow}    □ Current Domain      = ${GREEN}$( cat /etc/xray/domain )${NC}"
-echo -e "${BIYellow}    □ NS Domain           = ${GREEN}$(cat /root/nsdomain)${NC}"
+echo -e "${BIWhite}  ┌─────────────────────────────────────────────────────┐${NC}"
+echo -e "${BIWhite}    □ Server Uptime       = ${GREEN}$( uptime -p  | cut -d " " -f 2-10000 ) ${NC}"
+echo -e "${BIWhite}    □ Operating System    = ${GREEN}$( cat /etc/os-release | grep -w PRETTY_NAME | sed 's/PRETTY_NAME//g' | sed 's/=//g' | sed 's/"//g' ) ( $( uname -m) )${NC}"
+echo -e "${BIWhite}    □ ISP VPS             = ${GREEN}${ISP} ${NC}"           
+echo -e "${BIWhite}    □ CITY                = ${GREEN}${CITY} ${NC}"
+echo -e "${BIWhite}    □ IP-VPS              = ${GREEN}$IPVPS${NC}"           
+echo -e "${BIWhite}    □ Jumlah Ram          = ${GREEN}${totalram}MB, usg $cpu_usage"
+echo -e "${BIWhite}    □ Current Domain      = ${GREEN}$( cat /etc/xray/domain )${NC}"
+echo -e "${BIWhite}    □ NS Domain           = ${GREEN}$(cat /root/nsdomain)${NC}"
 if [ $Exp \< 1000 ];
 then
-echo -e " $BIYellow   License        = ${GREEN}$sisa_hari$NC Days Tersisa $NC"
+echo -e " $BIWhite   License              = ${GREEN}$sisa_hari$NC Days Tersisa $NC"
 else
     datediff "$Exp" "$DATE"
 fi
-echo -e "${BIYellow}  └─────────────────────────────────────────────────────┘${NC}"
+echo -e "${BIWhite}  └─────────────────────────────────────────────────────┘${NC}"
 echo -e "${BIYellow}  ┌─────────────────────────────────────────────────────┐${NC}" 
-echo -e "${BIYellow}  │\033[0m ${BOLD}${YELLOW} ---- SSH ---- VMESS ---- VLESS ---- TROJAN ----$NC" 
-echo -e "${BIYellow}  │\033[0m ${BIWhite}       $ssh1        $vma          $vla         $tra $NC" 
+echo -e "${BIYellow}  │\033[0m ${BOLD}${YELLOW}  ---- SSH ---- VMESS ---- VLESS ---- TROJAN ----$NC" 
+echo -e "${BIYellow}  │\033[0m ${BIWhite}        $ssh1        $vma          $vla          $tra $NC" 
 echo -e "${BIYellow}  └─────────────────────────────────────────────────────┘${NC}"  
-echo -e "${BICyan}      SSH ${NC}: $ressh"" ${BICyan} NGINX ${NC}: $resngx"" ${BICyan}  XRAY ${NC}: $resv2r"" ${BICyan} TROJAN ${NC}: $resv2r"
-echo -e "${BICyan}                  STUNNEL ${NC}: $resst" "${BICyan} DROPBEAR ${NC}: $resdbr" "${BICyan} SSH-WS ${NC}: $ressshws"
+echo -e "${BICyan}       SSH ${NC}: $ressh"" ${BICyan} NGINX ${NC}: $resngx"" ${BICyan}  XRAY ${NC}: $resv2r"" ${BICyan} TROJAN ${NC}: $resv2r"
+echo -e "${BICyan}          STUNNEL ${NC}: $resst" "${BICyan} DROPBEAR ${NC}: $resdbr" "${BICyan} SSH-WS ${NC}: $ressshws"
 echo -e "${BIYellow}  ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "${BIYellow}  │ ${BICyan}[${BIWhite}01${BICyan}] SSH OPVN      "          "     ${BICyan}[${BIWhite}05${BICyan}] CHECK RUNNING    ${NC}" "${BICyan}     │"
-echo -e "${BIYellow}  │ ${BICyan}[${BIWhite}02${BICyan}] VMESS MANAGER "          "     ${BICyan}[${BIWhite}06${BICyan}] MENU BACKUP      ${NC}" "${BICyan}     │"
-echo -e "${BIYellow}  │ ${BICyan}[${BIWhite}03${BICyan}] VLESS MANAGER "          "     ${BICyan}[${BIWhite}07${BICyan}] BOT TELEGRAM     ${NC}" "${BICyan}     │"
-echo -e "${BIYellow}  │ ${BICyan}[${BIWhite}04${BICyan}] TROJAN MANAGER"          "     ${BICyan}[${BIWhite}08${BICyan}] OTHER SETING     ${NC}" "${BICyan}     │"
+echo -e "${BIYellow}  │  ${BICyan}[${BIWhite} 1 ${BICyan}] SSH OPVN      "          "       ${BICyan}[${BIWhite} 5 ${BICyan}] CHECK RUNNING ${NC}" "${BIYellow}  │"
+echo -e "${BIYellow}  │  ${BICyan}[${BIWhite} 2 ${BICyan}] VMESS MANAGER "          "       ${BICyan}[${BIWhite} 6 ${BICyan}] MENU BACKUP   ${NC}" "${BIYellow}  │"
+echo -e "${BIYellow}  │  ${BICyan}[${BIWhite} 3 ${BICyan}] VLESS MANAGER "          "       ${BICyan}[${BIWhite} 7 ${BICyan}] BOT TELEGRAM  ${NC}" "${BIYellow}  │"
+echo -e "${BIYellow}  │  ${BICyan}[${BIWhite} 4 ${BICyan}] TROJAN MANAGER"          "       ${BICyan}[${BIWhite} 8 ${BICyan}] OTHER SETING  ${NC}" "${BIYellow}  │"
 echo -e "${BIYellow}  └─────────────────────────────────────────────────────┘${NC}"
 echo -e "${BIYellow}  ┌─────────────────────────────────────────────────────┐${NC}"
 echo -e "${BIYellow}  │$NC ${BICyan}HARI ini${NC}: ${red}$ttoday$NC ${BICyan}KEMARIN${NC}: ${red}$tyest$NC ${BICyan}BULAN${NC}: ${red}$tmon$NC $NC"
 echo -e "${BIYellow}  └─────────────────────────────────────────────────────┘${NC}"
-echo
-read -p " Select menu : " opt
+echo -e "                    Version script  3.0.1           \E[0m" | lolcat
+echo -e "                 ${BOLD}${BIRed}━━━${UWhite}━━━${GREEN}━━━${BIYellow}━━━${UWhite}━━━${BICyan}━━━${BIPurple}━━━${UWhite}━━━${BIRed}━━━${NC}"
+echo -e 
+read -p " Select From Options [ 1 - 6 ] : " opt
 echo -e ""
 case $opt in
 1) clear ; menu-ssh ;;
