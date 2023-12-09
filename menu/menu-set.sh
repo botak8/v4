@@ -47,13 +47,13 @@ echo -e "\e[33m └────────────────────�
 echo -e ""
 echo -e "\e[33m ┌──────────────────────────────────┐\033[0m"
 echo -e "\e[33m │  ${BICyan}[${BIWhite}1.${BICyan}] Chnge Domain server     "
-echo -e "\e[33m │  ${BICyan}[${BIWhite}2.${BICyan}] Change Port server      "
-echo -e "\e[33m │  ${BICyan}[${BIWhite}3.${BICyan}] Change Banner server"
-echo -e "\e[33m │  ${BICyan}[${BIWhite}4.${BICyan}] Chnge Auto Reboot   "
-echo -e "\e[33m │  ${BICyan}[${BIWhite}5.${BICyan}] Install bot tele      "
-echo -e "\e[33m │  ${BICyan}[${BIWhite}6.${BICyan}] Speedtest server   "
-echo -e "\e[33m │  ${BICyan}[${BIWhite}7.${BICyan}] Restart All Service"
-echo -e "\e[33m │  ${BICyan}[${BIWhite}8.${BICyan}] Cek Bandwith"
+echo -e "\e[33m │  ${BICyan}[${BIWhite}2.${BICyan}] Change Banner server"
+echo -e "\e[33m │  ${BICyan}[${BIWhite}3.${BICyan}] Chnge Auto Reboot   "
+echo -e "\e[33m │  ${BICyan}[${BIWhite}4.${BICyan}] Install bot tele      "
+echo -e "\e[33m │  ${BICyan}[${BIWhite}5.${BICyan}] Speedtest server   "
+echo -e "\e[33m │  ${BICyan}[${BIWhite}6.${BICyan}] Restart All Service"
+echo -e "\e[33m │  ${BICyan}[${BIWhite}7.${BICyan}] Cek Bandwith"
+echo -e "\e[33m │  ${BICyan}[${BIWhite}8.${BICyan}] Clear log all service "
 echo -e "\e[33m │  ${BICyan}[${BIWhite}9.${BICyan}] Update script     "
 echo -e "\e[33m │  ${BICyan}[${BIWhite}10${BICyan}] About Script     "
 echo -e "\e[33m │  ${BICyan}[${BIWhite}11${BICyan}] Reboot server     "
@@ -64,13 +64,13 @@ read -p " Select From Options [ 1 - 11 ] : "  opt
 echo -e ""
 case $opt in
 1) clear ; add-host ; exit ;;
-2) clear ; port-change ; exit ;;
-3) clear ; nano /etc/issue.net ; exit ;; #ssh-vpn banner.conf
-4) clear ; jam ; exit ;;
-5) clear ; wget https://raw.githubusercontent.com/sasak3/v4/main/xray/xroy.sh && chmod +x xroy.sh && ./xroy.sh ;;
-6) clear ; speedtest ; exit ;;
-7) clear ; restart ; exit ;;
-8) clear ; bw ; exit ;;
+2) clear ; nano /etc/issue.net ; exit ;; #ssh-vpn banner.conf
+3) clear ; jam ; exit ;;
+4) clear ; wget https://raw.githubusercontent.com/sasak3/v4/main/xray/xroy.sh && chmod +x xroy.sh && ./xroy.sh ;;
+5) clear ; speedtest ; exit ;;
+6) clear ; restart ; exit ;;
+7) clear ; bw ; exit ;;
+8) clear ; clearcache ; exit ;;
 9) clear ; update ; exit ;;
 10) clear ; about ; exit ;;
 11) clear ; reboot ; exit ;;
