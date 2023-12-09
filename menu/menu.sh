@@ -261,14 +261,14 @@ datediff() {
 }
 mai="datediff "$Exp" "$DATE""
 echo -e ""
-echo -e "\e[33m      ┌───────────────────────────────────────────────┐\033[0m"
-echo -e "\e[33m   ───│\033[0m  ${BICyan}  ┌─┐┬ ┬┌┬┐┌─┐┌─┐┌─┐┬─┐┬┌─┐┌┬┐  ┬  ┬┌┬┐┌─┐   │───\033[0m"
-echo -e "\e[33m   ───│\033[0m  ${BICyan}  ├─┤│ │ │ │ │└─┐│  ├┬┘│├─┘ │   │  │ │ ├┤    │───\033[0m"
-echo -e "\e[33m   ───│\033[0m  ${BICyan}  ┴ ┴└─┘ ┴ └─┘└─┘└─┘┴└─┴┴   ┴   ┴─┘┴ ┴ └─┘   │───\033[0m"
-echo -e "\e[33m   ───│\033[0m  ${BIWhite}      HR-vpn (C)https://t.me/HRstores      \033[0m \e[33m │───\033[0m"
-echo -e "\e[33m      └───────────────────────────────────────────────┘\033[0m"
+echo -e "\e[33m    ┌─────────────────────────────────────────────────┐\033[0m"
+echo -e "\e[33m ───│\033[0m  ${BICyan}   ┌─┐┬ ┬┌┬┐┌─┐┌─┐┌─┐┬─┐┬┌─┐┌┬┐  ┬  ┬┌┬┐┌─┐ \033[0m \e[33m  │───\033[0m"
+echo -e "\e[33m ───│\033[0m  ${BICyan}   ├─┤│ │ │ │ │└─┐│  ├┬┘│├─┘ │   │  │ │ ├┤   \033[0m \e[33m │───\033[0m"
+echo -e "\e[33m ───│\033[0m  ${BICyan}   ┴ ┴└─┘ ┴ └─┘└─┘└─┘┴└─┴┴   ┴   ┴─┘┴ ┴ └─┘  \033[0m \e[33m │───\033[0m"
+echo -e "\e[33m ───│\033[0m  ${BIWhite}       HR-vpn (C)https://t.me/HRstores      \033[0m \e[33m  │───\033[0m"
+echo -e "\e[33m    └─────────────────────────────────────────────────┘\033[0m"
 echo -e "${red}                     ♦️ SERVER INFORMATION     ${NC}"
-echo -e "${BIWhite}             ───────────────────────────${NC}"
+echo -e "${BIWhite}               ───────────────────────────${NC}"
 echo -e "${BIWhite}    □ Server Uptime       = ${GREEN}$( uptime -p  | cut -d " " -f 2-10000 ) ${NC}"
 echo -e "${BIWhite}    □ Operating System    = ${GREEN}$( cat /etc/os-release | grep -w PRETTY_NAME | sed 's/PRETTY_NAME//g' | sed 's/=//g' | sed 's/"//g' )${NC}"
 echo -e "${BIWhite}    □ ISP VPS             = ${GREEN}${ISP} ${NC}"           
@@ -283,25 +283,25 @@ echo -e " $BIWhite   License              = ${GREEN}$sisa_hari$NC Days Tersisa $
 else
     datediff "$Exp" "$DATE"
 fi
-echo -e "${BIYellow}  ┌─────────────────────────────────────────────────────┐${NC}" 
-echo -e "${BIYellow}  │\033[0m ${BOLD}${YELLOW}  ---- SSH ---- VMESS ---- VLESS ---- TROJAN ----$NC" 
+echo -e "${BIYellow}  ┌────────────────────────────────────────────────────┐${NC}" 
+echo -e "${BIYellow}  │\033[0m ${BOLD}${YELLOW}  ---- SSH ---- VMESS --- VLESS ---- TROJAN ----$NC" 
 echo -e "${BIYellow}  │\033[0m ${BIWhite}        $ssh1        $vma          $vla          $tra $NC" 
-echo -e "${BIYellow}  └─────────────────────────────────────────────────────┘${NC}"  
-echo -e "${BICyan}       SSH ${NC}: $ressh"" ${BICyan} NGINX ${NC}: $resngx"" ${BICyan}  XRAY ${NC}: $resv2r"" ${BICyan} TROJAN ${NC}: $resv2r"
-echo -e "${BICyan}          STUNNEL ${NC}: $resst" "${BICyan} DROPBEAR ${NC}: $resdbr" "${BICyan} SSH-WS ${NC}: $ressshws"
-echo -e "${BIYellow}  ┌─────────────────────────────────────────────────────┐${NC}"
+echo -e "${BIYellow}  └────────────────────────────────────────────────────┘${NC}"  
+echo -e "${BICyan}      SSH ${NC}: $ressh"" ${BICyan} NGINX ${NC}: $resngx"" ${BICyan}  XRAY ${NC}: $resv2r"" ${BICyan} TROJAN ${NC}: $resv2r"
+echo -e "${BICyan}         STUNNEL ${NC}: $resst" "${BICyan} DROPBEAR ${NC}: $resdbr" "${BICyan} SSH-WS ${NC}: $ressshws"
+echo -e "${BIYellow}  ┌────────────────────────────────────────────────────┐${NC}"
 echo -e "${BIYellow}  │  ${BICyan}[${BIWhite} 1 ${BICyan}] SSH OPVN      "          "       ${BICyan}[${BIWhite} 5 ${BICyan}] CHECK RUNNING ${NC}" "${BIYellow}  │"
 echo -e "${BIYellow}  │  ${BICyan}[${BIWhite} 2 ${BICyan}] VMESS MANAGER "          "       ${BICyan}[${BIWhite} 6 ${BICyan}] MENU BACKUP   ${NC}" "${BIYellow}  │"
 echo -e "${BIYellow}  │  ${BICyan}[${BIWhite} 3 ${BICyan}] VLESS MANAGER "          "       ${BICyan}[${BIWhite} 7 ${BICyan}] BOT TELEGRAM  ${NC}" "${BIYellow}  │"
 echo -e "${BIYellow}  │  ${BICyan}[${BIWhite} 4 ${BICyan}] TROJAN MANAGER"          "       ${BICyan}[${BIWhite} 8 ${BICyan}] OTHER SETING  ${NC}" "${BIYellow}  │"
-echo -e "${BIYellow}  └─────────────────────────────────────────────────────┘${NC}"
-echo -e "${BIYellow}  ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "${BIYellow}  │$NC ${BICyan}HARI ini${NC}: ${red}$ttoday$NC ${BICyan}KEMARIN${NC}: ${red}$tyest$NC ${BICyan}BULAN${NC}: ${red}$tmon$NC $NC"
-echo -e "${BIYellow}  └─────────────────────────────────────────────────────┘${NC}"
-echo -e "                    Version script  3.0.1           \E[0m" | lolcat
-echo -e "                 ${BOLD}${BIRed}━━━${UWhite}━━━${GREEN}━━━${BIYellow}━━━${UWhite}━━━${BICyan}━━━${BIPurple}━━━${UWhite}━━━${BIRed}━━━${NC}"
+echo -e "${BIYellow}  └────────────────────────────────────────────────────┘${NC}"
+echo -e "${BIYellow}  ┌────────────────────────────────────────────────────┐${NC}"
+echo -e "${BIYellow}  │$NC${BICyan}HARI ini${NC}: ${red}$ttoday$NC ${BICyan}KEMARIN${NC}: ${red}$tyest$NC ${BICyan}BULAN${NC}: ${red}$tmon$NC $NC"
+echo -e "${BIYellow}  └────────────────────────────────────────────────────┘${NC}"
+echo -e "                   Version script  3.0.1           \E[0m" | lolcat
+echo -e "                ${BOLD}${BIRed}━━━${UWhite}━━━${GREEN}━━━${BIYellow}━━━${UWhite}━━━${BICyan}━━━${BIPurple}━━━${UWhite}━━━${BIRed}━━━${NC}"
 echo -e 
-read -p " Select From Options [ 1 - 6 ] : " opt
+read -p " Select From Options [ 1 - 8 ] : " opt
 echo -e ""
 case $opt in
 1) clear ; menu-ssh ;;
