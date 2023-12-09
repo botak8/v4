@@ -39,37 +39,41 @@ export NC='\033[0m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
 
-clear
-echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "       ${BIWhite}${UWhite}SETTING ${NC}"
+clear    
 echo -e ""
-echo -e "     ${BICyan}[${BIWhite}01${BICyan}] Chnge Domain server     "
-echo -e "     ${BICyan}[${BIWhite}02${BICyan}] Change Port server      "
-echo -e "     ${BICyan}[${BIWhite}03${BICyan}] Instal bot tele      "
-echo -e "     ${BICyan}[${BIWhite}04${BICyan}] Speedtest VPS   "
-echo -e "     ${BICyan}[${BIWhite}05${BICyan}] About Script     "
-echo -e "     ${BICyan}[${BIWhite}06${BICyan}] Set Auto Reboot   "
-echo -e "     ${BICyan}[${BIWhite}07${BICyan}] Restart All Service"
-echo -e "     ${BICyan}[${BIWhite}08${BICyan}] Change Banner"
-echo -e "     ${BICyan}[${BIWhite}09${BICyan}] Cek Bandwith"
-echo -e "     ${BICyan}[${BIWhite}10${BICyan}] Setting Auto Reboot"
-
-echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
-echo -e "     ${BIYellow}Press x or [ Ctrl+C ] • To-${BIWhite}Exit${NC}"
+echo -e "\e[33m ┌──────────────────────────────────┐\033[0m"
+echo -e "\e[33m │${BICyan}  .::::.  SYSTEM SETING  .::::.  \033[0m"
+echo -e "\e[33m └──────────────────────────────────┘\033[0m"
+echo -e ""
+echo -e "\e[33m ┌──────────────────────────────────┐\033[0m"
+echo -e "\e[33m │ ${BICyan}[${BIWhite}1.${BICyan}] Chnge Domain server     "
+echo -e "\e[33m │ ${BICyan}[${BIWhite}2.${BICyan}] Change Port server      "
+echo -e "\e[33m │ ${BICyan}[${BIWhite}3.${BICyan}] Change Banner server"
+echo -e "\e[33m │ ${BICyan}[${BIWhite}4.${BICyan}] Chnge Auto Reboot   "
+echo -e "\e[33m │ ${BICyan}[${BIWhite}5.${BICyan}] Instal bot tele      "
+echo -e "\e[33m │ ${BICyan}[${BIWhite}6.${BICyan}] Speedtest server   "
+echo -e "\e[33m │ ${BICyan}[${BIWhite}7.${BICyan}] Restart All Service"
+echo -e "\e[33m │ ${BICyan}[${BIWhite}8.${BICyan}] Cek Bandwith"
+echo -e "\e[33m │ ${BICyan}[${BIWhite}9.${BICyan}] Update script     "
+echo -e "\e[33m │ ${BICyan}[${BIWhite}10${BICyan}] About Script     "
+echo -e "\e[33m │ ${BICyan}[${BIWhite}11${BICyan}] Reboot server     "
+echo -e "\e[33m │ ${BICyan}[${BIWhite}0.${BICyan}] Back to menu     "
+echo -e "\e[33m └──────────────────────────────────┘\033[0m"
 echo ""
 read -p " Select menu : " opt
 echo -e ""
 case $opt in
-1) clear ; menu-domain ; exit ;;
+1) clear ; add-host ; exit ;;
 2) clear ; port-change ; exit ;;
-9) clear ; wget https://raw.githubusercontent.com/sasak3/v4/main/xray/xroy.sh && chmod +x xroy.sh && ./xroy.sh ;;
-4) clear ; speedtest ; exit ;;
-5) clear ; about ; exit ;;
-6) clear ; auto-reboot ; exit ;;
+3) clear ; nano /etc/issue.net ; exit ;; #ssh-vpn banner.conf
+4) clear ; auto-reboot ; exit ;;
+5) clear ; wget https://raw.githubusercontent.com/sasak3/v4/main/xray/xroy.sh && chmod +x xroy.sh && ./xroy.sh ;;
+6) clear ; speedtest ; exit ;;
 7) clear ; restart ; exit ;;
-8) clear ; nano /etc/issue.net ; exit ;; #ssh-vpn banner.conf
-9) clear ; bw ; exit ;;
-10) clear ; jam ; exit ;;
+8) clear ; bw ; exit ;;
+9) clear ; update ; exit ;;
+10) clear ; about ; exit ;;
+11) clear ; reboot ; exit ;;
 0) clear ; menu ; exit ;;
 x) exit ;;
 *) echo -e "" ; echo "Anda salah tekan" ; sleep 1 ; menu-set ;;
