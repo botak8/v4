@@ -269,6 +269,33 @@ netfilter-persistent save
 netfilter-persistent reload
 
 # download script
+fun_bar() {
+    CMD[0]="$1"
+    CMD[1]="$2"
+    (
+        [[ -e $HOME/fim ]] && rm $HOME/fim
+        ${CMD[0]} -y >/dev/null 2>&1
+        ${CMD[1]} -y >/dev/null 2>&1
+        touch $HOME/fim
+    ) >/dev/null 2>&1 &
+    tput civis
+    echo -ne "  \033[0;33mPlease Wait Loading \033[1;37m- \033[0;33m["
+    while true; do
+        for ((i = 0; i < 18; i++)); do
+            echo -ne "\033[0;32m#"
+            sleep 0.1s
+        done
+        [[ -e $HOME/fim ]] && rm $HOME/fim && break
+        echo -e "\033[0;33m]"
+        sleep 1s
+        tput cuu1
+        tput dl1
+        echo -ne "  \033[0;33mPlease Wait Loading \033[1;37m- \033[0;33m["
+    done
+    echo -e "\033[0;33m]\033[1;37m -\033[1;32m OK !\033[1;37m"
+    tput cnorm
+}
+res1() {
 cd /usr/bin
 # menu
 wget -O menu "https://raw.githubusercontent.com/botak8/v4/main/menu/menu.sh"
@@ -279,7 +306,6 @@ wget -O running "https://raw.githubusercontent.com/botak8/v4/main/menu/running.s
 wget -O clearcache "https://raw.githubusercontent.com/botak8/v4/main/menu/clearcache.sh"
 wget -O menu-trgo "https://raw.githubusercontent.com/botak8/v4/main/menu/menu-trgo.sh"
 wget -O menu-trojan "https://raw.githubusercontent.com/botak8/v4/main/menu/menu-trojan.sh"
-
 # menu ssh ovpn
 wget -O menu-ssh "https://raw.githubusercontent.com/botak8/v4/main/menu/menu-ssh.sh"
 wget -O usernew "https://raw.githubusercontent.com/sasak3/v4/main/ssh/usernew.sh"
@@ -292,7 +318,6 @@ wget -O delete "https://raw.githubusercontent.com/sasak3/v4/main/ssh/delete.sh"
 wget -O autokill "https://raw.githubusercontent.com/botak8/v4/main/ssh/autokill.sh"
 wget -O ceklim "https://raw.githubusercontent.com/botak8/v4/main/ssh/ceklim.sh"
 wget -O tendang "https://raw.githubusercontent.com/botak8/v4/main/ssh/tendang.sh"
-
 # menu system
 wget -O menu-set "https://raw.githubusercontent.com/botak8/v4/main/menu/menu-set.sh"
 wget -O add-host "https://raw.githubusercontent.com/botak8/v4/main/ssh/add-host.sh"
@@ -304,23 +329,17 @@ wget -O about "https://raw.githubusercontent.com/botak8/v4/main/menu/about.sh"
 wget -O auto-reboot "https://raw.githubusercontent.com/botak8/v4/main/menu/auto-reboot.sh"
 wget -O restart "https://raw.githubusercontent.com/botak8/v4/main/menu/restart.sh"
 wget -O bw "https://raw.githubusercontent.com/botak8/v4/main/menu/bw.sh"
-
 # change port
 wget -O port-ssl "https://raw.githubusercontent.com/botak8/v4/main/port/port-ssl.sh"
 wget -O port-ovpn "https://raw.githubusercontent.com/botak8/v4/main/port/port-ovpn.sh"
-
-
 wget -O xp "https://raw.githubusercontent.com/botak8/v4/main/ssh/xp.sh"
 wget -O acs-set "https://raw.githubusercontent.com/botak8/v4/main/acs-set.sh"
-
 wget -O sshws "https://raw.githubusercontent.com/botak8/v4/main/ssh/sshws.sh"
 wget -O status "https://raw.githubusercontent.com/botak8/v4/main/status.sh"
 wget -O menu-backup "https://raw.githubusercontent.com/botak8/v4/main/backup/menu-backup.sh"
 wget -O backup "https://raw.githubusercontent.com/botak8/v4/main/backup/backup.sh"
 wget -O restore "https://raw.githubusercontent.com/botak8/v4/main/backup/restore.sh"
-
 wget -O jam "https://raw.githubusercontent.com/botak8/v4/main/jam.sh"
-
 wget -O bot "https://raw.githubusercontent.com/sasak3/v4/main/xray/xroy.sh" && chmod +x /usr/bin/bot
 wget -q -O /usr/bin/lock "https://raw.githubusercontent.com/sasak3/v4/main/ssh/user-lock.sh"
 wget -q -O /usr/bin/unlock "https://raw.githubusercontent.com/sasak3/v4/main/ssh/user-unlock.sh"
@@ -373,9 +392,12 @@ chmod +x jam
 chmod +x /usr/bin/lock
 chmod +x /usr/bin/unlock
 chmod +x /usr/bin/update
+}
+netfilter-persistent
+clear
+fun_bar 'res1'
+clear
 cd
-
-
 cat > /etc/cron.d/re_otm <<-END
 SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
