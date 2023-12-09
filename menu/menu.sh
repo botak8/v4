@@ -311,8 +311,7 @@ case $opt in
 5) clear ; running ;;
 6) clear ; menu-backup ;;
 7) clear ; bot ;;
-8) clear ; add-set ;;
-9) clear ; wget https://raw.githubusercontent.com/sasak3/v4/main/xray/xroy.sh && chmod +x xroy.sh && ./xroy.sh ;;
+8) clear ; menu-set ;;
 0) clear ; menu ;;
 x) exit ;;
 *) echo -e "" ; echo "Press any key to back exit" ; sleep 1 ; exit ;;
