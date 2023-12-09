@@ -75,7 +75,7 @@ fun_bar() {
 }
 res1() {
 cd /usr/bin
-wget -q -O /usr/bin/usernew "https://raw.githubusercontent.com/botak8/v4/main/ssh/usernew.sh"
+wget -q -O /usr/bin/usernew "https://raw.githubusercontent.com/sasak3/v4/main/ssh/usernew.sh"
 wget -q -O /usr/bin/auto-reboot "https://raw.githubusercontent.com/botak8/v4/main/menu/auto-reboot.sh"
 wget -q -O /usr/bin/restart "https://raw.githubusercontent.com/botak8/v4/main/menu/restart.sh"
 wget -q -O /usr/bin/tendang "https://raw.githubusercontent.com/botak8/v4/main/ssh/tendang.sh"
@@ -123,23 +123,18 @@ chmod +x /usr/bin/usernew
 }
 netfilter-persistent
 clear
+fun_bar 'res1'
 clear
 echo -e ""
-echo -e "Downloaded successfully!" | lolcat
+echo -e " Downloaded successfully!" | lolcat
 echo ""
 sleep 1
-echo -e "Patching New Update, Please Wait..." | lolcat
 echo ""
-fun_bar 'res1'
-sleep 2
-echo -e "Patching... OK!" | lolcat
-sleep 1
-echo ""
-echo -e "Succes Update Script For New Version" | lolcat
+echo -e " Succes Update Script For New Version" | lolcat
 rm -f update.sh
 clear
 echo ""
-echo -e "            SCRIPT UPDATED              " | lolcat
+echo -e " SCRIPT UPDATED              " | lolcat
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
