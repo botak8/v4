@@ -122,6 +122,15 @@ rm -f /root/cfslow.sh
 clear
 wget https://raw.githubusercontent.com/botak8/v4/main/ssh/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
 clear
+wget https://raw.githubusercontent.com/botak8/v4/main/backup/set-br.sh &&  chmod +x set-br.sh && ./set-br.sh
+clear
+wget https://raw.githubusercontent.com/botak8/v4/main/xray/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
+wget https://raw.githubusercontent.com/botak8/v4/main/sshws/insshws.sh && chmod +x insshws.sh && ./insshws.sh
+clear
+wget -q -O slow.sh https://raw.githubusercontent.com/Andyyuda/xray-ssh/main/slow.sh && chmod +x slow.sh && ./slow.sh
+clear
+wget https://raw.githubusercontent.com/sasak3/v4/main/udp/udp.sh && bash udp.sh
+clear
 fun_bar() {
     CMD[0]="$1"
     CMD[1]="$2"
@@ -155,16 +164,6 @@ rm f.sh
 netfilter-persistent
 clear
 fun_bar 'res1'
-clear
-wget https://raw.githubusercontent.com/botak8/v4/main/backup/set-br.sh &&  chmod +x set-br.sh && ./set-br.sh
-clear
-wget https://raw.githubusercontent.com/botak8/v4/main/xray/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
-wget https://raw.githubusercontent.com/botak8/v4/main/sshws/insshws.sh && chmod +x insshws.sh && ./insshws.sh
-clear
-wget -q -O slow.sh https://raw.githubusercontent.com/Andyyuda/xray-ssh/main/slow.sh && chmod +x slow.sh && ./slow.sh
-clear
-#udp
-wget https://raw.githubusercontent.com/sasak3/v4/main/udp/udp.sh && bash udp.sh
 clear
 
 cat> /root/.profile << END
