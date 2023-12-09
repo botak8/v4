@@ -13,21 +13,16 @@ LIGHT='\033[0;37m'
 # ==========================================
 # Getting
 clear
-echo -e ""
-echo -e "\e[33m ┌──────────────────────────────────┐\033[0m"
-echo -e "\e[33m │${BICyan}.::::.  RESTORE DATA VPS  .::::.  \033[0m"
-echo -e "\e[33m └──────────────────────────────────┘\033[0m"
-echo -e ""
-echo "  Fitur Ini Hanya Dapat Digunakan Sesuai Data Vps Dengan Autoscript Ini"
-echo "  Silahkan masukan link file backup data vps anda."
-echo "  Anda dapat memeriksanya di email Anda jika Anda menjalankan backup data vps sebelumnya."
-read -rp "   Link File: " -e url
+figlet "Restore" | lolcat
+echo "This Feature Can Only Be Used According To Vps Data With This Autoscript"
+echo "Please input link to your vps data backup file."
+echo "You can check it on your email if you run backup data vps before."
+read -rp "Link File: " -e url
 wget -O backup.zip "$url"
 unzip backup.zip
 rm -f backup.zip
 sleep 1
-echo "  Start Restore
-sleep 2
+echo Start Restore
 cd /root/backup
 cp passwd /etc/
 cp group /etc/
@@ -43,7 +38,6 @@ cp -r shadowsocksr /usr/local/
 cp -r public_html /home/vps/
 cp crontab /etc/
 strt
-clear
 rm -rf /root/backup
 rm -f backup.zip
-echo "  Restore Berhasil!!!" | lolcat
+echo "Restore Berhasil!!!" | lolcat
