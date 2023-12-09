@@ -18,25 +18,23 @@ else
 gg="AM"
 fi
 
-echo -e "${BICyan}┌─────────────────────────────────────────────────┐${NC}"
-echo -e "${BICyan}│ $NC$COLBG1                • AUTO REBOOT •                ${BICyan} │$NC"
-echo -e "${BICyan}└─────────────────────────────────────────────────┘${NC}"
-echo -e "
-    ${green}Example :${NC}
-    0     = 12 PM
-    12    = 12 AM
-    13-23 = 1 AM - 11 PM
-    1-11  = 1 PM - 11 AM
+echo -e ""
+echo -e "\e[33m ┌──────────────────────────────────┐\033[0m"
+echo -e "\e[33m │${cyan}  .::::.  AUTO REBOOT SERVER .::::.  \033[0m"
+echo -e "\e[33m └──────────────────────────────────┘\033[0m"
+echo -e ""
+      ${green}Example :${NC}
+      0     = 12 PM
+      12    = 12 AM
+      13-23 = 1 AM - 11 PM
+      1-11  = 1 PM - 11 AM
 "
-echo -e "${BICyan}┌─────────────────────────────────────────────────┐${NC}"
+echo -e "\e[33m ┌──────────────────────────────────┐\033[0m"
 echo ""
 echo -e "     ${green}Current : $aureb $gg ${NC}"
 echo -e ""
-echo -e " ${BICyan}└───────────────────────────────────────────────┘${NC}" 
-echo -e "${BICyan}┌────────────────────── BY ───────────────────────┐${NC}"
-echo -e "${BICyan}│${NC}             • sc multi port premium •           ${BICyan}│$NC"
-echo -e "${BICyan}└─────────────────────────────────────────────────┘${NC}"
-
+echo -e "\e[33m └──────────────────────────────────┘\033[0m"
+echo -e "         🔶 HR-vpn 🔶" | lolcat
 while :; do
   read -p "Input time auto reboot only 0 - 23 : " tr2
   [[ $tr2 =~ ^[0-9]+$ ]] || { echo -ne; continue; }
