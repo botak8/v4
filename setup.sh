@@ -1,69 +1,34 @@
 #!/bin/bash
+
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
-#########################
-sysctl -w net.ipv6.conf.all.disable_ipv6=1
-sysctl -w net.ipv6.conf.default.disable_ipv6=1
-apt install -y bzip2 gzip coreutils screen curl
-MYIP=$(curl -sS ipv4.icanhazip.com)
-scversi=$(curl -sS https://raw.githubusercontent.com/botak8/v4/main/ | awk '{print $1}')
+clear
 red='\e[1;31m'
 green='\e[0;32m'
 yell='\e[1;33m'
 tyblue='\e[1;36m'
 NC='\e[0m'
-clear
-  echo ""
-  echo -e "\e[32m      ┌───────────────────────────────────────────────┐\033[0m"
-  echo -e "\e[32m   ───│                                               │───\033[0m"
-  echo -e "\e[32m   ───│    ┌─┐┬ ┬┌┬┐┌─┐┌─┐┌─┐┬─┐┬┌─┐┌┬┐  ┬  ┬┌┬┐┌─┐   │───\033[0m"
-  echo -e "\e[32m   ───│    ├─┤│ │ │ │ │└─┐│  ├┬┘│├─┘ │   │  │ │ ├┤    │───\033[0m"
-  echo -e "\e[32m   ───│    ┴ ┴└─┘ ┴ └─┘└─┘└─┘┴└─┴┴   ┴   ┴─┘┴ ┴ └─┘   │───\033[0m"
-  echo -e "\e[32m      │\033[0m  \e[33m      HR-vpn (C)https://t.me/HRstores      \033[0m \e[32m │\033[0m"
-  echo -e "\e[32m      └───────────────────────────────────────────────┘\033[0m"
-  echo -e "\e[36m             Autoscript xray vpn lite (multi port)\033[0m"
-  echo -e "\e[36m  Make sure the internet is smooth when installing the script\033[0m"
-  echo -e "\e[31m     JANGAN INSTALL SCRIPT INI MENGGUNAKAN KONEKSI VPN!!!\033[0m"
-  echo ""
-read -n 1 -s -r -p " Tekan enter untuk melanjutkan"
-clear
-echo -e "[ \e[33mINFO\033[0m ] Memeriksa izin script.."
-sleep 3
-CEKEXPIRED () {
-today=$(date -d +1day +%Y-%m-%d)
-Exp1=$(curl -sS https://raw.githubusercontent.com/botak8/v4/main/ip | grep $MYIP | awk '{print $3}')
-if [[ $today < $Exp1 ]]; then
-echo -e "[ \e[33mINFO\033[0m ] Bersiap melakukan penginstalan"
-sleep 2
-else
-echo -e "[ \e[33mINFO\033[0m izin script sudah berahir"
-read -n 1 -s -r -p "  Press any key to Exit"
-rm -f /root/sc
-clear
-exit 0
+purple() { echo -e "\\033[35;1m${*}\\033[0m"; }
+tyblue() { echo -e "\\033[36;1m${*}\\033[0m"; }
+yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
+green() { echo -e "\\033[32;1m${*}\\033[0m"; }
+red() { echo -e "\\033[31;1m${*}\\033[0m"; }
+# domain random
+CDN="https://raw.githubusercontent.com/Andyyuda/v4/main/ssh"
+cd /root
+if [ "${EUID}" -ne 0 ]; then
+echo "You need to run this script as root"
+exit 1
 fi
-}
-IZIN=$(curl -sS https://raw.githubusercontent.com/botak8/v4/main/ip | awk '{print $4}' | grep $MYIP)
-if [[ $MYIP = $IZIN ]]; then
-echo -e "[ \e[33mINFO\033[0m ] izin script telah di konfirmasi"
-sleep 2
-CEKEXPIRED
-else
-echo -e "[ \e[33mINFO\033[0m ] izin ip di tolak.. silahkan melakukan registrasi"
-read -n 1 -s -r -p "  Press any key to Exit"
-rm -f /root/sc
-clear
-exit 0
+if [ "$(systemd-detect-virt)" == "openvz" ]; then
+echo "OpenVZ is not supported"
+exit 1
 fi
-clear
 localip=$(hostname -I | cut -d\  -f1)
 hst=( `hostname` )
 dart=$(cat /etc/hosts | grep -w `hostname` | awk '{print $2}')
 if [[ "$hst" != "$dart" ]]; then
 echo "$localip $(hostname)" >> /etc/hosts
-fi
-if [ -f "/root/log-install.txt" ]; then
-rm -fr /root/log-install.txt
 fi
 mkdir -p /etc/xray
 mkdir -p /etc/v2ray
@@ -71,62 +36,86 @@ touch /etc/xray/domain
 touch /etc/v2ray/domain
 touch /etc/xray/scdomain
 touch /etc/v2ray/scdomain
-ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
-sysctl -w net.ipv6.conf.all.disable_ipv6=1 >/dev/null 2>&1
-sysctl -w net.ipv6.conf.default.disable_ipv6=1 >/dev/null 2>&1
-apt install git curl -y >/dev/null 2>&1
-apt install python -y >/dev/null 2>&1
-mkdir -p /var/lib/alf-prem >/dev/null 2>&1
-echo "IP=" >> /var/lib/alf-prem/ipvps.conf
-echo -e "[ ${green}INFO${NC} mulai menginstall"
-if [ -f "/etc/xray/domain" ]; then
-rm setup.sh
-sleep 10
-exit 0
+echo -e "[ ${tyblue}NOTES${NC} ] Before we go.. "
+sleep 1
+echo -e "[ ${tyblue}NOTES${NC} ] I need check your headers first.."
+sleep 2
+echo -e "[ ${green}INFO${NC} ] Checking headers"
+sleep 1
+totet=`uname -r`
+REQUIRED_PKG="linux-headers-$totet"
+PKG_OK=$(dpkg-query -W --showformat='${Status}\n' $REQUIRED_PKG|grep "install ok installed")
+echo Checking for $REQUIRED_PKG: $PKG_OK
+if [ "" = "$PKG_OK" ]; then
+sleep 2
+echo -e "[ ${yell}WARNING${NC} ] Try to install ...."
+echo "No $REQUIRED_PKG. Setting up $REQUIRED_PKG."
+apt-get --yes install $REQUIRED_PKG
+sleep 1
+echo ""
+sleep 1
+echo -e "[ ${tyblue}NOTES${NC} ] If error you need.. to do this"
+sleep 1
+echo ""
+sleep 1
+echo -e "[ ${tyblue}NOTES${NC} ] 1. apt update -y"
+sleep 1
+echo -e "[ ${tyblue}NOTES${NC} ] 2. apt upgrade -y"
+sleep 1
+echo -e "[ ${tyblue}NOTES${NC} ] 3. apt dist-upgrade -y"
+sleep 1
+echo -e "[ ${tyblue}NOTES${NC} ] 4. reboot"
+sleep 1
+echo ""
+sleep 1
+echo -e "[ ${tyblue}NOTES${NC} ] After rebooting"
+sleep 1
+echo -e "[ ${tyblue}NOTES${NC} ] Then run this script again"
+echo -e "[ ${tyblue}NOTES${NC} ] if you understand then tap enter now"
+read
+else
+echo -e "[ ${green}INFO${NC} ] Oke installed"
+fi
+ttet=`uname -r`
+ReqPKG="linux-headers-$ttet"
+if ! dpkg -s $ReqPKG  >/dev/null 2>&1; then
+rm /root/setup.sh >/dev/null 2>&1
+exit
 else
 clear
 fi
+secs_to_human() {
+echo "Installation time : $(( ${1} / 3600 )) hours $(( (${1} / 60) % 60 )) minute's $(( ${1} % 60 )) seconds"
+}
+start=$(date +%s)
+ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
+sysctl -w net.ipv6.conf.all.disable_ipv6=1 >/dev/null 2>&1
+sysctl -w net.ipv6.conf.default.disable_ipv6=1 >/dev/null 2>&1
+coreselect=''
+cat> /root/.profile << END
+if [ "$BASH" ]; then
+if [ -f ~/.bashrc ]; then
+. ~/.bashrc
 fi
-
-    # > pasang gotop
-    gotop_latest="$(curl -s https://api.github.com/repos/xxxserxxx/gotop/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
-    gotop_link="https://github.com/xxxserxxx/gotop/releases/download/v$gotop_latest/gotop_v"$gotop_latest"_linux_amd64.deb"
-    curl -sL "$gotop_link" -o /tmp/gotop.deb
-    dpkg -i /tmp/gotop.deb >/dev/null 2>&1
-
-    # > Pasang BBR Plus
-    wget -qO /tmp/bbr.sh "${REPO}server/bbr.sh" >/dev/null 2>&1
-    chmod +x /tmp/bbr.sh && bash /tmp/bbr.sh
-
-if [[ -e /etc/debian_version ]]; then
-	source /etc/os-release
-	OS=$ID # debian or ubuntu
-elif [[ -e /etc/centos-release ]]; then
-	source /etc/os-release
-	OS=centos
 fi
-
+mesg n || true
+clear
+END
+chmod 644 /root/.profile
+echo -e "[ ${green}INFO${NC} ] Preparing the install file"
+apt install git curl -y >/dev/null 2>&1
+apt install python -y >/dev/null 2>&1
+echo -e "[ ${green}INFO${NC} ] Aight good ... installation file is ready"
+sleep 2
+echo -ne "[ ${green}INFO${NC} ] Check permission : "
+mkdir -p /var/lib/SIJA >/dev/null 2>&1
+echo "IP=" >> /var/lib/SIJA/ipvps.conf
 echo ""
 wget -q https://raw.githubusercontent.com/sasak3/v4/main/dep.sh;chmod +x dep.sh;./dep.sh
 rm dep.sh
 clear
+echo " "
 clear
-
-#echo " "
-#read -rp "Input ur domain : " -e pp
-   # if [ -z $pp ]; then
-   #     echo -e "
-   #     Nothing input for domain!
-    #    Then a random domain will be created"
-   #else
-   #     echo "$pp" > /root/scdomain
-#	echo "$pp" > /etc/xray/scdomain
-#	echo "$pp" > /etc/xray/domain
-#	echo "$pp" > /etc/v2ray/domain
-#	echo $pp > /root/domain
- #       echo "IP=$pp" > /var/lib/SIJA/ipvps.conf
-  #  fi
-
 echo ""
   echo -e "\e[32m      ┌───────────────────────────────────────────────┐\033[0m"
   echo -e "\e[32m   ───│                                               │───\033[0m"
