@@ -268,7 +268,7 @@ echo -e "\e[33m ───│\033[0m  ${BICyan}   ┴ ┴└─┘ ┴ └─┘�
 echo -e "\e[33m ───│\033[0m  ${BIWhite}       HR-vpn (C)https://t.me/HRstores      \033[0m \e[33m  │───\033[0m"
 echo -e "\e[33m    └─────────────────────────────────────────────────┘\033[0m"
 echo -e "${red}                  ♦️ SERVER INFORMATION ♦️   ${NC}"
-echo -e "${BIYellow}                  ───────────────────────────${NC}"
+echo -e "${BIYellow}                  ─────────────────────────${NC}"
 echo -e "${BIWhite}      □ Server Uptime       = ${GREEN}$( uptime -p  | cut -d " " -f 2-10000 ) ${NC}"
 echo -e "${BIWhite}      □ Operating System    = ${GREEN}$( cat /etc/os-release | grep -w PRETTY_NAME | sed 's/PRETTY_NAME//g' | sed 's/=//g' | sed 's/"//g' )${NC}"
 echo -e "${BIWhite}      □ ISP VPS             = ${GREEN}${ISP} ${NC}"           
