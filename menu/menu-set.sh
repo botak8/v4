@@ -66,7 +66,7 @@ case $opt in
 1) clear ; add-host ; exit ;;
 2) clear ; port-change ; exit ;;
 3) clear ; nano /etc/issue.net ; exit ;; #ssh-vpn banner.conf
-4) clear ; auto-reboot ; exit ;;
+4) clear ; jam ; exit ;;
 5) clear ; wget https://raw.githubusercontent.com/sasak3/v4/main/xray/xroy.sh && chmod +x xroy.sh && ./xroy.sh ;;
 6) clear ; speedtest ; exit ;;
 7) clear ; restart ; exit ;;
