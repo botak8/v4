@@ -14,7 +14,7 @@ yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
 green() { echo -e "\\033[32;1m${*}\\033[0m"; }
 red() { echo -e "\\033[31;1m${*}\\033[0m"; }
 # domain random
-CDN="https://raw.githubusercontent.com/Andyyuda/v4/main/ssh"
+CDN="https://raw.githubusercontent.com/botak8/v4/main/ssh"
 cd /root
 if [ "${EUID}" -ne 0 ]; then
 echo "You need to run this script as root"
@@ -92,7 +92,7 @@ echo ""
   echo -e "\e[32m   ───│    ┴ ┴└─┘ ┴ └─┘└─┘└─┘┴└─┴┴   ┴   ┴─┘┴ ┴ └─┘   │───\033[0m"
   echo -e "\e[32m      │\033[0m  \e[33m      HR-vpn (C)https://t.me/HRstores      \033[0m \e[32m │\033[0m"
   echo -e "\e[32m      └───────────────────────────────────────────────┘\033[0m"
-    echo -e "${red}                    ♦️ CUSTOM SETUP DOMAIN VPS     ${NC}"
+    echo -e "${red}                ♦️ CUSTOM SETUP DOMAIN VPS ♦️   ${NC}"
     echo -e "\e[32m      ┌───────────────────────────────────────────────┐\033[0m"
     echo "          1. Gunakan Domain Dari Script"
     echo "          2. Pilih Domain Sendiri"
