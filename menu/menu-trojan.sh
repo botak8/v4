@@ -117,12 +117,6 @@ echo -e "${yelow} │  ${cyann}[•2]${NC}  Trial trojan-ws Account${NC}"
 echo -e "${yelow} │  ${cyann}[•3]${NC}  Renew trojan-ws Account${NC}"
 echo -e "${yelow} │  ${cyann}[•4]${NC}  Delete trojan-ws Account${NC}"
 echo -e "${yelow} │  ${cyann}[•5]${NC}  Check trojan-ws login Account${NC}"
-echo -e "${yelow} │────────────────────────────────────────${NC}"
-echo -e "${yelow} │  ${cyann}[•6]${NC}  Creating trojan-go Account${NC}"
-echo -e "${yelow} │  ${cyann}[•7]${NC}  Trial trojan-go acount${NC}"
-echo -e "${yelow} │  ${cyann}[•8]${NC}  Renew trojan-go Account${NC}"
-echo -e "${yelow} │  ${cyann}[•9]${NC}  Delete trojan-go Account${NC}"
-echo -e "${yelow} │  ${cyann}[10]${NC}  Check trojan-go login Account${NC}"
 echo -e "${yelow} │  ${cyann}[•0]${NC}  Exit trojan Manager${NC}"
 echo -e "${yelow} └───────────────────────────────────────┘${NC}"
 echo -e ""
@@ -134,11 +128,6 @@ case $opt in
 3) clear ; renew-tr ;;
 4) clear ; del-tr ;;
 5) clear ; cek-tr ;;
-6) clear ; addtrgo ;;
-7) clear ; trialtrojango ;;
-8) clear ; renewtrgo ;;
-9) clear ; deltrgo ;;
-10) clear ; cektrgo ;;
 0) clear ; menu ;;
 x) exit ;;
 *) echo "Salah tekan" ; sleep 1 ; menu-trojan ;;
