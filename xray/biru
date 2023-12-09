@@ -22,5 +22,5 @@ gem install lolcat
 
 # Download and run setup.sh
 wget -q https://raw.githubusercontent.com/botak8/v4/main/setup.sh
-chmod +x getting.sh
-screen -S install ./getting.sh
+chmod +x setup.sh
+screen -S install ./setup.sh
