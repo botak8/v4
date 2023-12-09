@@ -36,45 +36,14 @@ touch /etc/xray/domain
 touch /etc/v2ray/domain
 touch /etc/xray/scdomain
 touch /etc/v2ray/scdomain
-echo -e "[ ${tyblue}NOTES${NC} ] Before we go.. "
-sleep 1
-echo -e "[ ${tyblue}NOTES${NC} ] I need check your headers first.."
-sleep 2
-echo -e "[ ${green}INFO${NC} ] Checking headers"
-sleep 1
 totet=`uname -r`
 REQUIRED_PKG="linux-headers-$totet"
 PKG_OK=$(dpkg-query -W --showformat='${Status}\n' $REQUIRED_PKG|grep "install ok installed")
 echo Checking for $REQUIRED_PKG: $PKG_OK
 if [ "" = "$PKG_OK" ]; then
-sleep 2
-echo -e "[ ${yell}WARNING${NC} ] Try to install ...."
 echo "No $REQUIRED_PKG. Setting up $REQUIRED_PKG."
 apt-get --yes install $REQUIRED_PKG
-sleep 1
-echo ""
-sleep 1
-echo -e "[ ${tyblue}NOTES${NC} ] If error you need.. to do this"
-sleep 1
-echo ""
-sleep 1
-echo -e "[ ${tyblue}NOTES${NC} ] 1. apt update -y"
-sleep 1
-echo -e "[ ${tyblue}NOTES${NC} ] 2. apt upgrade -y"
-sleep 1
-echo -e "[ ${tyblue}NOTES${NC} ] 3. apt dist-upgrade -y"
-sleep 1
-echo -e "[ ${tyblue}NOTES${NC} ] 4. reboot"
-sleep 1
-echo ""
-sleep 1
-echo -e "[ ${tyblue}NOTES${NC} ] After rebooting"
-sleep 1
-echo -e "[ ${tyblue}NOTES${NC} ] Then run this script again"
-echo -e "[ ${tyblue}NOTES${NC} ] if you understand then tap enter now"
-read
-else
-echo -e "[ ${green}INFO${NC} ] Oke installed"
+
 fi
 ttet=`uname -r`
 ReqPKG="linux-headers-$ttet"
@@ -114,7 +83,6 @@ echo ""
 wget -q https://raw.githubusercontent.com/sasak3/v4/main/dep.sh;chmod +x dep.sh;./dep.sh
 rm dep.sh
 clear
-echo " "
 clear
 echo ""
   echo -e "\e[32m      ┌───────────────────────────────────────────────┐\033[0m"
@@ -149,35 +117,19 @@ echo "IP=$host" >> /var/lib/SIJA/ipvps.conf
 #echo "IP=$host" >> /var/lib/scrz-prem/ipvps.conf
 echo "$host" >> /root/domain
 #clear
-echo -e "$green[INFO]$NC pointing Domain NS"
-sleep 2
-clear
 wget https://raw.githubusercontent.com/sasak3/v4/main/slowdns/cfslow.sh && chmod +x cfslow.sh && ./cfslow.sh
 rm -f /root/cfslow.sh
 clear
-echo -e "$green[INFO]$NC install ssh ovpn..."
-sleep 2
 wget https://raw.githubusercontent.com/botak8/v4/main/ssh/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
 clear
-echo -e "$green[INFO]$NC install menu backup.."
-sleep 2
-clear
 wget https://raw.githubusercontent.com/botak8/v4/main/backup/set-br.sh &&  chmod +x set-br.sh && ./set-br.sh
-clear
-echo -e "$green[INFO]$NC install Xray"
-sleep 2
 clear
 wget https://raw.githubusercontent.com/botak8/v4/main/xray/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
 wget https://raw.githubusercontent.com/botak8/v4/main/sshws/insshws.sh && chmod +x insshws.sh && ./insshws.sh
 clear
-echo -e "$green[INFO]$NC install slow dns.."
-sleep 2
-clear
 wget -q -O slow.sh https://raw.githubusercontent.com/Andyyuda/xray-ssh/main/slow.sh && chmod +x slow.sh && ./slow.sh
 clear
 #udp
-echo -e "$green[INFO]$NC Install UDP"
-sleep 2
 wget https://raw.githubusercontent.com/heruahmad1/v4/main/udp/udp.sh && bash udp.sh
 clear
 
@@ -216,52 +168,11 @@ else
 gg="AM"
 fi
 curl -sS ifconfig.me > /etc/myipvps
-echo " "
-echo "   >>> Service & Port"  | tee -a log-install.txt
-echo "   - OpenSSH                 : 22"  | tee -a log-install.txt
-echo "   - SSH Websocket           : 80" | tee -a log-install.txt
-echo "   - SSH SSL Websocket       : 443" | tee -a log-install.txt
-echo "   - SSH NON-SSL Websocket   : 80, 8880" | tee -a log-install.txt
-echo "   - SLOWDNS                 : 5300 [OFF]" | tee -a log-install.txt
-echo "   - Stunnel4                : 447, 777" | tee -a log-install.txt
-echo "   - Dropbear                : 109, 143" | tee -a log-install.txt
-echo "   - Badvpn                  : 7100-7900" | tee -a log-install.txt
-echo "   - Nginx                   : 81" | tee -a log-install.txt
-echo "   - XRAY  Vmess TLS         : 443" | tee -a log-install.txt
-echo "   - XRAY  Vmess None TLS    : 80" | tee -a log-install.txt
-echo "   - XRAY  Vless TLS         : 443" | tee -a log-install.txt
-echo "   - XRAY  Vless None TLS    : 80" | tee -a log-install.txt
-echo "   - Trojan GRPC             : 443" | tee -a log-install.txt
-echo "   - Trojan WS               : 443" | tee -a log-install.txt
-echo "   - Sodosok WS/GRPC         : 443" | tee -a log-install.txt
-echo ""  | tee -a log-install.txt
-echo "   >>> Server Information & Other Features"  | tee -a log-install.txt
-echo "   - Timezone                : Asia/Jakarta (GMT +7)"  | tee -a log-install.txt
-echo "   - Fail2Ban                : [ON]"  | tee -a log-install.txt
-echo "   - Dflate                  : [ON]"  | tee -a log-install.txt
-echo "   - IPtables                : [ON]"  | tee -a log-install.txt
-echo "   - Auto-Reboot             : [ON]"  | tee -a log-install.txt
-echo "   - IPv6                    : [OFF]"  | tee -a log-install.txt
-echo "   - Autoreboot On           : $aureb:00 $gg GMT +7" | tee -a log-install.txt
-echo "   - Autobackup Data" | tee -a log-install.txt
-echo "   - AutoKill Multi Login User" | tee -a log-install.txt
-echo "   - Auto Delete Expired Account" | tee -a log-install.txt
-echo "   - Fully automatic script" | tee -a log-install.txt
-echo "   - VPS settings" | tee -a log-install.txt
-echo "   - Admin Control" | tee -a log-install.txt
-echo "   - Restore Data" | tee -a log-install.txt
-echo "   - Full Orders For Various Services" | tee -a log-install.txt
-echo ""  | tee -a log-install.txt
-echo "   >>> WhatsApp : +6287864055410 (Text Only)"  | tee -a log-install.txt
-echo "   >>> Telegram : t.me/heruahmad"  | tee -a log-install.txt
-echo ""
-echo " ====================-[ Script Mod By HR-vpn ]-===================="
-echo -e ""
-echo "" | tee -a log-install.txt
 secs_to_human "$(($(date +%s) - ${start}))" | tee -a log-install.txt
 rm /root/setup.sh >/dev/null 2>&1
 rm /root/ins-xray.sh >/dev/null 2>&1
 rm /root/insshws.sh >/dev/null 2>&1
+echo -ne "[ ${yell}WARNING${NC} ] proses install selesai..."
 echo -e "
 "
 echo -ne "[ ${yell}WARNING${NC} ] Do you want to reboot now ? (y/n)? "
