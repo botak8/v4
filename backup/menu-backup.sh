@@ -45,7 +45,7 @@ if [ $bro = 2 ] || [ $bro = 2 ]
 then
 echo
 echo " RESTORE" | lolcat
-backup
+restore
 echo "--------------------------------------------------------"
 echo
 echo "  Terimakasih sudah menggunakan layanan script HR-vpn"
@@ -56,7 +56,7 @@ if [ $bro = 3 ] || [ $bro = 3 ]
 then
 echo
 echo " STRT" | lolcat
-backup
+strt
 echo "--------------------------------------------------------"
 echo
 echo "  Terimakasih sudah menggunakan layanan script HR-vpn"
@@ -67,7 +67,7 @@ if [ $bro = 4 ] || [ $bro = 4 ]
 then
 echo
 echo " LIMIT SPEED" | lolcat
-backup
+limitspeed
 echo "--------------------------------------------------------"
 echo
 echo "  Terimakasih sudah menggunakan layanan script HR-vpn"
@@ -79,7 +79,7 @@ if [ $bro = 5 ] || [ $bro = 5 ]
 then
 echo
 echo " AUTO BACKUP" | lolcat
-backup
+autobackup
 echo "--------------------------------------------------------"
 echo
 echo "  Terimakasih sudah menggunakan layanan script HR-vpn"
