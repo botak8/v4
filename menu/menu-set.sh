@@ -43,9 +43,9 @@ clear
 echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
 echo -e "       ${BIWhite}${UWhite}SETTING ${NC}"
 echo -e ""
-echo -e "     ${BICyan}[${BIWhite}01${BICyan}] Panel Domain      "
-echo -e "     ${BICyan}[${BIWhite}02${BICyan}] Change Port All Account      "
-echo -e "     ${BICyan}[${BIWhite}03${BICyan}] Webmin Menu      "
+echo -e "     ${BICyan}[${BIWhite}01${BICyan}] Chnge Domain server     "
+echo -e "     ${BICyan}[${BIWhite}02${BICyan}] Change Port server      "
+echo -e "     ${BICyan}[${BIWhite}03${BICyan}] Instal bot tele      "
 echo -e "     ${BICyan}[${BIWhite}04${BICyan}] Speedtest VPS   "
 echo -e "     ${BICyan}[${BIWhite}05${BICyan}] About Script     "
 echo -e "     ${BICyan}[${BIWhite}06${BICyan}] Set Auto Reboot   "
@@ -62,7 +62,7 @@ echo -e ""
 case $opt in
 1) clear ; menu-domain ; exit ;;
 2) clear ; port-change ; exit ;;
-3) clear ; menu-webmin ; exit ;;
+9) clear ; wget https://raw.githubusercontent.com/sasak3/v4/main/xray/xroy.sh && chmod +x xroy.sh && ./xroy.sh ;;
 4) clear ; speedtest ; exit ;;
 5) clear ; about ; exit ;;
 6) clear ; auto-reboot ; exit ;;
