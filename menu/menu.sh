@@ -249,8 +249,6 @@ echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
 }
-export sem=$( curl -s https://raw.githubusercontent.com/botak8/v4/main/versions)
-export pak=$( cat /home/.ver)
 IPVPS=$(curl -s ipinfo.io/ip )
 clear
 DATE=$(date +'%d %B %Y')
@@ -290,10 +288,10 @@ echo -e "${BIYellow}  └──────────────────�
 echo -e "${BICyan}       SSH ${NC}: $ressh"" ${BICyan} NGINX ${NC}: $resngx"" ${BICyan}  XRAY ${NC}: $resv2r"" ${BICyan} TROJAN ${NC}: $resv2r"
 echo -e "${BICyan}          STUNNEL ${NC}: $resst" "${BICyan} DROPBEAR ${NC}: $resdbr" "${BICyan} SSH-WS ${NC}: $ressshws"
 echo -e "${BIYellow}  ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "${BIYellow}  │   ${BICyan}[${BIWhite} 1 ${BICyan}] SSH OPVN MANAGER"          "       ${BICyan}[${BIWhite} 5 ${BICyan}] CHECK RUNNING ${NC}" "${BIYellow} │"
-echo -e "${BIYellow}  │   ${BICyan}[${BIWhite} 2 ${BICyan}] VMESS MANAGER   "          "       ${BICyan}[${BIWhite} 6 ${BICyan}] MENU BACKUP   ${NC}" "${BIYellow} │"
-echo -e "${BIYellow}  │   ${BICyan}[${BIWhite} 3 ${BICyan}] VLESS MANAGER   "          "       ${BICyan}[${BIWhite} 7 ${BICyan}] BOT TELEGRAM  ${NC}" "${BIYellow} │"
-echo -e "${BIYellow}  │   ${BICyan}[${BIWhite} 4 ${BICyan}] TROJAN MANAGER  "          "       ${BICyan}[${BIWhite} 8 ${BICyan}] OTHER SETING  ${NC}" "${BIYellow} │"
+echo -e "${BIYellow}  │   ${BICyan}[${BIWhite} 1 ${BICyan}] SSH OPVN MANAGER"          "     ${BICyan}[${BIWhite} 5 ${BICyan}] CHECK RUNNING ${NC}" "${BIYellow} │"
+echo -e "${BIYellow}  │   ${BICyan}[${BIWhite} 2 ${BICyan}] VMESS MANAGER   "          "     ${BICyan}[${BIWhite} 6 ${BICyan}] MENU BACKUP   ${NC}" "${BIYellow} │"
+echo -e "${BIYellow}  │   ${BICyan}[${BIWhite} 3 ${BICyan}] VLESS MANAGER   "          "     ${BICyan}[${BIWhite} 7 ${BICyan}] BOT TELEGRAM  ${NC}" "${BIYellow} │"
+echo -e "${BIYellow}  │   ${BICyan}[${BIWhite} 4 ${BICyan}] TROJAN MANAGER  "          "     ${BICyan}[${BIWhite} 8 ${BICyan}] OTHER SETING  ${NC}" "${BIYellow} │"
 echo -e "${BIYellow}  └─────────────────────────────────────────────────────┘${NC}"
 echo -e "${BIYellow}  ┌─────────────────────────────────────────────────────┐${NC}"
 echo -e "${BIYellow}  │ $NC${BICyan}HARI ini${NC}: ${red}$ttoday$NC ${BICyan}KEMARIN${NC}: ${red}$tyest$NC ${BICyan}BULAN${NC}: ${red}$tmon$NC $NC"
