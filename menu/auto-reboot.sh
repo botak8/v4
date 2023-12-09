@@ -12,25 +12,24 @@ echo '/sbin/shutdown -r now' >> /usr/local/bin/reboot_otomatis
 chmod +x /usr/local/bin/reboot_otomatis
 fi
 clear
-echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "\E[40;1;37m       • AUTO-REBOOT MENU •        \e[0m"
-echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e ""
-echo -e "[\e[36m•1\e[0m] Set Auto-Reboot Setiap 1 Jam"
-echo -e "[\e[36m•2\e[0m] Set Auto-Reboot Setiap 6 Jam"
-echo -e "[\e[36m•3\e[0m] Set Auto-Reboot Setiap 12 Jam"
-echo -e "[\e[36m•4\e[0m] Set Auto-Reboot Setiap 1 Hari"
-echo -e "[\e[36m•5\e[0m] Set Auto-Reboot Setiap 1 Minggu"
-echo -e "[\e[36m•6\e[0m] Set Auto-Reboot Setiap 1 Bulan"
-echo -e "[\e[36m•7\e[0m] Matikan Auto-Reboot"
-echo -e "[\e[36m•8\e[0m] View reboot log"
-echo -e "[\e[36m•9\e[0m] Remove reboot log"
+echo -e "\e[33m ┌──────────────────────────────────┐\033[0m"
+echo -e "\e[33m │${BICyan}.::::.  AUTO REBOOT SETING  .::::.  \033[0m"
+echo -e "\e[33m └──────────────────────────────────┘\033[0m"
 echo -e ""
-echo -e " [\e[31m•0\e[0m] \e[31mBACK TO MENU\033[0m"
-echo -e ""
-echo -e "Press x or [ Ctrl+C ] • To-Exit"
-echo -e ""
-echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "\e[33m ┌──────────────────────────────────┐\033[0m"
+echo -e "\e[33m │ [\e[36m•1\e[0m] Set Auto-Reboot Setiap 1 Jam"
+echo -e "\e[33m │ [\e[36m•2\e[0m] Set Auto-Reboot Setiap 6 Jam"
+echo -e "\e[33m │ [\e[36m•3\e[0m] Set Auto-Reboot Setiap 12 Jam"
+echo -e "\e[33m │ [\e[36m•4\e[0m] Set Auto-Reboot Setiap 1 Hari"
+echo -e "\e[33m │ [\e[36m•5\e[0m] Set Auto-Reboot Setiap 1 Minggu"
+echo -e "\e[33m │ [\e[36m•6\e[0m] Set Auto-Reboot Setiap 1 Bulan"
+echo -e "\e[33m │ [\e[36m•7\e[0m] Matikan Auto-Reboot"
+echo -e "\e[33m │ [\e[36m•8\e[0m] View reboot log"
+echo -e "\e[33m │ [\e[36m•9\e[0m] Remove reboot log"
+echo -e "\e[33m │ [\e[36m•8\e[0m] Seting time auto reboot"
+echo -e "\e[33m │ [\e[36m•8\e[0m] Back to menu"
+echo -e "\e[33m └──────────────────────────────────┘\033[0m"
 echo -e ""
 read -p " Select menu : " x
 if test $x -eq 1; then
@@ -55,6 +54,8 @@ elif test $x -eq 7; then
 rm -f /etc/cron.d/reboot_otomatis
 echo "Auto-Reboot successfully TURNED OFF."
 elif test $x -eq 8; then
+8) clear ; jam ; exit ;;
+elif test $x -eq 0; then
 if [ ! -e /root/log-reboot.txt ]; then
 	clear
     echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
