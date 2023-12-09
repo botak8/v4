@@ -95,6 +95,7 @@ wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/botak8/v4/main/menu/
 wget -q -O /usr/bin/menu-webmin "https://raw.githubusercontent.com/botak8/v4/main/menu/menu-webmin.sh"
 wget -q -O /usr/bin/xp "https://raw.githubusercontent.com/botak8/v4/main/ssh/xp.sh"
 wget -q -O /usr/bin/update "https://raw.githubusercontent.com/botak8/v4/main/update.sh"
+wget -q -O /usr/bin/add-host "https://raw.githubusercontent.com/botak8/v4/main/xray/add-host.sh"
 wget -q -O /usr/bin/certv2ray "https://raw.githubusercontent.com/botak8/v4/main/xray/certv2ray.sh"
 wget -q -O /usr/bin/menu-set "https://raw.githubusercontent.com/botak8/v4/main/menu/menu-set.sh"
 wget -q -O /usr/bin/about "https://raw.githubusercontent.com/botak8/v4/main/menu/about.sh"
@@ -116,6 +117,7 @@ chmod +x /usr/bin/menu
 chmod +x /usr/bin/menu-webmin
 chmod +x /usr/bin/xp
 chmod +x /usr/bin/update
+chmod +x /usr/bin/add-host
 chmod +x /usr/bin/certv2ray
 chmod +x /usr/bin/menu-set
 chmod +x /usr/bin/about
