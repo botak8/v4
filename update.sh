@@ -29,27 +29,23 @@ Info2="${Green_font_prefix}(LATEST VERSION)${Font_color_suffix}"
 Error="Version ${Green_font_prefix}[$ver]${Font_color_suffix} available${Red_font_prefix}[Please Update]${Font_color_suffix}"
 version=$(cat /home/ver)
 clear
-echo -e "\e[1;31mUpdate Available Now..\e[m"
+echo -e " Update Available Now.." | lolcat
 echo -e ""
 sleep 2
-echo -e "\e[1;36mStart Update For New Version, Please Wait..\e[m"
+echo -e " Start Update For New Version, Please Wait.." | lolcat
 sleep 2
 clear
-echo -e "\e[0;32mGetting New Version Script..\e[0m"
+echo -e " Getting New Version Script.." | lolcat
 sleep 1
 echo ""
 # UPDATE RUN-UPDATE
-cd /usr/bin
-wget -O run-update "https://raw.githubusercontent.com/${GitUser}/v4/main/update.sh"
-chmod +x run-update
-# RUN UPDATE
 echo ""
 clear
-echo -e "\e[0;32mPlease Wait...!\e[0m"
+echo -e " Please Wait...!" | lolcat
 sleep 6
 clear
 echo ""
-echo -e "\e[0;32mNew Version Downloading started!\e[0m"
+echo -e " New Version Downloading started!" | lolcat
 sleep 2
 fun_bar() {
     CMD[0]="$1"
@@ -129,24 +125,21 @@ netfilter-persistent
 clear
 clear
 echo -e ""
-echo -e "\e[0;32mDownloaded successfully!\e[0m"
+echo -e "Downloaded successfully!" | lolcat
 echo ""
-ver=$( curl https://raw.githubusercontent.com/${GitUser}/v4/main/version )
 sleep 1
-echo -e "\e[0;32mPatching New Update, Please Wait...\e[0m"
+echo -e "Patching New Update, Please Wait..." | lolcat
 echo ""
-sleep 2
-echo -e "\e[0;32mPatching... OK!\e[0m"
-sleep 1
-echo ""
-echo -e "\e[0;32mSucces Update Script For New Version\e[0m"
 fun_bar 'res1'
-cd
-echo "$ver" > /home/ver
+sleep 2
+echo -e "Patching... OK!" | lolcat
+sleep 1
+echo ""
+echo -e "Succes Update Script For New Version" | lolcat
 rm -f update.sh
 clear
 echo ""
-echo -e "\E[44;1;39m            SCRIPT UPDATED              \E[0m"
+echo -e "            SCRIPT UPDATED              " | lolcat
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
