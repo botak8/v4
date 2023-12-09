@@ -14,74 +14,75 @@ Red_background="\033[41;37m"
 Suffix="\033[0m"
 
 
-echo -e "${ungu}++++++++++++++++++++++++++++++++++++++++++++"
-echo -e
-echo -e "${BlueCyan}              Menu Backup                   "
-echo -e
-echo -e "            t.me/AndyYuda"
-echo -e "${ungu}++++++++++++++++++++++++++++++++++++++++++++"
-echo
-echo
-echo -e "${BlueCyan}Pilih Nomor: "
-echo
-echo "1).Backup"
-echo "2).Restore"
-echo "3).strt"
-echo "4).limit speed"
-echo "5).autobackup"
-echo
-echo -e "${ungu}++++++++++++++++++++++++++++++++++++++++++++"
-echo
-echo -e "${BlueCyan}"
-read -p    "Pilih Nomor └╼>>>" bro
-
+echo -e ""
+echo -e "\e[33m ┌──────────────────────────────────┐\033[0m"
+echo -e "\e[33m │${BICyan}  .::::.  MENU BACKUP  .::::.  \033[0m"
+echo -e "\e[33m └──────────────────────────────────┘\033[0m"
+echo -e ""
+echo -e "\e[33m ┌──────────────────────────────────┐\033[0m"
+echo -e "\e[33m │${BICyan}  1).Backup"
+echo -e "\e[33m │${BICyan}  2).Restore"
+echo -e "\e[33m │${BICyan}  3).strt"
+echo -e "\e[33m │${BICyan}  4).limit speed"
+echo -e "\e[33m │${BICyan}  5).autobackup"
+echo -e "\e[33m └──────────────────────────────────┘\033[0m"
+echo ""
+read -p " Select From Options [ 1 - 5 ] : "  bro
+echo -e ""
 if [ $bro = 1 ] || [ $bro = 1 ]
 then
-figlet "backup" | lolcat
+echo
+echo " BACKUP" | lolcat
 backup
 echo "--------------------------------------------------------"
 echo
-echo "Terimakasih sudah menggunakan layanan script AndyYuda"
+echo "  Terimakasih sudah menggunakan layanan script HR-vpn"
 echo
 echo "--------------------------------------------------------"
 fi
 
 if [ $bro = 2 ] || [ $bro = 2 ]
 then
-figlet "Restore" | lolcat
-restore
+echo
+echo " RESTORE" | lolcat
+backup
 echo "--------------------------------------------------------"
 echo
-echo "Terimakasih sudah menggunakan layanan script AndyYuda"
+echo "  Terimakasih sudah menggunakan layanan script HR-vpn"
 echo
 echo "--------------------------------------------------------"
 fi
 if [ $bro = 3 ] || [ $bro = 3 ]
 then
-figlet "strt"
-strt
+echo
+echo " STRT" | lolcat
+backup
 echo "--------------------------------------------------------"
 echo
-echo "Terimakasih sudah menggunakan layanan script AndyYuda"
+echo "  Terimakasih sudah menggunakan layanan script HR-vpn"
 echo
 echo "--------------------------------------------------------"
 fi
 if [ $bro = 4 ] || [ $bro = 4 ]
 then
-limitspeed
+echo
+echo " LIMIT SPEED" | lolcat
+backup
 echo "--------------------------------------------------------"
 echo
-echo "Terimakasih sudah menggunakan layanan script AndyYuda"
+echo "  Terimakasih sudah menggunakan layanan script HR-vpn"
 echo
 echo "--------------------------------------------------------"
 fi
 
 if [ $bro = 5 ] || [ $bro = 5 ]
 then
-autobackup
+echo
+echo " AUTO BACKUP" | lolcat
+backup
 echo "--------------------------------------------------------"
 echo
-echo "Terimakasih sudah menggunakan layanan script AndyYuda"
+echo "  Terimakasih sudah menggunakan layanan script HR-vpn"
 echo
 echo "--------------------------------------------------------"
 fi
