@@ -587,7 +587,6 @@ sed -i '$ igrpc_set_header Host \$http_host;' /etc/nginx/conf.d/xray.conf
 sed -i '$ igrpc_pass grpc://127.0.0.1:33456;' /etc/nginx/conf.d/xray.conf
 sed -i '$ i}' /etc/nginx/conf.d/xray.conf
 
-
 echo -e "$yell[SERVICE]$NC Restart All service"
 systemctl daemon-reload
 sleep 1
@@ -602,66 +601,7 @@ systemctl stop trojan-go
 systemctl start trojan-go
 systemctl enable trojan-go
 systemctl restart trojan-go
-fun_bar() {
-    CMD[0]="$1"
-    CMD[1]="$2"
-    (
-        [[ -e $HOME/fim ]] && rm $HOME/fim
-        ${CMD[0]} -y >/dev/null 2>&1
-        ${CMD[1]} -y >/dev/null 2>&1
-        touch $HOME/fim
-    ) >/dev/null 2>&1 &
-    tput civis
-    echo -ne "  \033[0;33mPlease Wait Loading \033[1;37m- \033[0;33m["
-    while true; do
-        for ((i = 0; i < 18; i++)); do
-            echo -ne "\033[0;32m#"
-            sleep 0.1s
-        done
-        [[ -e $HOME/fim ]] && rm $HOME/fim && break
-        echo -e "\033[0;33m]"
-        sleep 1s
-        tput cuu1
-        tput dl1
-        echo -ne "  \033[0;33mPlease Wait Loading \033[1;37m- \033[0;33m["
-    done
-    echo -e "\033[0;33m]\033[1;37m -\033[1;32m OK !\033[1;37m"
-    tput cnorm
-}
-res1() {
-cd /usr/bin/
-# vmess
-wget -O add-ws "https://raw.githubusercontent.com/sasak3/v4/main/xray/add-ws.sh" && chmod +x add-ws
-wget -O trialvmess "https://raw.githubusercontent.com/sasak3/v4/main/xray/trialvmess.sh" && chmod +x trialvmess
-wget -O renew-ws "https://raw.githubusercontent.com/sasak3/v4/main/xray/renew-ws.sh" && chmod +x renew-ws
-wget -O del-ws "https://raw.githubusercontent.com/sasak3/v4/main/xray/del-ws.sh" && chmod +x del-ws
-wget -O cek-ws "https://raw.githubusercontent.com/sasak3/v4/main/xray/cek-ws.sh" && chmod +x cek-ws
 
-# vless
-wget -O add-vless "https://raw.githubusercontent.com/sasak3/v4/main/xray/add-vless.sh" && chmod +x add-vless
-wget -O trialvless "https://raw.githubusercontent.com/sasak3/v4/main/xray/trialvless.sh" && chmod +x trialvless
-wget -O renew-vless "https://raw.githubusercontent.com/sasak3/v4/main/xray/renew-vless.sh" && chmod +x renew-vless
-wget -O del-vless "https://raw.githubusercontent.com/sasak3/v4/main/xray/del-vless.sh" && chmod +x del-vless
-wget -O cek-vless "https://raw.githubusercontent.com/sasak3/v4/main/xray/cek-vless.sh" && chmod +x cek-vless
-
-# trojan
-wget -O add-tr "https://raw.githubusercontent.com/sasak3/v4/main/xray/add-tr.sh" && chmod +x add-tr
-wget -O trialtrojan "https://raw.githubusercontent.com/sasak3/v4/main/xray/trialtrojan.sh" && chmod +x trialtrojan
-wget -O del-tr "https://raw.githubusercontent.com/sasak3/v4/main/xray/del-tr.sh" && chmod +x del-tr
-wget -O renew-tr "https://raw.githubusercontent.com/sasak3/v4/main/xray/renew-tr.sh" && chmod +x renew-tr
-wget -O cek-tr "https://raw.githubusercontent.com/sasak3/v4/main/xray/cek-tr.sh" && chmod +x cek-tr
-
-# trojan go
-wget -O addtrgo "https://raw.githubusercontent.com/sasak3/v4/main/xray/addtrgo.sh" && chmod +x addtrgo
-wget -O trialtrojango "https://raw.githubusercontent.com/sasak3/v4/main/xray/trialtrojango.sh" && chmod +x trialtrojango
-wget -O deltrgo "https://raw.githubusercontent.com/sasak3/v4/main/xray/deltrgo.sh" && chmod +x deltrgo
-wget -O renewtrgo "https://raw.githubusercontent.com/sasak3/v4/main/xray/renewtrgo.sh" && chmod +x renewtrgo
-wget -O cektrgo "https://raw.githubusercontent.com/sasak3/v4/main/xray/cektrgo.sh" && chmod +x cektrgo
-}
-netfilter-persistent
-clear
-fun_bar 'res1'
-clear
 sleep 1
 yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
 yellow "xray/Vmess"
