@@ -49,7 +49,7 @@ echo -e "\e[0;32mPlease Wait...!\e[0m"
 sleep 6
 clear
 echo ""
-echo -e "  New Version Downloading started!" | lolcat
+echo -e "\e[0;32mNew Version Downloading started!\e[0m"
 sleep 2
 fun_bar() {
     CMD[0]="$1"
@@ -138,15 +138,13 @@ echo -e "\e[0;32mPatching... OK!\e[0m"
 sleep 1
 echo ""
 echo -e "\e[0;32mSucces Update Script For New Version\e[0m"
+fun_bar 'res1'
 cd
 echo "$ver" > /home/ver
 rm -f update.sh
 clear
 echo ""
-echo -e "\033[0;34m----------------------------------------\033[0m"
 echo -e "\E[44;1;39m            SCRIPT UPDATED              \E[0m"
-fun_bar 'res1'
-echo -e "\033[0;34m----------------------------------------\033[0m"
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
