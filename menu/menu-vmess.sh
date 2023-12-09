@@ -106,19 +106,20 @@ MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
 
 clear
-echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "       ${BIWhite}${UWhite}VMESS ${NC}"
 echo -e ""
-echo -e "     ${BICyan}[${BIWhite}01${BICyan}] Create Account XRAY Vmess Websocket "
-echo -e "     ${BICyan}[${BIWhite}02${BICyan}] Trial Account XRAY Vmess     "
-echo -e "     ${BICyan}[${BIWhite}03${BICyan}] Extending Account XRAY Vmess Active "
-echo -e "     ${BICyan}[${BIWhite}04${BICyan}] Delete Account XRAY Vmess Websocket  "
-echo -e "     ${BICyan}[${BIWhite}05${BICyan}] Check User Login XRAY Vmess     "
-
-echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
-echo -e "     ${BIYellow}Press x or [ Ctrl+C ] • To-${BIWhite}Exit${NC}"
-echo ""
-read -p " Select menu :  "  opt
+echo -e "${yelow} ┌───────────────────────────────────────┐${NC}"
+echo -e "${yelow} │${cyann}    .::::.  MENU MANAGER VMESS  .::::.  ${NC}"
+echo -e "${yelow} └───────────────────────────────────────┘${NC}"
+echo -e "${yelow} ┌───────────────────────────────────────┐${NC}"
+echo -e "${yelow} │  ${cyann}[•1]${NC}  Creating VMESS Account${NC}"
+echo -e "${yelow} │  ${cyann}[•2]${NC}  Trial VMESS Account${NC}"
+echo -e "${yelow} │  ${cyann}[•3]${NC}  Renew VMESS Account${NC}"
+echo -e "${yelow} │  ${cyann}[•4]${NC}  Delete VMESS Account${NC}"
+echo -e "${yelow} │  ${cyann}[•5]${NC}  Check VMESS login Account${NC}"
+echo -e "${yelow} │  ${cyann}[•0]${NC}  Exit VMESS manager${NC}"
+echo -e "${yelow} └───────────────────────────────────────┘${NC}"
+echo -e ""
+read -p "  Select From Options [1-5] : " opt
 echo -e ""
 case $opt in
 1) clear ; add-ws ; exit ;;
