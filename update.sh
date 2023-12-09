@@ -49,7 +49,7 @@ echo -e "\e[0;32mPlease Wait...!\e[0m"
 sleep 6
 clear
 echo ""
-echo -e "\e[0;32mNew Version Downloading started!\e[0m"
+echo -e "  New Version Downloading started! | lolcat
 sleep 2
 fun_bar() {
     CMD[0]="$1"
