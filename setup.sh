@@ -6,7 +6,7 @@ sysctl -w net.ipv6.conf.all.disable_ipv6=1
 sysctl -w net.ipv6.conf.default.disable_ipv6=1
 apt install -y bzip2 gzip coreutils screen curl
 MYIP=$(curl -sS ipv4.icanhazip.com)
-scversi=$(curl -sS https://raw.githubusercontent.com/botak8/v4/main/ip | awk '{print $1}')
+scversi=$(curl -sS https://raw.githubusercontent.com/botak8/v4/main/ | awk '{print $1}')
 red='\e[1;31m'
 green='\e[0;32m'
 yell='\e[1;33m'
