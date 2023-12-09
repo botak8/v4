@@ -1,43 +1,46 @@
 #!/bin/bash
 MYIP=$(wget -qO- ipinfo.io/ip);
-echo "Checking VPS"
-
+#
+NC="\033[0m" # PENUTUP WARNA
+# color validation 
+wh="\e[1;37m" # PUTIH
+ye="\e[1;33m" # KUNING
+cy="\e[1;36m" # CYAN/BIRU MUDA
 clear 
-echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "\E[40;1;37m         • RESTART MENU •          \E[0m"
-echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e ""
-echo -e " [\e[36m•1\e[0m] Restart All Services"
-echo -e " [\e[36m•2\e[0m] Restart OpenSSH"
-echo -e " [\e[36m•3\e[0m] Restart Dropbear"
-echo -e " [\e[36m•4\e[0m] Restart Stunnel4"
-echo -e " [\e[36m•5\e[0m] Restart OpenVPN"
-echo -e " [\e[36m•6\e[0m] Restart Squid"
-echo -e " [\e[36m•7\e[0m] Restart Nginx"
-echo -e " [\e[36m•8\e[0m] Restart Badvpn"
-echo -e " [\e[36m•9\e[0m] Restart XRAY"
-echo -e " [\e[36m10\e[0m] Restart WEBSOCKET"
-echo -e " [\e[36m11\e[0m] Restart Trojan Go"
+echo -e "${ye} ┌─────────────────────────────┐${NC}"
+echo -e "${ye} │${cy} .::::.  RESTART MENU  .::::.  ${NC}"
+echo -e "${ye} └─────────────────────────────┘${NC}"
 echo -e ""
-echo -e " [\e[31m•0\e[0m] \e[31mBACK TO MENU\033[0m"
-echo -e   ""
-echo -e   "Press x or [ Ctrl+C ] • To-Exit"
-echo -e   ""
-echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "${ye} ┌─────────────────────────────┐${NC}"
+echo -e "${ye} │ ${cy}•1)${NC} Restart All Services${NC}"
+echo -e "${ye} │ ${cy}•2)${NC} Restart OpenSSH${NC}"
+echo -e "${ye} │ ${cy}•3)${NC} Restart Dropbear${NC}"
+echo -e "${ye} │ ${cy}•4)${NC} Restart Stunnel4${NC}"
+echo -e "${ye} │ ${cy}•5)${NC} Restart OpenVPN${NC}"
+echo -e "${ye} │ ${cy}•6)${NC} Restart Squid${NC}"
+echo -e "${ye} │ ${cy}•7)${NC} Restart Nginx${NC}"
+echo -e "${ye} │ ${cy}•8)${NC} Restart Badvpn${NC}"
+echo -e "${ye} │ ${cy}•9)${NC} Restart Xray${NC}"
+echo -e "${ye} │ ${cy}10)${NC} Restart Websocket${NC}"
+echo -e "${ye} │ ${cy}11)${NC} Restart Trojan Go${NC}"
+echo -e "${ye} │ ${cy}•0)${NC} Back To Menu${NC}"
+echo -e "${ye} └─────────────────────────────┘${NC}"
 echo -e ""
-read -p " Select menu : " Restart
+read -p " Select From Options [ 1 - 11 ] :   " Restart
 echo -e ""
-sleep 1
 clear
 case $Restart in
                 1)
                 clear
-                echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-                echo -e "\E[40;1;37m         • RESTART MENU •          \E[0m"
-                echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
                 echo -e ""
-                echo -e "[ \033[32mInfo\033[0m ] Restart Begin"
-                sleep 1
+                echo -e "${ye} ┌─────────────────────────────┐${NC}"
+                echo -e "${ye} │${cy} .::::.  RESTART MENU  .::::.  ${NC}"
+                echo -e "${ye} └─────────────────────────────┘${NC}"
+                echo -e ""
+                echo -e "[ \033[1;32mInfo\033[0m ] Restart Begin"
+                echo -e "loading......" | lolcat
+                sleep 2
                 /etc/init.d/ssh restart
                 /etc/init.d/dropbear restart
                 /etc/init.d/stunnel4 restart
@@ -46,36 +49,30 @@ case $Restart in
                 /etc/init.d/cron restart
                 /etc/init.d/nginx restart
                 /etc/init.d/squid restart
-                echo -e "[ \033[32mok\033[0m ] Restarting xray Service (via systemctl) "
-                sleep 0.5
+                echo -e "[ \033[1;36mOK\033[0m ] Restarting xray (via systemctl) "
                 systemctl restart xray
                 systemctl restart xray.service
-                echo -e "[ \033[32mok\033[0m ] Restarting badvpn Service (via systemctl) "
-                sleep 0.5
+                echo -e "[ \033[1;36mOK\033[0m ] Restarting badvpn (via systemctl) "
                 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500
-                sleep 0.5
-                echo -e "[ \033[32mok\033[0m ] Restarting websocket Service (via systemctl) "
-                sleep 0.5
+                echo -e "[ \033[1;36mOK\033[0m ] Restart Websocket (via systemctl) "
                 systemctl restart sshws.service
                 systemctl restart ws-dropbear.service
                 systemctl restart ws-stunnel.service
-                sleep 0.5
-                echo -e "[ \033[32mok\033[0m ] Restarting Trojan Go Service (via systemctl) "
-                sleep 0.5
+                echo -e "[ \033[1;36mOK\033[0m ] Restart Trojan Go (via systemctl) "
                 systemctl restart trojan-go.service 
-                sleep 0.5
-                echo -e "[ \033[32mInfo\033[0m ] ALL Service Restarted"
+                echo -e "[ \033[1;32mSUCCES\033[0m ] \e[1;36mRestarted All Service\033[0m"
                 echo ""
-                echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+                echo -e "\e[33m ──────────────────────────────────\033[0m"
                 echo ""
                 read -n 1 -s -r -p "Press any key to back on system menu"
-                restart
+                restarts
                 ;;
                 2)
                 clear
-                echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-                echo -e "\E[40;1;37m         • RESTART MENU •          \E[0m"
-                echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+                echo -e ""
+                echo -e "${ye} ┌─────────────────────────────┐${NC}"
+                echo -e "${ye} │${cy} .::::.  RESTART MENU  .::::.  ${NC}"
+                echo -e "${ye} └─────────────────────────────┘${NC}"
                 echo -e ""
                 echo -e "[ \033[32mInfo\033[0m ] Restart Begin"
                 sleep 1
@@ -83,16 +80,17 @@ case $Restart in
                 sleep 0.5
                 echo -e "[ \033[32mInfo\033[0m ] SSH Service Restarted"
                 echo ""
-                echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+                echo -e "\e[33m ──────────────────────────────────\033[0m"
                 echo ""
                 read -n 1 -s -r -p "Press any key to back on system menu"
-                restart
+                restarts
                 ;;
                 3)
                 clear
-                echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-                echo -e "\E[40;1;37m         • RESTART MENU •          \E[0m"
-                echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+                echo -e ""
+                echo -e "${ye} ┌─────────────────────────────┐${NC}"
+                echo -e "${ye} │${cy} .::::.  RESTART MENU  .::::.  ${NC}"
+                echo -e "${ye} └─────────────────────────────┘${NC}"
                 echo -e ""
                 echo -e "[ \033[32mInfo\033[0m ] Restart Begin"
                 sleep 1
@@ -100,16 +98,17 @@ case $Restart in
                 sleep 0.5
                 echo -e "[ \033[32mInfo\033[0m ] Dropbear Service Restarted"
                 echo ""
-                echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+                echo -e "\e[33m ──────────────────────────────────\033[0m"
                 echo ""
                 read -n 1 -s -r -p "Press any key to back on system menu"
-                restart
+                restarts
                 ;;
                 4)
                 clear
-                echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-                echo -e "\E[40;1;37m         • RESTART MENU •          \E[0m"
-                echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+                echo -e ""
+                echo -e "${ye} ┌─────────────────────────────┐${NC}"
+                echo -e "${ye} │${cy} .::::.  RESTART MENU  .::::.  ${NC}"
+                echo -e "${ye} └─────────────────────────────┘${NC}"
                 echo -e ""
                 echo -e "[ \033[32mInfo\033[0m ] Restart Begin"
                 sleep 1
@@ -117,16 +116,17 @@ case $Restart in
                 sleep 0.5
                 echo -e "[ \033[32mInfo\033[0m ] Stunnel4 Service Restarted"
                 echo ""
-                echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+                echo -e "\e[33m ──────────────────────────────────\033[0m"
                 echo ""
                 read -n 1 -s -r -p "Press any key to back on system menu"
-                restart
+                restarts
                 ;;
                 5)
                 clear
-                echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-                echo -e "\E[40;1;37m         • RESTART MENU •          \E[0m"
-                echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+                echo -e ""
+                echo -e "${ye} ┌─────────────────────────────┐${NC}"
+                echo -e "${ye} │${cy} .::::.  RESTART MENU  .::::.  ${NC}"
+                echo -e "${ye} └─────────────────────────────┘${NC}"
                 echo -e ""
                 echo -e "[ \033[32mInfo\033[0m ] Restart Begin"
                 sleep 1
@@ -134,16 +134,17 @@ case $Restart in
                 sleep 0.5
                 echo -e "[ \033[32mInfo\033[0m ] Openvpn Service Restarted"
                 echo ""
-                echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+                echo -e "\e[33m ──────────────────────────────────\033[0m"
                 echo ""
                 read -n 1 -s -r -p "Press any key to back on system menu"
-                restart
+                restarts
                 ;;
                 6)
                 clear
-                echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-                echo -e "\E[40;1;37m         • RESTART MENU •          \E[0m"
-                echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+                echo -e ""
+                echo -e "${ye} ┌─────────────────────────────┐${NC}"
+                echo -e "${ye} │${cy} .::::.  RESTART MENU  .::::.  ${NC}"
+                echo -e "${ye} └─────────────────────────────┘${NC}"
                 echo -e ""
                 echo -e "[ \033[32mInfo\033[0m ] Restart Begin"
                 sleep 1
@@ -151,16 +152,17 @@ case $Restart in
                 sleep 0.5
                 echo -e "[ \033[32mInfo\033[0m ] Squid Service Restarted"
                 echo ""
-                echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+                echo -e "\e[33m ──────────────────────────────────\033[0m"
                 echo ""
                 read -n 1 -s -r -p "Press any key to back on system menu"
-                restart
+                restarts
                 ;;
                 7)
                 clear
-                echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-                echo -e "\E[40;1;37m         • RESTART MENU •          \E[0m"
-                echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+                echo -e ""
+                echo -e "${ye} ┌─────────────────────────────┐${NC}"
+                echo -e "${ye} │${cy} .::::.  RESTART MENU  .::::.  ${NC}"
+                echo -e "${ye} └─────────────────────────────┘${NC}"
                 echo -e ""
                 echo -e "[ \033[32mInfo\033[0m ] Restart Begin"
                 sleep 1
@@ -168,16 +170,17 @@ case $Restart in
                 sleep 0.5
                 echo -e "[ \033[32mInfo\033[0m ] Nginx Service Restarted"
                 echo ""
-                echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+                echo -e "\e[33m ──────────────────────────────────\033[0m"
                 echo ""
                 read -n 1 -s -r -p "Press any key to back on system menu"
-                restart
+                restarts
                 ;;
                 8)
                 clear
-                echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-                echo -e "\E[40;1;37m         • RESTART MENU •          \E[0m"
-                echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+                echo -e ""
+                echo -e "${ye} ┌─────────────────────────────┐${NC}"
+                echo -e "${ye} │${cy} .::::.  RESTART MENU  .::::.  ${NC}"
+                echo -e "${ye} └─────────────────────────────┘${NC}"
                 echo -e ""
                 echo -e "[ \033[32mInfo\033[0m ] Restart Begin"
                 sleep 1
@@ -186,16 +189,17 @@ case $Restart in
                 sleep 0.5
                 echo -e "[ \033[32mInfo\033[0m ] Badvpn Service Restarted"
                 echo ""
-                echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+                echo -e "\e[33m ──────────────────────────────────\033[0m"
                 echo ""
                 read -n 1 -s -r -p "Press any key to back on system menu"
-                restart
+                restarts
                 ;;
                 9)
                 clear
-                echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-                echo -e "\E[40;1;37m         • RESTART MENU •          \E[0m"
-                echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+                echo -e ""
+                echo -e "${ye} ┌─────────────────────────────┐${NC}"
+                echo -e "${ye} │${cy} .::::.  RESTART MENU  .::::.  ${NC}"
+                echo -e "${ye} └─────────────────────────────┘${NC}"
                 echo -e ""
                 echo -e "[ \033[32mInfo\033[0m ] Restart Begin"
                 sleep 1
@@ -205,16 +209,17 @@ case $Restart in
                 sleep 0.5
                 echo -e "[ \033[32mInfo\033[0m ] XRAY Service Restarted"
                 echo ""
-                echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+                echo -e "\e[33m ──────────────────────────────────\033[0m"
                 echo ""
                 read -n 1 -s -r -p "Press any key to back on system menu"
-                restart
+                restarts
                 ;;
                 10)
                 clear
-                echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-                echo -e "\E[40;1;37m         • RESTART MENU •          \E[0m"
-                echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+                echo -e ""
+                echo -e "${ye} ┌─────────────────────────────┐${NC}"
+                echo -e "${ye} │${cy} .::::.  RESTART MENU  .::::.  ${NC}"
+                echo -e "${ye} └─────────────────────────────┘${NC}"
                 echo -e ""
                 echo -e "[ \033[32mInfo\033[0m ] Restart Begin"
                 sleep 1
@@ -226,16 +231,16 @@ case $Restart in
                 sleep 0.5
                 echo -e "[ \033[32mInfo\033[0m ] WEBSOCKET Service Restarted"
                 echo ""
-                echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+                echo -e "\e[33m ──────────────────────────────────\033[0m"
                 echo ""
                 read -n 1 -s -r -p "Press any key to back on system menu"
-                restart
+                restarts
                 ;;
                 11)
                 clear
-                echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-                echo -e "\E[40;1;37m         • RESTART MENU •          \E[0m"
-                echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+                echo -e "${ye} ┌─────────────────────────────┐${NC}"
+                echo -e "${ye} │${cy} .::::.  RESTART MENU  .::::.  ${NC}"
+                echo -e "${ye} └─────────────────────────────┘${NC}"
                 echo -e ""
                 echo -e "[ \033[32mInfo\033[0m ] Restart Begin"
                 sleep 1
@@ -245,10 +250,10 @@ case $Restart in
                 sleep 0.5
                 echo -e "[ \033[32mInfo\033[0m ] Trojan Go Service Restarted"
                 echo ""
-                echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+                echo -e "\e[33m ──────────────────────────────────\033[0m"
                 echo ""
                 read -n 1 -s -r -p "Press any key to back on system menu"
-                restart
+                restarts
                 ;;                                                                         
                 0)
                 menu
@@ -258,5 +263,5 @@ case $Restart in
                 clear
                 exit
                 ;;
-                *) echo -e "" ; echo "Boh salah tekan, Sayang kedak Babi" ; sleep 1 ; restart ;;               
+                *) echo -e "" ; echo "salah tekan" ; sleep 1 ; restart ;;               
         esac
