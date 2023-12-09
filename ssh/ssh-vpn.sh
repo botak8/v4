@@ -295,7 +295,7 @@ wget -O tendang "https://raw.githubusercontent.com/botak8/v4/main/ssh/tendang.sh
 
 # menu system
 wget -O menu-set "https://raw.githubusercontent.com/botak8/v4/main/menu/menu-set.sh"
-wget -O add-host "https://raw.githubusercontent.com/botak8/v4/main/ssh/add-host.sh"
+wget -O add-host "https://raw.githubusercontent.com/sasak3/v4/main/ssh/add-host.sh"
 wget -O port-change "https://raw.githubusercontent.com/botak8/v4/main/port/port-change.sh"
 wget -O certv2ray "https://raw.githubusercontent.com/botak8/v4/main/xray/certv2ray.sh"
 wget -O menu-webmin "https://raw.githubusercontent.com/botak8/v4/main/menu/menu-webmin.sh"
