@@ -106,23 +106,24 @@ MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
 
 clear
-echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "       ${BIWhite}${UWhite}SSH ${NC}"
 echo -e ""
-echo -e "     ${BICyan}[${BIWhite}01${BICyan}] Create SSH & OpenVPN Account      "
-echo -e "     ${BICyan}[${BIWhite}02${BICyan}] Trial Account SSH & OpenVPN      "
-echo -e "     ${BICyan}[${BIWhite}03${BICyan}] Renew SSH & OpenVPN Account      "
-echo -e "     ${BICyan}[${BIWhite}04${BICyan}] Delete SSH & OpenVPN Account     "
-echo -e "     ${BICyan}[${BIWhite}05${BICyan}] Check User Login SSH & OpenVPN     "
-echo -e "     ${BICyan}[${BIWhite}06${BICyan}] List Member SSH & OpenVPN     "
-echo -e "     ${BICyan}[${BIWhite}07${BICyan}] Delete User Expired SSH & OpenVPN"
-echo -e "     ${BICyan}[${BIWhite}08${BICyan}] Set up Autokill SSH"
-echo -e "     ${BICyan}[${BIWhite}09${BICyan}] Cek Users Who Do Multi Login SSH"
-
-echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
-echo -e "     ${BIYellow}Press x or [ Ctrl+C ] • To-${BIWhite}Exit${NC}"
-echo ""
-read -p " Select menu :  "  opt
+echo -e "${yelow} ┌───────────────────────────────────────┐${NC}"
+echo -e "${yelow} │${cyann} .::::.  MENU MANAGER SSH OVPN  .::::.  ${NC}"
+echo -e "${yelow} └───────────────────────────────────────┘${NC}"
+echo -e "${yelow} ┌───────────────────────────────────────┐${NC}"
+echo -e "${yelow} │  ${cyann}[•1]${NC}  Creating a SSH OVPN Account${NC}"
+echo -e "${yelow} │  ${cyann}[•2]${NC}  Trial SSH OVPN Account${NC}"
+echo -e "${yelow} │  ${cyann}[•3]${NC}  Renew SSH OVPN Account${NC}"
+echo -e "${yelow} │  ${cyann}[•4]${NC}  Delete SSH OVPN Account${NC}"
+echo -e "${yelow} │  ${cyann}[•5]${NC}  Check SSH OVPN login Account${NC}"
+echo -e "${yelow} │  ${cyann}[•6]${NC}  Member SSH OVPN Account${NC}"
+echo -e "${yelow} │  ${cyann}[•7]${NC}  Delete SSH OVPN Expired${NC}"
+echo -e "${yelow} │  ${cyann}[•8]${NC}  Locked SSH OVPN Account${NC}"
+echo -e "${yelow} │  ${cyann}[•9]${NC}  Unlocked SSH OVPN Account${NC}"
+echo -e "${yelow} │  ${cyann}[•0]${NC}  Exit SSH OVPN Manager${NC}"
+echo -e "${yelow} └───────────────────────────────────────┘${NC}"
+echo -e ""
+read -p " Select From Options [ 1 - 9 ] : "  opt
 echo -e ""
 case $opt in
 1) clear ; usernew ; exit ;;
@@ -132,8 +133,8 @@ case $opt in
 5) clear ; cek ; exit ;;
 6) clear ; member ; exit ;;
 7) clear ; delete ; exit ;;
-8) clear ; autokill ; exit ;;
-9) clear ; ceklim ; exit ;;
+8) clear ; user-lock ; exit ;;
+9) clear ; user-unlock ; exit ;;
 0) clear ; menu ; exit ;;
 x) exit ;;
 *) echo "Anda salah tekan " ; sleep 1 ; menu-ssh ;;
