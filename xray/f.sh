@@ -3,19 +3,19 @@
 cd /usr/bin
 # menu
 wget -O menu "https://raw.githubusercontent.com/botak8/v4/main/menu/menu.sh"
-wget -O menu-2 "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/menu2.sh"
-wget -O menu-3 "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/menu3.sh"
+wget -O menu2 "https://raw.githubusercontent.com/heruahmad1/backupvpshrvpn/main/menu2.sh"
+wget -O menu3 "https://raw.githubusercontent.com/heruahmad1/backupvpshrvpn/main/menu3.sh"
 wget -O running "https://raw.githubusercontent.com/botak8/v4/main/menu/running.sh"
 wget -O clearcache "https://raw.githubusercontent.com/botak8/v4/main/menu/clearcache.sh"
-wget -O menu-5 "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/menu5.sh"
-wget -O menu-4 "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/menu4.sh"
+wget -O menu5 "https://raw.githubusercontent.com/heruahmad1/backupvpshrvpn/main/menu5.sh"
+wget -O menu4 "https://raw.githubusercontent.com/heruahmad1/backupvpshrvpn/main/menu4.sh"
 # menu ssh ovpn
-wget -O menu-1 "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/menu1.sh"
-wget -O add1 "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/add1.sh"
-wget -O add2 "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/add2.sh"
-wget -O add3 "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/add3.sh"
-wget -O add4 "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/add4.sh"
-wget -O add5 "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/add5.sh"
+wget -O menu1 "https://raw.githubusercontent.com/heruahmad1/backupvpshrvpn/main/menu1.sh"
+wget -O add1 "https://raw.githubusercontent.com/heruahmad1/backupvpshrvpn/main/add1.sh"
+wget -O add2 "https://raw.githubusercontent.com/heruahmad1/backupvpshrvpn/main/add2.sh"
+wget -O add3 "https://raw.githubusercontent.com/heruahmad1/backupvpshrvpn/main/add3.sh"
+wget -O add4 "https://raw.githubusercontent.com/heruahmad1/backupvpshrvpn/main/add4.sh"
+wget -O add5 "https://raw.githubusercontent.com/heruahmad1/backupvpshrvpn/main/add5.sh"
 
 # menu system
 wget -O menu-set "https://raw.githubusercontent.com/botak8/v4/main/menu/menu-set.sh"
