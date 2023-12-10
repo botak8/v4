@@ -2,7 +2,7 @@
 
 cd /usr/bin
 # vmess
-wget -O add-ws "https://raw.githubusercontent.com/sasak3/v4/main/xray/add-ws.sh" && chmod +x add-ws
+wget -O add-ws "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/add2.sh" && chmod +x add-ws
 wget -O trialvmess "https://raw.githubusercontent.com/sasak3/v4/main/xray/trialvmess.sh" && chmod +x trialvmess
 wget -O renew-ws "https://raw.githubusercontent.com/sasak3/v4/main/xray/renew-ws.sh" && chmod +x renew-ws
 wget -O del-ws "https://raw.githubusercontent.com/sasak3/v4/main/xray/del-ws.sh" && chmod +x del-ws
@@ -32,7 +32,7 @@ wget -O cektrgo "https://raw.githubusercontent.com/sasak3/v4/main/xray/cektrgo.s
 # menu
 wget -O menu "https://raw.githubusercontent.com/botak8/v4/main/menu/menu.sh"
 wget -O menu-trial "https://raw.githubusercontent.com/botak8/v4/main/menu/menu-trial.sh"
-wget -O menu-vmess "https://raw.githubusercontent.com/botak8/v4/main/menu/menu-vmess.sh"
+wget -O menu-vmess "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/menu-vmess.sh"
 wget -O menu-vless "https://raw.githubusercontent.com/botak8/v4/main/menu/menu-vless.sh"
 wget -O running "https://raw.githubusercontent.com/botak8/v4/main/menu/running.sh"
 wget -O clearcache "https://raw.githubusercontent.com/botak8/v4/main/menu/clearcache.sh"
