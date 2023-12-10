@@ -34,9 +34,8 @@ echo -e ""
 sleep 2
 echo -e " Start Update For New Version, Please Wait.." | lolcat
 sleep 2
-clear
 echo -e " Please Wait...!" | lolcat
-sleep 6
+sleep 3
 fun_bar() {
     CMD[0]="$1"
     CMD[1]="$2"
@@ -76,7 +75,7 @@ clear
 echo -e ""
 echo -e " Downloaded successfully!" | lolcat
 echo ""
-sleep 3
+sleep 2
 echo -e ""
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
