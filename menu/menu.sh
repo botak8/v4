@@ -30,16 +30,13 @@ checking_sc() {
     if [[ $date_list < $useexp ]]; then
         echo -ne
     else
-        echo -e "\033[1;36m┌─────────────────────────────────────────────────┐\033[0m"
-        echo -e "             • AUTOSCRIPT PREMIUM •  " | lolcat
-        echo -e "\033[1;36m└─────────────────────────────────────────────────┘\033[0m"
-        echo -e "\033[1;36m┌─────────────────────────────────────────────────┐\033[0m"
-        echo -e "             \033[0;31m IZIN DITOLAK !\033[0m"
-        echo -e "      \033[0;33mVPS ANDA\033[0m $ipsaya \033[0;33mTelah di Banned\033[0m"
-        echo -e "          \033[0;33mBeli izin akses script\033[0m"
-        echo -e "               \033[0;33mHubungi ADMIN \033[0m"
-        echo -e "          \033[0;36mTelegram\033[0m: https://t.me/heruahmad"
-        echo -e "\033[1;36m└─────────────────────────────────────────────────┘\033[0m"
+        echo -e " • AUTOSCRIPT LITE BY HR-vpn •  " | lolcat
+        echo -e ""
+        echo -e "\033[0;31m IZIN DITOLAK !\033[0m"
+        echo -e "\033[0;33m VPS ANDA\033[0m $ipsaya \033[0;33mTelah di Banned\033[0m"
+        echo -e "\033[0;33m Beli izin akses script\033[0m"
+        echo -e "\033[0;33m Hubungi ADMIN \033[0m"
+        echo -e "\033[0;36m Telegram\033[0m: https://t.me/heruahmad"
         exit
     fi
 }
