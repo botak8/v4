@@ -67,7 +67,6 @@ wget -q https://raw.githubusercontent.com/botak8/v4/main/xray/f.sh;chmod +x f.sh
 rm f.sh
 }
 netfilter-persistent
-clear
 fun_bar 'res1'
 clear
 rm -f update.sh
@@ -76,7 +75,6 @@ echo -e ""
 echo -e " Downloaded successfully!" | lolcat
 echo ""
 sleep 2
-echo -e ""
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
 ;;
