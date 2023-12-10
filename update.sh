@@ -29,12 +29,11 @@ Info2="${Green_font_prefix}(LATEST VERSION)${Font_color_suffix}"
 Error="Version ${Green_font_prefix}[$ver]${Font_color_suffix} available${Red_font_prefix}[Please Update]${Font_color_suffix}"
 version=$(cat /home/ver)
 clear
+echo -e ""
 echo -e " Update Available Now.." | lolcat
 echo -e ""
 sleep 2
-echo -e " Start Update For New Version, Please Wait.." | lolcat
-sleep 2
-echo -e " Please Wait...!" | lolcat
+echo -e " Start update untuk versi baru, Silahkan tunggu.." | lolcat
 sleep 3
 fun_bar() {
     CMD[0]="$1"
@@ -67,15 +66,18 @@ wget -q https://raw.githubusercontent.com/botak8/v4/main/xray/f.sh;chmod +x f.sh
 rm f.sh
 }
 netfilter-persistent
+clear
+echo -e ""
+echo -e " PROSES UPDATE SCRIPT HR-vpn " | lolcat
 fun_bar 'res1'
 clear
 rm -f update.sh
 clear
 echo -e ""
-echo -e " Downloaded successfully!" | lolcat
+echo -e " UPDATE successfully!" | lolcat
 echo ""
 sleep 2
-read -n 1 -s -r -p "Press any key to back on menu"
+read -n 1 -s -r -p " Tekan enter untuk kembali ke menu"
 menu
 ;;
 esac
