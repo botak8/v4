@@ -216,10 +216,6 @@ IPVPS=$(curl -s ipinfo.io/ip )
 clear
 clear
 echo -e ""
-echo -e "    AUTOSCRIPT LITE HR-vpn" | lolcat
-sleep 1
-clear
-echo -e ""
 echo -e "\e[33m    ┌─────────────────────────────────────────────────┐\033[0m"
 echo -e "\e[33m ───│\033[0m  ${BICyan}   ┌─┐┬ ┬┌┬┐┌─┐┌─┐┌─┐┬─┐┬┌─┐┌┬┐  ┬  ┬┌┬┐┌─┐ \033[0m \e[33m  │───\033[0m"
 echo -e "\e[33m ───│\033[0m  ${BICyan}   ├─┤│ │ │ │ │└─┐│  ├┬┘│├─┘ │   │  │ │ ├┤   \033[0m \e[33m │───\033[0m"
