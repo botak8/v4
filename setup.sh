@@ -80,6 +80,8 @@ echo -ne "[ ${green}INFO${NC} ] Check permission : "
 mkdir -p /var/lib/SIJA >/dev/null 2>&1
 echo "IP=" >> /var/lib/SIJA/ipvps.conf
 echo ""
+echo -e "[ ${green}INFO${NC} ] install config"
+sleep 2
 wget -q https://raw.githubusercontent.com/sasak3/v4/main/dep.sh;chmod +x dep.sh;./dep.sh
 rm dep.sh
 clear
@@ -120,17 +122,27 @@ echo "$host" >> /root/domain
 wget https://raw.githubusercontent.com/sasak3/v4/main/slowdns/cfslow.sh && chmod +x cfslow.sh && ./cfslow.sh
 rm -f /root/cfslow.sh
 clear
-wget https://raw.githubusercontent.com/heruahmad1/backupvpshrvpn/main/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
+echo -e "[ ${green}INFO${NC} ] install ssh-vpn"
+sleep 2
+wget https://raw.githubusercontent.com/botak8/v4/main/ssh/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
 clear
+echo -e "[ ${green}INFO${NC} ] install menu backup"
+sleep 2
 wget https://raw.githubusercontent.com/botak8/v4/main/backup/set-br.sh &&  chmod +x set-br.sh && ./set-br.sh
 clear
-wget https://raw.githubusercontent.com/heruahmad1/backupvpshrvpn/main/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
+echo -e "[ ${green}INFO${NC} ] install xray"
+sleep 2
+wget https://raw.githubusercontent.com/botak8/v4/main/xray/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
 wget https://raw.githubusercontent.com/botak8/v4/main/sshws/insshws.sh && chmod +x insshws.sh && ./insshws.sh
 clear
+echo -e "[ ${green}INFO${NC} ] install udp"
+sleep 2
 wget -q -O slow.sh https://raw.githubusercontent.com/Andyyuda/xray-ssh/main/slow.sh && chmod +x slow.sh && ./slow.sh
 clear
+sleep 2
 wget https://raw.githubusercontent.com/sasak3/v4/main/udp/udp.sh && bash udp.sh
 clear
+sleep 2
 fun_bar() {
     CMD[0]="$1"
     CMD[1]="$2"
@@ -163,6 +175,8 @@ rm f.sh
 }
 netfilter-persistent
 clear
+echo -e "[ ${green}INFO${NC} ] install menu server"
+sleep 2
 fun_bar 'res1'
 clear
 
