@@ -1,24 +1,4 @@
 #!/bin/bash
-
-BURIQ () {
-    curl -sS https://raw.githubusercontent.com/heruahmad1/permission/main/ipmini > /root/tmp
-    data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
-    for user in "${data[@]}"
-    do
-    exp=( `grep -E "^### $user" "/root/tmp" | awk '{print $3}'` )
-    d1=(`date -d "$exp" +%s`)
-    d2=(`date -d "$biji" +%s`)
-    exp2=$(( (d1 - d2) / 86400 ))
-    if [[ "$exp2" -le "0" ]]; then
-    echo $user > /etc/.$user.ini
-    else
-    rm -f /etc/.$user.ini > /dev/null 2>&1
-    fi
-    done
-    rm -f /root/tmp
-}
-
-MYIP=$(curl -sS ipv4.icanhazip.com)
 ipsaya=$(curl -sS ipinfo.io/ip)
 data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
@@ -30,7 +10,6 @@ checking_sc() {
     if [[ $date_list < $useexp ]]; then
         echo -ne
     else
-        clear
         echo -e ""
         echo -e " • AUTOSCRIPT LITE BY HR-vpn •  " | lolcat
         echo -e ""
@@ -56,6 +35,11 @@ let tra=$trx/2
 ssx=$(grep -c -E "^## " "/etc/xray/config.json")
 let ssa=$ssx/2
 
+if [[ -e /usr/bin/bot ]]; then
+echo -ne
+else
+wget -O /usr/bin/bot https://raw.githubusercontent.com/sasak3/v4/main/bot.sh && chmod +x /usr/bin/bot
+fi
 UDPX="https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1S3IE25v_fyUfCLslnujFBSBMNunDHDk2' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1S3IE25v_fyUfCLslnujFBSBMNunDHDk2"
 # // Exporting Language to UTF-8
 BIBlack='\033[1;90m'      # Black
@@ -91,24 +75,6 @@ dmon="$(vnstat -i eth0 -m | grep "`date +"%b '%y"`" | awk '{print $3" "substr ($
 umon="$(vnstat -i eth0 -m | grep "`date +"%b '%y"`" | awk '{print $6" "substr ($7, 1, 1)}')"
 tmon="$(vnstat -i eth0 -m | grep "`date +"%b '%y"`" | awk '{print $9" "substr ($10, 1, 1)}')"
 clear
-
-###########- END COLOR CODE -##########
-tram=$( free -h | awk 'NR==2 {print $2}' )
-uram=$( free -h | awk 'NR==2 {print $3}' )
-ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
-CITY=$(curl -s ipinfo.io/city )
-# Getting CPU Information
-cpu_usage1="$(ps aux | awk 'BEGIN {sum=0} {sum+=$3}; END {print sum}')"
-cpu_usage="$((${cpu_usage1/\.*} / ${corediilik:-1}))"
-cpu_usage+=" %"
-# TOTAL RAM
-total_ram=` grep "MemTotal: " /proc/meminfo | awk '{ print $2}'`
-totalram=$(($total_ram/1024))
-
-persenmemori="$(echo "scale=2; $usmem*100/$tomem" | bc)"
-#persencpu=
-persencpu="$(echo "scale=2; $cpu1+$cpu2" | bc)"
-
 
 # // Exporting Language to UTF-8
 
@@ -236,8 +202,14 @@ echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
 }
+export sem=$( curl -s https://raw.githubusercontent.com/heruahmad1/permission/main/ipmini)
+#export pak=$( cat /home/.ver)
 IPVPS=$(curl -s ipinfo.io/ip )
-clear 
+clear
+clear
+echo -e ""
+echo -e ""
+clear
 echo -e ""
 echo -e "\e[33m    ┌─────────────────────────────────────────────────┐\033[0m"
 echo -e "\e[33m ───│\033[0m  ${BICyan}   ┌─┐┬ ┬┌┬┐┌─┐┌─┐┌─┐┬─┐┬┌─┐┌┬┐  ┬  ┬┌┬┐┌─┐ \033[0m \e[33m  │───\033[0m"
