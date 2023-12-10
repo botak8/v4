@@ -209,6 +209,7 @@ clear
 clear
 echo -e ""
 echo -e "    AUTOSCRIPT LITE HR-vpn" | lolcat
+sleep 1
 clear
 echo -e ""
 echo -e "\e[33m    ┌─────────────────────────────────────────────────┐\033[0m"
