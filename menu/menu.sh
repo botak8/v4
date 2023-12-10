@@ -243,11 +243,11 @@ echo -e
 read -p " Select From Options [ 1 - 8 ] : " opt
 echo -e ""
 case $opt in
-1) clear ; menu1 ;;
-2) clear ; menu2 ;;
-3) clear ; menu3 ;;
-4) clear ; menu4 ;;
-5) clear ; menu5 ;;
+1) clear ; usernew ;;
+2) clear ; menu-vmess ;;
+3) clear ; menu-vless ;;
+4) clear ; menu-trojan ;;
+5) clear ; menu-trgo ;;
 6) clear ; menu-backup ;;
 7) clear ; bot ;;
 8) clear ; menu-set ;;
