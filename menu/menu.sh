@@ -49,13 +49,7 @@ green='\e[1;32m'
 NC='\e[0m'
 green() { echo -e "\\033[32;1m${*}\\033[0m"; }
 red() { echo -e "\\033[31;1m${*}\\033[0m"; }
-PERMISSION
 
-if [ "$res" = "Expired" ]; then
-Exp="\e[36mExpired\033[0m"
-else
-Exp=$(curl -sS https://raw.githubusercontent.com/heruahmad1/permission/main/ipmini | grep $MYIP | awk '{print $3}')
-fi
 
 # =========================================
 vlx=$(grep -c -E "^#& " "/etc/xray/config.json")
@@ -250,14 +244,7 @@ read -n 1 -s -r -p "Press any key to back on menu"
 menu
 }
 IPVPS=$(curl -s ipinfo.io/ip )
-clear
-DATE=$(date +'%d %B %Y')
-datediff() {
-    d1=$(date -d "$1" +%s)
-    d2=$(date -d "$2" +%s)
-    echo -e " ${BIWhite}     □ Expiry In           = ${GREEN}$(( (d1 - d2) / 86400 )) Days $NC"
-}
-mai="datediff "$Exp" "$DATE""
+clear 
 echo -e ""
 echo -e "\e[33m    ┌─────────────────────────────────────────────────┐\033[0m"
 echo -e "\e[33m ───│\033[0m  ${BICyan}   ┌─┐┬ ┬┌┬┐┌─┐┌─┐┌─┐┬─┐┬┌─┐┌┬┐  ┬  ┬┌┬┐┌─┐ \033[0m \e[33m  │───\033[0m"
@@ -275,12 +262,7 @@ echo -e "${BIWhite}      □ IP-VPS              = ${GREEN}$IPVPS${NC}"
 echo -e "${BIWhite}      □ Jumlah Ram          = ${GREEN}${totalram}MB, usg $cpu_usage"
 echo -e "${BIWhite}      □ Current Domain      = ${GREEN}$( cat /etc/xray/domain )${NC}"
 echo -e "${BIWhite}      □ NS Domain           = ${GREEN}$(cat /root/nsdomain)${NC}"
-if [ $Exp \< 1000 ];
-then
-echo -e " $BIWhite     License              = ${GREEN}$sisa_hari$NC Days Tersisa $NC"
-else
-    datediff "$Exp" "$DATE"
-fi
+echo -e " ${BIWhite}     □ Expiry In           = ${GREEN}$(( (d1 - d2) / 86400 )) Days $NC"
 echo -e "${BIYellow}  ┌─────────────────────────────────────────────────────┐${NC}" 
 echo -e "${BIYellow}  │\033[0m ${BOLD}${YELLOW}  ---- SSH ---- VMESS ---- VLESS ---- TROJAN ----$NC" 
 echo -e "${BIYellow}  │\033[0m ${BIWhite}        $ssh1        $vma          $vla           $tra $NC" 
