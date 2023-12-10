@@ -229,7 +229,7 @@ echo -e "${BIYellow}  └──────────────────�
 echo -e "${BICyan}       SSH ${NC}: $ressh"" ${BICyan} NGINX ${NC}: $resngx"" ${BICyan}  XRAY ${NC}: $resv2r"" ${BICyan} TROJAN ${NC}: $resv2r"
 echo -e "${BICyan}          STUNNEL ${NC}: $resst" "${BICyan} DROPBEAR ${NC}: $resdbr" "${BICyan} SSH-WS ${NC}: $ressshws"
 echo -e "${BIYellow}  ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "${BIYellow}  │   ${BICyan}[${BIWhite} 1 ${BICyan}] SSH OPVN MANAGER"          "     ${BICyan}[${BIWhite} 5 ${BICyan}] CHECK RUNNING ${NC}" "${BIYellow} │"
+echo -e "${BIYellow}  │   ${BICyan}[${BIWhite} 1 ${BICyan}] SSH OPVN MANAGER"          "     ${BICyan}[${BIWhite} 5 ${BICyan}] SHDWSK MANAGER${NC}" "${BIYellow} │"
 echo -e "${BIYellow}  │   ${BICyan}[${BIWhite} 2 ${BICyan}] VMESS MANAGER   "          "     ${BICyan}[${BIWhite} 6 ${BICyan}] MENU BACKUP   ${NC}" "${BIYellow} │"
 echo -e "${BIYellow}  │   ${BICyan}[${BIWhite} 3 ${BICyan}] VLESS MANAGER   "          "     ${BICyan}[${BIWhite} 7 ${BICyan}] BOT TELEGRAM  ${NC}" "${BIYellow} │"
 echo -e "${BIYellow}  │   ${BICyan}[${BIWhite} 4 ${BICyan}] TROJAN MANAGER  "          "     ${BICyan}[${BIWhite} 8 ${BICyan}] OTHER SETING  ${NC}" "${BIYellow} │"
@@ -243,11 +243,11 @@ echo -e
 read -p " Select From Options [ 1 - 8 ] : " opt
 echo -e ""
 case $opt in
-1) clear ; menu-ssh ;;
-2) clear ; menu-vmess ;;
-3) clear ; menu-vless ;;
-4) clear ; menu-trojan ;;
-5) clear ; running ;;
+1) clear ; menu1 ;;
+2) clear ; menu2 ;;
+3) clear ; menu3 ;;
+4) clear ; menu4 ;;
+5) clear ; menu5 ;;
 6) clear ; menu-backup ;;
 7) clear ; bot ;;
 8) clear ; menu-set ;;
