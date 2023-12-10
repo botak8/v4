@@ -2,35 +2,24 @@
 ipsaya=$(curl -sS ipinfo.io/ip)
 data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
-tram=$( free -h | awk 'NR==2 {print $2}' )
-uram=$( free -h | awk 'NR==2 {print $3}' )
 ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
 CITY=$(curl -s ipinfo.io/city )
-# Getting CPU Information
-cpu_usage1="$(ps aux | awk 'BEGIN {sum=0} {sum+=$3}; END {print sum}')"
-cpu_usage="$((${cpu_usage1/\.*} / ${corediilik:-1}))"
-cpu_usage+=" %"
-# TOTAL RAM
-total_ram=` grep "MemTotal: " /proc/meminfo | awk '{ print $2}'`
-totalram=$(($total_ram/1024))
-
-persenmemori="$(echo "scale=2; $usmem*100/$tomem" | bc)"
-#persencpu=
-persencpu="$(echo "scale=2; $cpu1+$cpu2" | bc)"
 data_ip="https://raw.githubusercontent.com/heruahmad1/permission/main/ipmini"
 checking_sc() {
     useexp=$(curl -sS $data_ip | grep $ipsaya | awk '{print $3}')
     if [[ $date_list < $useexp ]]; then
         echo -ne
     else
-        echo -e ""
-        echo -e " • AUTOSCRIPT LITE BY HR-vpn •  " | lolcat
-        echo -e ""
-        echo -e "\033[0;31m IZIN DITOLAK !\033[0m"
-        echo -e "\033[0;33m VPS ANDA\033[0m $ipsaya \033[0;33mTelah di Banned\033[0m"
-        echo -e "\033[0;33m Beli izin akses script\033[0m"
-        echo -e "\033[0;33m Hubungi ADMIN \033[0m"
-        echo -e "\033[0;36m Telegram\033[0m: https://t.me/heruahmad"
+        echo -e "\033[1;36m┌─────────────────────────────────────────────────┐\033[0m"
+        echo -e "\033[1;36m \033[0m ${COLBG1}          ${WH}• AUTOSCRIPT PREMIUM •               \033[0m \033[1;36m $NC"
+        echo -e "\033[1;36m└─────────────────────────────────────────────────┘\033[0m"
+        echo -e "\033[1;36m┌─────────────────────────────────────────────────┐\033[0m"
+        echo -e "            ${RED}PERMISSION DENIED !\033[0m"
+        echo -e "   \033[0;33mYour VPS\033[0m $ipsaya \033[0;33mHas been Banned\033[0m"
+        echo -e "     \033[0;33mBuy access permissions for scripts\033[0m"
+        echo -e "             \033[0;33mContact Your Admin \033[0m"
+        echo -e "     \033[0;36mTelegram\033[0m: https://t.me/heruahmad"
+        echo -e "\033[1;36m└─────────────────────────────────────────────────┘\033[0m"
         exit
     fi
 }
@@ -47,7 +36,7 @@ trx=$(grep -c -E "^#! " "/etc/xray/config.json")
 let tra=$trx/2
 ssx=$(grep -c -E "^## " "/etc/xray/config.json")
 let ssa=$ssx/2
-
+        
 UDPX="https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1S3IE25v_fyUfCLslnujFBSBMNunDHDk2' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1S3IE25v_fyUfCLslnujFBSBMNunDHDk2"
 # // Exporting Language to UTF-8
 BIBlack='\033[1;90m'      # Black
