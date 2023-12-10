@@ -35,9 +35,9 @@ checking_sc() {
         echo -e "\033[1;36m└─────────────────────────────────────────────────┘\033[0m"
         echo -e "\033[1;36m┌─────────────────────────────────────────────────┐\033[0m"
         echo -e "             \033[0;31m IZIN DITOLAK !\033[0m"
-        echo -e "           \033[0;33mVPS ANDA\033[0m $ipsaya \033[0;33mTelah di Banned\033[0m"
-        echo -e "         \033[0;33mBeli izin akses script\033[0m"
-        echo -e "                 \033[0;33mHubungi ADMIN \033[0m"
+        echo -e "      \033[0;33mVPS ANDA\033[0m $ipsaya \033[0;33mTelah di Banned\033[0m"
+        echo -e "          \033[0;33mBeli izin akses script\033[0m"
+        echo -e "               \033[0;33mHubungi ADMIN \033[0m"
         echo -e "          \033[0;36mTelegram\033[0m: https://t.me/heruahmad"
         echo -e "\033[1;36m└─────────────────────────────────────────────────┘\033[0m"
         exit
