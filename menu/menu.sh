@@ -30,6 +30,8 @@ checking_sc() {
     if [[ $date_list < $useexp ]]; then
         echo -ne
     else
+        clear
+        echo -e ""
         echo -e " • AUTOSCRIPT LITE BY HR-vpn •  " | lolcat
         echo -e ""
         echo -e "\033[0;31m IZIN DITOLAK !\033[0m"
