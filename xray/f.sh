@@ -13,8 +13,8 @@ wget -O menu-vmess "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/me
 wget -O menu-vless "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/menu3.sh"
 wget -O running "https://raw.githubusercontent.com/botak8/v4/main/menu/running.sh"
 wget -O clearcache "https://raw.githubusercontent.com/botak8/v4/main/menu/clearcache.sh"
-wget -O menu-trgo "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/menu4.sh"
-wget -O menu-trojan "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/menu5.sh"
+wget -O menu-trgo "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/menu5.sh"
+wget -O menu-trojan "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/menu4.sh"
 # menu ssh ovpn
 wget -O menu-ssh "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/menu-vmess.sh"
 wget -O usernew "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/add1.sh"
