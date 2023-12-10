@@ -1,21 +1,23 @@
 #!/bin/bash
 
 cd /usr/bin
+# vmess
+wget -O add-ws "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/add2.sh" && chmod +x add-ws
+wget -O add-vless "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/add3.sh" && chmod +x add-vless
+wget -O add-tr "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/add4.sh" && chmod +x add-tr
+wget -O addtrgo "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/add5.sh" && chmod +x addtrgo
+
 # menu
 wget -O menu "https://raw.githubusercontent.com/botak8/v4/main/menu/menu.sh"
-wget -O menu2 "https://raw.githubusercontent.com/heruahmad1/backupvpshrvpn/main/menu2.sh"
-wget -O menu3 "https://raw.githubusercontent.com/heruahmad1/backupvpshrvpn/main/menu3.sh"
+wget -O menu-vmess "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/menu2.sh"
+wget -O menu-vless "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/menu3.sh"
 wget -O running "https://raw.githubusercontent.com/botak8/v4/main/menu/running.sh"
 wget -O clearcache "https://raw.githubusercontent.com/botak8/v4/main/menu/clearcache.sh"
-wget -O menu5 "https://raw.githubusercontent.com/heruahmad1/backupvpshrvpn/main/menu5.sh"
-wget -O menu4 "https://raw.githubusercontent.com/heruahmad1/backupvpshrvpn/main/menu4.sh"
+wget -O menu-trgo "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/menu4.sh"
+wget -O menu-trojan "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/menu5.sh"
 # menu ssh ovpn
-wget -O menu1 "https://raw.githubusercontent.com/heruahmad1/backupvpshrvpn/main/menu1.sh"
-wget -O add1 "https://raw.githubusercontent.com/heruahmad1/backupvpshrvpn/main/add1.sh"
-wget -O add2 "https://raw.githubusercontent.com/heruahmad1/backupvpshrvpn/main/add2.sh"
-wget -O add3 "https://raw.githubusercontent.com/heruahmad1/backupvpshrvpn/main/add3.sh"
-wget -O add4 "https://raw.githubusercontent.com/heruahmad1/backupvpshrvpn/main/add4.sh"
-wget -O add5 "https://raw.githubusercontent.com/heruahmad1/backupvpshrvpn/main/add5.sh"
+wget -O menu-ssh "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/menu-vmess.sh"
+wget -O usernew "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/add1.sh"
 
 # menu system
 wget -O menu-set "https://raw.githubusercontent.com/botak8/v4/main/menu/menu-set.sh"
@@ -35,7 +37,7 @@ wget -O xp "https://raw.githubusercontent.com/botak8/v4/main/ssh/xp.sh"
 wget -O acs-set "https://raw.githubusercontent.com/botak8/v4/main/acs-set.sh"
 wget -O sshws "https://raw.githubusercontent.com/botak8/v4/main/ssh/sshws.sh"
 wget -O status "https://raw.githubusercontent.com/botak8/v4/main/status.sh"
-wget -O menu-backup "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/menu-backup.sh"
+wget -O menu-backup "https://raw.githubusercontent.com/botak8/v4/main/backup/menu-backup.sh"
 wget -O backup "https://raw.githubusercontent.com/botak8/v4/main/backup/backup.sh"
 wget -O restore "https://raw.githubusercontent.com/botak8/v4/main/backup/restore.sh"
 wget -O jam "https://raw.githubusercontent.com/botak8/v4/main/jam.sh"
@@ -45,19 +47,25 @@ wget -q -O /usr/bin/unlock "https://raw.githubusercontent.com/sasak3/v4/main/ssh
 wget -q -O /usr/bin/update "https://raw.githubusercontent.com/botak8/v4/main/update.sh"
 
 chmod +x menu
-chmod +x menu1
-chmod +x menu2
-chmod +x menu3
+chmod +x menu-trial
+chmod +x menu-vmess
+chmod +x menu-vless
 chmod +x running
 chmod +x clearcache
-chmod +x menu4
-chmod +x menu5
+chmod +x menu-trgo
+chmod +x menu-trojan
 
-chmod +x add1
-chmod +x add2
-chmod +x add3
-chmod +x add4
-chmod +x add5
+chmod +x menu-ssh
+chmod +x usernew
+chmod +x trial
+chmod +x renew
+chmod +x hapus
+chmod +x cek
+chmod +x member
+chmod +x delete
+chmod +x autokill
+chmod +x ceklim
+chmod +x tendang
 
 chmod +x menu-set
 chmod +x menu-domain
