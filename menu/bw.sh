@@ -23,8 +23,6 @@ echo -e "\e[33m └────────────────────�
 echo -e ""
 read -p " Select menu : " opt
 echo -e ""
-read -p " Select menu : " opt
-echo -e ""
 case $opt in
 1)
 clear 
