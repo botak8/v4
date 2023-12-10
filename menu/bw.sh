@@ -37,7 +37,7 @@ echo -e ""
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e ""
 read -n 1 -s -r -p "Press any key to back on menu"
-bw
+menu
 ;;
 
 2)
@@ -53,7 +53,7 @@ echo -e ""
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e ""
 read -n 1 -s -r -p "Press any key to back on menu"
-bw
+menu
 ;;
 
 3)
@@ -69,7 +69,7 @@ echo -e ""
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e ""
 read -n 1 -s -r -p "Press any key to back on menu"
-bw
+menu
 ;;
 
 4)
@@ -85,7 +85,7 @@ echo -e ""
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e ""
 read -n 1 -s -r -p "Press any key to back on menu"
-bw
+menu
 ;;
 
 5)
@@ -101,7 +101,7 @@ echo -e ""
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e ""
 read -n 1 -s -r -p "Press any key to back on menu"
-bw
+menu
 ;;
 
 6)
@@ -117,7 +117,7 @@ echo -e ""
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e ""
 read -n 1 -s -r -p "Press any key to back on menu"
-bw
+menu
 ;;
 
 7)
@@ -133,7 +133,7 @@ echo -e ""
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e ""
 read -n 1 -s -r -p "Press any key to back on menu"
-bw
+menu
 ;;
 
 8)
@@ -149,7 +149,7 @@ echo -e ""
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e ""
 read -n 1 -s -r -p "Press any key to back on menu"
-bw
+menu
 ;;
 
 9)
@@ -166,7 +166,7 @@ echo -e ""
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e ""
 read -n 1 -s -r -p "Press any key to back on menu"
-bw
+menu
 ;;
 
 10)
@@ -182,7 +182,7 @@ echo -e ""
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e ""
 read -n 1 -s -r -p "Press any key to back on menu"
-bw
+menu
 ;;
 
 0)
