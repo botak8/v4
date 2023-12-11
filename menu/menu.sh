@@ -5,26 +5,61 @@ date_list=$(date +"%Y-%m-%d" -d "$data_server")
 ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
 CITY=$(curl -s ipinfo.io/city )
 data_ip="https://raw.githubusercontent.com/heruahmad1/permission/main/ipmini"
-checking_sc() {
-    useexp=$(curl -sS $data_ip | grep $ipsaya | awk '{print $3}')
-    if [[ $date_list < $useexp ]]; then
-        echo -ne
+BURIQ () {
+    curl -sS https://raw.githubusercontent.com/heruahmad1/permission/main/ipmini > /root/tmp
+    data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
+    for user in "${data[@]}"
+    do
+    exp=( `grep -E "^### $user" "/root/tmp" | awk '{print $3}'` )
+    d1=(`date -d "$exp" +%s`)
+    d2=(`date -d "$biji" +%s`)
+    exp2=$(( (d1 - d2) / 86400 ))
+    if [[ "$exp2" -le "0" ]]; then
+    echo $user > /etc/.$user.ini
     else
-        echo -e "\033[1;36m┌─────────────────────────────────────────────────┐\033[0m"
-        echo -e "\033[1;36m \033[0m ${COLBG1}          ${WH}• AUTOSCRIPT PREMIUM •               \033[0m \033[1;36m $NC"
-        echo -e "\033[1;36m└─────────────────────────────────────────────────┘\033[0m"
-        echo -e "\033[1;36m┌─────────────────────────────────────────────────┐\033[0m"
-        echo -e "            ${RED}PERMISSION DENIED !\033[0m"
-        echo -e "   \033[0;33mYour VPS\033[0m $ipsaya \033[0;33mHas been Banned\033[0m"
-        echo -e "     \033[0;33mBuy access permissions for scripts\033[0m"
-        echo -e "             \033[0;33mContact Your Admin \033[0m"
-        echo -e "     \033[0;36mTelegram\033[0m: https://t.me/heruahmad"
-        echo -e "\033[1;36m└─────────────────────────────────────────────────┘\033[0m"
-        exit
+    rm -f /etc/.$user.ini > /dev/null 2>&1
     fi
+    done
+    rm -f /root/tmp
 }
-checking_sc
-Name=$(curl -sS https://raw.githubusercontent.com/heruahmad1/permission/main/ipmini | grep $ipsaya | awk '{print $2}')
+
+MYIP=$(curl -sS ipv4.icanhazip.com)
+Name=$(curl -sS https://raw.githubusercontent.com/heruahmad1/permission/main/ipmini | grep $MYIP | awk '{print $2}')
+echo $Name > /usr/local/etc/.$Name.ini
+CekOne=$(cat /usr/local/etc/.$Name.ini)
+
+Bloman () {
+if [ -f "/etc/.$Name.ini" ]; then
+CekTwo=$(cat /etc/.$Name.ini)
+    if [ "$CekOne" = "$CekTwo" ]; then
+        res="Expired"
+    fi
+else
+res="Permission Accepted..."
+fi
+}
+
+PERMISSION () {
+    MYIP=$(curl -sS ipv4.icanhazip.com)
+    IZIN=$(curl -sS https://raw.githubusercontent.com/heruahmad1/permission/main/ipmini | awk '{print $4}' | grep $MYIP)
+    if [ "$MYIP" = "$IZIN" ]; then
+    Bloman
+    else
+    res="Permission Denied!"
+    fi
+    BURIQ
+}
+PERMISSION
+if [ -f /home/needupdate ]; then
+red "Your script need to update first !"
+exit 0
+elif [ "$res" = "Permission Accepted..." ]; then
+echo -ne
+else
+red "Permission Denied!"
+exit 0
+fi
+clear
 # =========================================
 vlx=$(grep -c -E "^#& " "/etc/xray/config.json")
 let vla=$vlx/2
