@@ -22,7 +22,4 @@ echo -e "loading......" | lolcat
                 systemctl restart ws-stunnel.service
                 echo -e "[ \033[1;36mOK\033[0m ] Restart Trojan Go (via systemctl) "
                 systemctl restart trojan-go.service 
-                echo -e "[ \033[1;32mSUCCES\033[0m ] \e[1;36mRestarted All Service\033[0m"
-                echo ""
-                read -n 1 -s -r -p "Press any key to back on system menu"
-                menu
+                exit
