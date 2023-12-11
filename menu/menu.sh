@@ -1,12 +1,7 @@
 #!/bin/bash
-ipsaya=$(curl -sS ipinfo.io/ip)
-data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
-date_list=$(date +"%Y-%m-%d" -d "$data_server")
-ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
-CITY=$(curl -s ipinfo.io/city )
-data_ip="https://raw.githubusercontent.com/heruahmad1/permission/main/ipmini"
+
 BURIQ () {
-    curl -sS https://raw.githubusercontent.com/heruahmad1/permission/main/ipmini > /root/tmp
+    curl -sS https://raw.githubusercontent.com/Andyyuda/v5/main/izin > /root/tmp
     data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
     for user in "${data[@]}"
     do
@@ -24,7 +19,7 @@ BURIQ () {
 }
 
 MYIP=$(curl -sS ipv4.icanhazip.com)
-Name=$(curl -sS https://raw.githubusercontent.com/heruahmad1/permission/main/ipmini | grep $MYIP | awk '{print $2}')
+Name=$(curl -sS https://raw.githubusercontent.com/Andyyuda/v5/main/izin | grep $MYIP | awk '{print $2}')
 echo $Name > /usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini)
 
@@ -41,7 +36,7 @@ fi
 
 PERMISSION () {
     MYIP=$(curl -sS ipv4.icanhazip.com)
-    IZIN=$(curl -sS https://raw.githubusercontent.com/heruahmad1/permission/main/ipmini | awk '{print $4}' | grep $MYIP)
+    IZIN=$(curl -sS https://raw.githubusercontent.com/Andyyuda/v5/main/izin | awk '{print $4}' | grep $MYIP)
     if [ "$MYIP" = "$IZIN" ]; then
     Bloman
     else
@@ -49,17 +44,19 @@ PERMISSION () {
     fi
     BURIQ
 }
+red='\e[1;31m'
+green='\e[1;32m'
+NC='\e[0m'
+green() { echo -e "\\033[32;1m${*}\\033[0m"; }
+red() { echo -e "\\033[31;1m${*}\\033[0m"; }
 PERMISSION
-if [ -f /home/needupdate ]; then
-red "Your script need to update first !"
-exit 0
-elif [ "$res" = "Permission Accepted..." ]; then
-echo -ne
+
+if [ "$res" = "Expired" ]; then
+Exp="\e[36mExpired\033[0m"
 else
-red "Permission Denied!"
-exit 0
+Exp=$(curl -sS https://raw.githubusercontent.com/Andyyuda/v5/main/izin | grep $MYIP | awk '{print $3}')
 fi
-clear
+
 # =========================================
 vlx=$(grep -c -E "^#& " "/etc/xray/config.json")
 let vla=$vlx/2
@@ -71,7 +68,7 @@ trx=$(grep -c -E "^#! " "/etc/xray/config.json")
 let tra=$trx/2
 ssx=$(grep -c -E "^## " "/etc/xray/config.json")
 let ssa=$ssx/2
-        
+
 UDPX="https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1S3IE25v_fyUfCLslnujFBSBMNunDHDk2' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1S3IE25v_fyUfCLslnujFBSBMNunDHDk2"
 # // Exporting Language to UTF-8
 BIBlack='\033[1;90m'      # Black
@@ -107,6 +104,24 @@ dmon="$(vnstat -i eth0 -m | grep "`date +"%b '%y"`" | awk '{print $3" "substr ($
 umon="$(vnstat -i eth0 -m | grep "`date +"%b '%y"`" | awk '{print $6" "substr ($7, 1, 1)}')"
 tmon="$(vnstat -i eth0 -m | grep "`date +"%b '%y"`" | awk '{print $9" "substr ($10, 1, 1)}')"
 clear
+
+###########- END COLOR CODE -##########
+tram=$( free -h | awk 'NR==2 {print $2}' )
+uram=$( free -h | awk 'NR==2 {print $3}' )
+ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
+CITY=$(curl -s ipinfo.io/city )
+# Getting CPU Information
+cpu_usage1="$(ps aux | awk 'BEGIN {sum=0} {sum+=$3}; END {print sum}')"
+cpu_usage="$((${cpu_usage1/\.*} / ${corediilik:-1}))"
+cpu_usage+=" %"
+# TOTAL RAM
+total_ram=` grep "MemTotal: " /proc/meminfo | awk '{ print $2}'`
+totalram=$(($total_ram/1024))
+
+persenmemori="$(echo "scale=2; $usmem*100/$tomem" | bc)"
+#persencpu=
+persencpu="$(echo "scale=2; $cpu1+$cpu2" | bc)"
+
 
 # // Exporting Language to UTF-8
 
@@ -153,7 +168,7 @@ ressh="${green}ON${NC}"
 else
 ressh="${red}OFF${NC}"
 fi
-sshstunel=$(service stunnel4 status | grep active | cut -d ' ' $stat)
+sshstunel=$(service stunnel5 status | grep active | cut -d ' ' $stat)
 if [ "$sshstunel" = "active" ]; then
 resst="${green}ON${NC}"
 else
@@ -234,10 +249,9 @@ echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
 menu
 }
-export sem=$( curl -s https://raw.githubusercontent.com/heruahmad1/permission/main/ipmini)
-#export pak=$( cat /home/.ver)
+export sem=$( curl -s https://raw.githubusercontent.com/artanodrop/permission/main/versions)
+export pak=$( cat /home/.ver)
 IPVPS=$(curl -s ipinfo.io/ip )
-clear
 clear
 echo -e ""
 echo -e "\e[33m    ┌─────────────────────────────────────────────────┐\033[0m"
@@ -247,6 +261,13 @@ echo -e "\e[33m ───│\033[0m  ${BICyan}   ┴ ┴└─┘ ┴ └─┘�
 echo -e "\e[33m ───│\033[0m  ${BIWhite}       HR-vpn (C)https://t.me/HRstores      \033[0m \e[33m  │───\033[0m"
 echo -e "\e[33m    └─────────────────────────────────────────────────┘\033[0m"
 echo -e "${red}                  ♦️ SERVER INFORMATION ♦️   ${NC}"
+DATE=$(date +'%d %B %Y')
+datediff() {
+    d1=$(date -d "$1" +%s)
+    d2=$(date -d "$2" +%s)
+    echo -e " ${BICyan}│$NC    Expiry In     :\033[1;31m $Name \e[0m${NC} $(( (d1 - d2) / 86400 )) Days $NC"
+}
+mai="datediff "$Exp" "$DATE""
 echo -e "${BIYellow}                 ──────────────────────────${NC}"
 echo -e "${BIWhite}      □ Server Uptime       = ${GREEN}$( uptime -p  | cut -d " " -f 2-10000 ) ${NC}"
 echo -e "${BIWhite}      □ Operating System    = ${GREEN}$( cat /etc/os-release | grep -w PRETTY_NAME | sed 's/PRETTY_NAME//g' | sed 's/=//g' | sed 's/"//g' )${NC}"
@@ -255,6 +276,12 @@ echo -e "${BIWhite}      □ CITY                = ${GREEN}${CITY} ${NC}"
 echo -e "${BIWhite}      □ IP-VPS              = ${GREEN}$(curl -sS ipv4.icanhazip.com)${NC}"           
 echo -e "${BIWhite}      □ Current Domain      = ${GREEN}$( cat /etc/xray/domain )${NC}"
 echo -e "${BIWhite}      □ NS Domain           = ${GREEN}$(cat /root/nsdomain)${NC}"
+if [ $exp \< 1000 ];
+then
+echo -e "   $BICyan│$NC License      : ${GREEN}$sisa_hari$NC Days Tersisa $NC"
+else
+    datediff "$Exp" "$DATE"
+fi;
 echo -e " ${BIWhite}     □ User script Exp     = ${GREEN}$useexp ${NC} \033[1;31m$Name \e[0m${NC} "
 echo -e "${BIYellow}  ┌─────────────────────────────────────────────────────┐${NC}" 
 echo -e "${BIYellow}  │\033[0m ${BOLD}${YELLOW}  ---- SSH ---- VMESS ---- VLESS ---- TROJAN ----$NC" 
