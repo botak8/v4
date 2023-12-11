@@ -93,7 +93,7 @@ case $opt in
 2) clear ; add-host ; exit ;;
 3) clear ; nano /etc/issue.net ; exit ;; #ssh-vpn banner.conf
 4) clear ; jam ; exit ;;
-5) clear ; wget --load-cookies /tmp/cookies.txt ${UDPX} -O install-udp && rm -rf /tmp/cookies.txt && chmod +x install-udp && ./install-udp ;;
+5) clear ; clear ; wget -load -cookies /tmp/cookies.txt ${UDPX} -O install-udp && rm -rf /tmp/cookies.txt && chmod +x install-udp && ./install-udp ;;
 6) clear ; speedtest ; exit ;;
 7) clear ; restart ; exit ;;
 8) clear ; bw ; exit ;;
