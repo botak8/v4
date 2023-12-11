@@ -253,7 +253,6 @@ echo -e "${BIWhite}      □ Operating System    = ${GREEN}$( cat /etc/os-releas
 echo -e "${BIWhite}      □ ISP VPS             = ${GREEN}${ISP} ${NC}"           
 echo -e "${BIWhite}      □ CITY                = ${GREEN}${CITY} ${NC}"
 echo -e "${BIWhite}      □ IP-VPS              = ${GREEN}$IPVPS${NC}"           
-echo -e "${BIWhite}      □ Jumlah Ram          = ${GREEN}${totalram}MB,, CPU $cpu_usage"
 echo -e "${BIWhite}      □ Current Domain      = ${GREEN}$( cat /etc/xray/domain )${NC}"
 echo -e "${BIWhite}      □ NS Domain           = ${GREEN}$(cat /root/nsdomain)${NC}"
 echo -e " ${BIWhite}     □ User script Exp     = ${GREEN}$useexp${NC} \033[1;31m$Name \e[0m${NC} "
@@ -278,7 +277,7 @@ echo -e
 read -p " Select From Options [ 1 - 8 ] : " opt
 echo -e ""
 case $opt in
-1) clear ; usernew ;;
+1) clear ; menu-ssh ;;
 2) clear ; menu-vmess ;;
 3) clear ; menu-vless ;;
 4) clear ; menu-trojan ;;
