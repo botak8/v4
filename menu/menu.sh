@@ -17,7 +17,7 @@ checking_sc() {
         echo -e "            Your VPS $ipsaya Has been Banned" | lolcat
         echo -e "            Buy access permissions for script" | lolcat
         echo -e "                   Contact Your Admin " | lolcat
-        echo -e "            Telegram : https://t.me/heruahmad"" | lolcat
+        echo -e "            Telegram : https://t.me/heruahmad" | lolcat
         exit
     fi
 }
