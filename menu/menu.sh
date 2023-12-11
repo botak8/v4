@@ -209,13 +209,6 @@ echo -e "\e[33m ───│\033[0m  ${BICyan}   ┴ ┴└─┘ ┴ └─┘�
 echo -e "\e[33m ───│\033[0m  ${BIWhite}       HR-vpn (C)https://t.me/HRstores      \033[0m \e[33m  │───\033[0m"
 echo -e "\e[33m    └─────────────────────────────────────────────────┘\033[0m"
 echo -e "${red}                  ♦️ SERVER INFORMATION ♦️   ${NC}"
-DATE=$(date +'%d %B %Y')
-datediff() {
-    d1=$(date -d "$1" +%s)
-    d2=$(date -d "$2" +%s)
-    echo -e " ${BICyan}│$NC    Expiry In     :\033[1;31m $Name \e[0m${NC} $(( (d1 - d2) / 86400 )) Days $NC"
-}
-mai="datediff "$Exp" "$DATE""
 echo -e "${BIYellow}                 ──────────────────────────${NC}"
 echo -e "${BIWhite}      □ Server Uptime       = ${GREEN}$( uptime -p  | cut -d " " -f 2-10000 ) ${NC}"
 echo -e "${BIWhite}      □ Operating System    = ${GREEN}$( cat /etc/os-release | grep -w PRETTY_NAME | sed 's/PRETTY_NAME//g' | sed 's/=//g' | sed 's/"//g' )${NC}"
@@ -224,12 +217,6 @@ echo -e "${BIWhite}      □ CITY                = ${GREEN}${CITY} ${NC}"
 echo -e "${BIWhite}      □ IP-VPS              = ${GREEN}$(curl -sS ipv4.icanhazip.com)${NC}"           
 echo -e "${BIWhite}      □ Current Domain      = ${GREEN}$( cat /etc/xray/domain )${NC}"
 echo -e "${BIWhite}      □ NS Domain           = ${GREEN}$(cat /root/nsdomain)${NC}"
-if [ $exp \< 1000 ];
-then
-echo -e "   $BICyan│$NC License      : ${GREEN}$sisa_hari$NC Days Tersisa $NC"
-else
-    datediff "$Exp" "$DATE"
-fi;
 echo -e " ${BIWhite}     □ User script Exp     = ${GREEN}$useexp ${NC} \033[1;31m$Name \e[0m${NC} "
 echo -e "${BIYellow}  ┌─────────────────────────────────────────────────────┐${NC}" 
 echo -e "${BIYellow}  │\033[0m ${BOLD}${YELLOW}  ---- SSH ---- VMESS ---- VLESS ---- TROJAN ----$NC" 
