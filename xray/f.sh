@@ -5,19 +5,31 @@ cd /usr/bin
 wget -O add-ws "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/add2.sh" && chmod +x add-ws
 wget -O add-vless "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/add3.sh" && chmod +x add-vless
 wget -O add-tr "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/add4.sh" && chmod +x add-tr
-wget -O addtrgo "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/add5.sh" && chmod +x addtrgo
-
+wget -O addtrgo "https://raw.githubusercontent.com/sasak3/v4/main/xray/addtrgo.sh" && chmod +x addtrgo
+wget -O trialtrojango "https://raw.githubusercontent.com/sasak3/v4/main/xray/trialtrojango.sh" && chmod +x trialtrojango
+wget -O deltrgo "https://raw.githubusercontent.com/sasak3/v4/main/xray/deltrgo.sh" && chmod +x deltrgo
+wget -O renewtrgo "https://raw.githubusercontent.com/sasak3/v4/main/xray/renewtrgo.sh" && chmod +x renewtrgo
+wget -O cektrgo "https://raw.githubusercontent.com/sasak3/v4/main/xray/cektrgo.sh" && chmod +x cektrgo
 # menu
 wget -O menu "https://raw.githubusercontent.com/botak8/v4/main/menu/menu.sh"
 wget -O menu-vmess "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/menu2.sh"
 wget -O menu-vless "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/menu3.sh"
 wget -O running "https://raw.githubusercontent.com/botak8/v4/main/menu/running.sh"
 wget -O clearcache "https://raw.githubusercontent.com/botak8/v4/main/menu/clearcache.sh"
-wget -O menu-trgo "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/menu5.sh"
+wget -O menu-trgo "https://raw.githubusercontent.com/botak8/v4/main/menu/menu-trgo.sh"
 wget -O menu-trojan "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/menu4.sh"
 # menu ssh ovpn
-wget -O menu-ssh "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/menu1.sh"
-wget -O usernew "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/add1.sh"
+wget -O menu-ssh "https://raw.githubusercontent.com/botak8/v4/main/menu/menu-ssh.sh"
+wget -O usernew "https://raw.githubusercontent.com/sasak3/v4/main/ssh/usernew.sh"
+wget -O trial "https://raw.githubusercontent.com/sasak3/v4/main/ssh/trial.sh"
+wget -O renew "https://raw.githubusercontent.com/sasak3/v4/main/ssh/renew.sh"
+wget -O hapus "https://raw.githubusercontent.com/sasak3/v4/main/ssh/hapus.sh"
+wget -O cek "https://raw.githubusercontent.com/sasak3/v4/main/ssh/cek.sh"
+wget -O member "https://raw.githubusercontent.com/sasak3/v4/main/ssh/member.sh"
+wget -O delete "https://raw.githubusercontent.com/sasak3/v4/main/ssh/delete.sh"
+wget -O autokill "https://raw.githubusercontent.com/botak8/v4/main/ssh/autokill.sh"
+wget -O ceklim "https://raw.githubusercontent.com/botak8/v4/main/ssh/ceklim.sh"
+wget -O tendang "https://raw.githubusercontent.com/botak8/v4/main/ssh/tendang.sh"
 
 # menu system
 wget -O menu-set "https://raw.githubusercontent.com/botak8/v4/main/menu/menu-set.sh"
