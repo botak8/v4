@@ -3,6 +3,31 @@
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 clear
+ipsaya=$(curl -sS ipinfo.io/ip)
+data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
+date_list=$(date +"%Y-%m-%d" -d "$data_server")
+ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
+CITY=$(curl -s ipinfo.io/city )
+data_ip="https://raw.githubusercontent.com/heruahmad1/permission/main/ipmini"
+checking_sc() {
+    useexp=$(curl -sS $data_ip | grep $ipsaya | awk '{print $3}')
+    if [[ $date_list < $useexp ]]; then
+        echo -ne
+    else
+        echo -e "
+        echo -e "                  • AUTOSCRIPT LITE •" | lolcat 
+        echo -e "
+        echo -e "                   PERMISSION DENIED !" | lolcat
+        echo -e "            Your VPS $ipsaya Has been Banned" | lolcat
+        echo -e "            Buy access permissions for script" | lolcat
+        echo -e "                   Contact Your Admin " | lolcat
+        echo -e "            Telegram : https://t.me/heruahmad" | lolcat
+        exit
+    fi
+}
+checking_sc
+Name=$(curl -sS https://raw.githubusercontent.com/heruahmad1/permission/main/ipmini | grep $ipsaya | awk '{print $2}')
+# =========================================
 red='\e[1;31m'
 green='\e[0;32m'
 yell='\e[1;33m'
@@ -135,14 +160,9 @@ sleep 2
 wget https://raw.githubusercontent.com/botak8/v4/main/xray/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
 wget https://raw.githubusercontent.com/botak8/v4/main/sshws/insshws.sh && chmod +x insshws.sh && ./insshws.sh
 clear
-echo -e "[ ${green}INFO${NC} ] install udp"
 sleep 2
 wget -q -O slow.sh https://raw.githubusercontent.com/Andyyuda/xray-ssh/main/slow.sh && chmod +x slow.sh && ./slow.sh
 clear
-sleep 2
-wget https://raw.githubusercontent.com/sasak3/v4/main/udp/udp.sh && bash udp.sh
-clear
-sleep 2
 fun_bar() {
     CMD[0]="$1"
     CMD[1]="$2"
