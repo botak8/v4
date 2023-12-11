@@ -40,6 +40,7 @@ cp crontab /etc/
 strt
 rm -rf /root/backup
 rm -f backup.zip
+clear
 echo -e "[ ${green}INFO${NC} ] Restore berhasil... " 
 sleep 0.5
 echo -e "[ ${green}INFO${NC} ] Restart all service untuk mengaktipkan akun kembali. " 
