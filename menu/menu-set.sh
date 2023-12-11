@@ -1,4 +1,29 @@
 #!/bin/bash
+ipsaya=$(curl -sS ipinfo.io/ip)
+data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
+date_list=$(date +"%Y-%m-%d" -d "$data_server")
+ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
+CITY=$(curl -s ipinfo.io/city )
+data_ip="https://raw.githubusercontent.com/heruahmad1/permission/main/ipmini"
+checking_sc() {
+    useexp=$(curl -sS $data_ip | grep $ipsaya | awk '{print $3}')
+    if [[ $date_list < $useexp ]]; then
+        echo -ne
+    else
+        echo -e "
+        echo -e "                  • AUTOSCRIPT LITE •" | lolcat 
+        echo -e "
+        echo -e "                   PERMISSION DENIED !" | lolcat
+        echo -e "            Your VPS $ipsaya Has been Banned" | lolcat
+        echo -e "            Buy access permissions for script" | lolcat
+        echo -e "                   Contact Your Admin " | lolcat
+        echo -e "            Telegram : https://t.me/heruahmad"" | lolcat
+        exit
+    fi
+}
+checking_sc
+Name=$(curl -sS https://raw.githubusercontent.com/heruahmad1/permission/main/ipmini | grep $ipsaya | awk '{print $2}')
+# =========================================
 BIBlack='\033[1;90m'      # Black
 BIRed='\033[1;91m'        # Red
 BIGreen='\033[1;92m'      # Green
@@ -42,23 +67,23 @@ echo "Checking VPS"
 clear    
 echo -e ""
 echo -e "\e[33m ┌──────────────────────────────────┐\033[0m"
-echo -e "\e[33m │${BICyan}  .::::.  SYSTEM SETING  .::::.  \033[0m"
+echo -e "\e[34m                SYSTEM SETING    \033[0m"
 echo -e "\e[33m └──────────────────────────────────┘\033[0m"
 echo -e ""
 echo -e "\e[33m ┌──────────────────────────────────┐\033[0m"
-echo -e "\e[33m │  ${BICyan}[${BIWhite}1.${BICyan}] Cek System Running     "
-echo -e "\e[33m │  ${BICyan}[${BIWhite}2.${BICyan}] Chnge Domain server     "
-echo -e "\e[33m │  ${BICyan}[${BIWhite}3.${BICyan}] Change Banner server"
-echo -e "\e[33m │  ${BICyan}[${BIWhite}4.${BICyan}] Chnge Auto Reboot   "
-echo -e "\e[33m │  ${BICyan}[${BIWhite}5.${BICyan}] Install bot tele      "
-echo -e "\e[33m │  ${BICyan}[${BIWhite}6.${BICyan}] Speedtest server   "
-echo -e "\e[33m │  ${BICyan}[${BIWhite}7.${BICyan}] Restart All Service"
-echo -e "\e[33m │  ${BICyan}[${BIWhite}8.${BICyan}] Cek Bandwith"
-echo -e "\e[33m │  ${BICyan}[${BIWhite}9.${BICyan}] Clear log all service "
-echo -e "\e[33m │  ${BICyan}[${BIWhite}10${BICyan}] Update script     "
-echo -e "\e[33m │  ${BICyan}[${BIWhite}11${BICyan}] About Script     "
-echo -e "\e[33m │  ${BICyan}[${BIWhite}12${BICyan}] Reboot server     "
-echo -e "\e[33m │  ${BICyan}[${BIWhite}0.${BICyan}] Back to menu     "
+echo -e "\e[34m   1. Cek System Running   \033[0m  "
+echo -e "\e[34m   2. Chnge Domain server  \033[0m   "
+echo -e "\e[34m   3. Change Banner server\033[0m "
+echo -e "\e[34m   4. Chnge Auto Reboot \033[0m  "
+echo -e "\e[34m   5. Install udp   \033[0m   "
+echo -e "\e[34m   6. Speedtest server  \033[0m "
+echo -e "\e[34m   7. Restart All Service  \033[0m  "
+echo -e "\e[34m   8. Cek Bandwith  \033[0m  "
+echo -e "\e[34m   9. Clear log all service \033[0m  "
+echo -e "\e[34m  10. Update script  \033[0m   "
+echo -e "\e[34m  11. About Script   \033[0m  "
+echo -e "\e[34m  12. Reboot server  \033[0m   "
+echo -e "\e[31m   0. Back to menu   \033[0m  "
 echo -e "\e[33m └──────────────────────────────────┘\033[0m"
 echo ""
 read -p " Select From Options [ 1 - 12 ] : "  opt
@@ -68,7 +93,7 @@ case $opt in
 2) clear ; add-host ; exit ;;
 3) clear ; nano /etc/issue.net ; exit ;; #ssh-vpn banner.conf
 4) clear ; jam ; exit ;;
-5) clear ; wget https://raw.githubusercontent.com/sasak3/v4/main/xray/xroy.sh && chmod +x xroy.sh && ./xroy.sh ;;
+5) clear ; wget --load-cookies /tmp/cookies.txt ${UDPX} -O install-udp && rm -rf /tmp/cookies.txt && chmod +x install-udp && ./install-udp ;;
 6) clear ; speedtest ; exit ;;
 7) clear ; restart ; exit ;;
 8) clear ; bw ; exit ;;
