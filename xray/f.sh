@@ -16,7 +16,7 @@ wget -O clearcache "https://raw.githubusercontent.com/botak8/v4/main/menu/clearc
 wget -O menu-trgo "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/menu5.sh"
 wget -O menu-trojan "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/menu4.sh"
 # menu ssh ovpn
-wget -O menu-ssh "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/menu-vmess.sh"
+wget -O menu-ssh "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/menu1.sh"
 wget -O usernew "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/add1.sh"
 
 # menu system
