@@ -12,13 +12,13 @@ checking_sc() {
         echo -ne
     else
         echo -e "
-        echo -e "                  • AUTOSCRIPT LITE •" | lolcat 
+        echo -e "                  • AUTOSCRIPT LITE •" 
         echo -e "
-        echo -e "                   PERMISSION DENIED !" | lolcat
-        echo -e "            Your VPS $ipsaya Has been Banned" | lolcat
-        echo -e "            Buy access permissions for script" | lolcat
-        echo -e "                   Contact Your Admin " | lolcat
-        echo -e "            Telegram : https://t.me/heruahmad" | lolcat
+        echo -e "                   PERMISSION DENIED !" 
+        echo -e "            Your VPS $ipsaya Has been Banned" 
+        echo -e "            Buy access permissions for script" 
+        echo -e "                   Contact Your Admin " 
+        echo -e "            Telegram : https://t.me/heruahmad" 
         exit
     fi
 }
