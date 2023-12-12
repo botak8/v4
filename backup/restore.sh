@@ -13,10 +13,13 @@ LIGHT='\033[0;37m'
 # ==========================================
 # Getting
 clear
-figlet "Restore" | lolcat
-echo "This Feature Can Only Be Used According To Vps Data With This Autoscript"
-echo "Please input link to your vps data backup file."
-echo "You can check it on your email if you run backup data vps before."
+echo -e " $COLOR1┌─────────────────────────────────────────────────┐${NC}"
+echo -e " $COLOR1│$NC \e[33m           • RESTORE MENU •       ${NC}"
+echo -e " $COLOR1└─────────────────────────────────────────────────┘${NC}"
+echo -e "
+echo " >Fitur Ini Hanya Dapat Digunakan Sesuai Data Vps Dengan Autoscript Ini"
+echo " >Silahkan masukan link file backup data vps anda."
+echo " >Anda dapat memeriksanya di email Anda jika Anda menjalankan backup data vps sebelumnya."
 read -rp "Link File: " -e url
 wget -O backup.zip "$url"
 unzip backup.zip
@@ -45,17 +48,6 @@ echo -e "[ ${green}INFO${NC} ] VPS Data Restore Complete !"
 sleep 2
 echo -e "[ ${green}INFO${NC} ] Restart All Service"
 sleep 2
-systemctl restart nginx
-systemctl restart xray.service
-systemctl restart xray@none.service
-systemctl restart xray@vless.service
-systemctl restart xray@vnone.service
-systemctl restart xray@trojanws.service
-systemctl restart xray@trnone.service
-systemctl restart xray@xtrojan.service
-systemctl restart xray@trojan.service
-service cron restart
-sleep 0.5
 clear
 read -n 1 -s -r -p "Press any key to back on system menu"
 menu
