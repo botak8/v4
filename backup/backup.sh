@@ -20,7 +20,9 @@ IP=$(wget -qO- ipinfo.io/ip);
 date=$(date +"%Y-%m-%d")
 time=$(date +'%H:%M:%S')
 clear
-figlet "Backup"
+echo -e " $COLOR1┌───────────────────────────────────────────────┐${NC}"
+echo -e " $COLOR1│$NC \e[33m             • BACKUP MENU •       ${NC}"
+echo -e " $COLOR1└───────────────────────────────────────────────┘${NC}"
 echo "Mohon Menunggu , Proses Backup sedang berlangsung !!"
 rm -rf /root/backup
 mkdir /root/backup
@@ -66,4 +68,4 @@ Link Backup   : $link
 Tanggal       : $date
 ==================================
 "
-echo "Silahkan disave link diatas"
+echo "Silahkan save link diatas"
