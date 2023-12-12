@@ -19,7 +19,7 @@ checking_sc() {
                             Buy access permissions for script
                                   Contact Your Admin 
                            Telegram : https://t.me/heruahmad" | lolcat
-       
+       exit
     fi
 }
 checking_sc
