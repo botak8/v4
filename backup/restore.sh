@@ -41,8 +41,21 @@ strt
 rm -rf /root/backup
 rm -f backup.zip
 clear
-echo -e "[ \033[1;32mSUCCES\033[0m ] \e[1;36mRestore selesai\033[0m"
+echo -e "[ ${green}INFO${NC} ] VPS Data Restore Complete !"
 sleep 2
-echo ""
+echo -e "[ ${green}INFO${NC} ] Restart All Service"
+sleep 2
+systemctl restart nginx
+systemctl restart xray.service
+systemctl restart xray@none.service
+systemctl restart xray@vless.service
+systemctl restart xray@vnone.service
+systemctl restart xray@trojanws.service
+systemctl restart xray@trnone.service
+systemctl restart xray@xtrojan.service
+systemctl restart xray@trojan.service
+service cron restart
+sleep 0.5
+clear
 read -n 1 -s -r -p "Press any key to back on system menu"
 menu
