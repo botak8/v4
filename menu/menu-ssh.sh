@@ -134,8 +134,8 @@ case $opt in
 5) clear ; cek ; exit ;;
 6) clear ; member ; exit ;;
 7) clear ; delete ; exit ;;
-8) clear ; user-lock ; exit ;;
-9) clear ; user-unlock ; exit ;;
+8) clear ; lock ; exit ;;
+9) clear ; unlock ; exit ;;
 0) clear ; menu ; exit ;;
 x) exit ;;
 *) echo "Anda salah tekan " ; sleep 1 ; menu-ssh ;;
