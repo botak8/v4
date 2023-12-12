@@ -43,10 +43,6 @@ rm -f backup.zip
 clear
 echo -e "[ \033[1;32mSUCCES\033[0m ] \e[1;36mRestore selesai\033[0m"
 sleep 2
-echo -e "[ \033[1;32mSUCCES\033[0m ] \e[1;36mRestarted All Service\033[0m"
-sleep 2
-wget -q https://raw.githubusercontent.com/botak8/v4/main/backup/rs.sh;chmod +x rs.sh;./rs.sh
-echo -e "[ \033[1;32mSUCCES\033[0m ]
 echo ""
 read -n 1 -s -r -p "Press any key to back on system menu"
 menu
