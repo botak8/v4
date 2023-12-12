@@ -98,11 +98,10 @@ apt install git curl -y >/dev/null 2>&1
 apt install python -y >/dev/null 2>&1
 echo -e "[ ${green}INFO${NC} ] Aight good ... installation file is ready"
 sleep 2
-echo -ne "[ ${green}INFO${NC} ] Check permission : "
 mkdir -p /var/lib/SIJA >/dev/null 2>&1
 echo "IP=" >> /var/lib/SIJA/ipvps.conf
 echo ""
-echo -e "[ ${green}INFO${NC} ] install config"
+echo -e "[ ${green}INFO${NC} ] tools instal..."
 sleep 2
 wget -q https://raw.githubusercontent.com/sasak3/v4/main/dep.sh;chmod +x dep.sh;./dep.sh
 rm dep.sh
@@ -158,10 +157,8 @@ TEXT="Installasi VPN Script HR-vpn
 ============================
 <code>Domain     :</code> <code>$domain</code>
 <code>IP Vps     :</code> <code>$IPVPS</code>
-<code>User Login :</code> <code>bok</code>
-<code>Pass Login :</code> <code>bok</code>
 <code>User Script:</code> <code>$Name</code>
-<code>Exp Script :</code> <code>$Exp</code>
+<code>Exp Script :</code> <code>$useexp</code>
 <code>Location   :</code> <code>$CITY</code>
 <code>Timezone   :</code> <code>$WKT</code>
 ============================
