@@ -1,40 +1,51 @@
 #wget https://github.com/${GitUser}/
 GitUser="botak8"
-if [ "${EUID}" -ne 0 ]; then
-		echo "You need to run this script as root"
-		exit 1
-fi
-if [ "$(systemd-detect-virt)" == "openvz" ]; then
-		echo "OpenVZ is not supported"
-		exit 1
-fi
-echo ""
-version=$(cat /home/ver)
-ver=$( curl https://raw.githubusercontent.com/${GitUser}/v4/main/version )
-clear
-# LINE COLOUR
-line=$(cat /etc/line)
-# TEXT COLOUR BELOW
-below=$(cat /etc/below)
-# BACKGROUND TEXT COLOUR
-back_text=$(cat /etc/back)
-# NUMBER COLOUR
-number=$(cat /etc/number)
-# TEXT ON BOX COLOUR
-box=$(cat /etc/box)
-# CEK UPDATE
-Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_prefix="\033[42;37m" && Red_background_prefix="\033[41;37m" && Font_color_suffix="\033[0m"
-Info1="${Green_font_prefix}($version)${Font_color_suffix}"
-Info2="${Green_font_prefix}(LATEST VERSION)${Font_color_suffix}"
-Error="Version ${Green_font_prefix}[$ver]${Font_color_suffix} available${Red_font_prefix}[Please Update]${Font_color_suffix}"
-version=$(cat /home/ver)
-clear
-echo -e ""
-echo -e " Update Available Now.." | lolcat
-echo -e ""
+echo -e " [INFO] Downloading Update File"
 sleep 2
-echo -e " Start update untuk versi baru, Silahkan tunggu.." | lolcat
-sleep 3
+# hapus menu
+rm -rf menu
+rm -rf menu-trial
+rm -rf menu-vmess
+rm -rf menu-vlesss
+rm -rf running
+rm -rf clearcache
+rm -rf menu-trgo
+rm -rf menu-trojan
+rm -rf menu-ssh
+rm -rf usernew
+rm -rf trial
+rm -rf renew
+rm -rf hapus
+rm -rf cek
+rm -rf member
+rm -rf delete
+rm -rf autokill
+rm -rf ceklim
+rm -rf autokilll
+rm -rf tendang
+rm -rf menu-set
+rm -rf menu-domain
+rm -rf add-host
+rm -rf port-change
+rm -rf certv2ray
+rm -rf menu-webmin
+rm -rf speedtest
+rm -rf about
+rm -rf auto-reboot
+rm -rf restart
+rm -rf bw
+rm -rf port-ssl
+rm -rf port-ovpn
+rm -rf xp
+rm -rf acs-set
+rm -rf sshws
+rm -rf status
+rm -rf menu-backup
+rm -rf backup
+rm -rf restore
+rm -rf jam
+rm -rf up
+#rm -rf bot
 fun_bar() {
     CMD[0]="$1"
     CMD[1]="$2"
@@ -68,7 +79,7 @@ rm f.sh
 netfilter-persistent
 clear
 echo -e ""
-echo -e " PROSES UPDATE SCRIPT HR-vpn " | lolcat
+echo -e " PROSES UPDATE SCRIPT  " | lolcat
 fun_bar 'res1'
 clear
 rm -f update.sh
