@@ -16,7 +16,7 @@ clear
 echo -e " $COLOR1┌───────────────────────────────────────────────┐${NC}"
 echo -e " $COLOR1│$NC \e[33m             • RESTORE MENU •       ${NC}"
 echo -e " $COLOR1└───────────────────────────────────────────────┘${NC}"
-echo -e "
+echo -e ""
 echo " Fitur Ini Hanya Dapat Digunakan Sesuai Data Vps Dengan Autoscript Ini"
 echo " Silahkan masukan link file backup data vps anda."
 echo " Anda dapat memeriksanya di email Anda jika Anda menjalankan backup data vps sebelumnya."
