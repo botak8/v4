@@ -11,14 +11,14 @@ checking_sc() {
     if [[ $date_list < $useexp ]]; then
         echo -ne
     else
-        echo -e "
-        echo -e "                  • AUTOSCRIPT LITE •
-        
-                                   PERMISSION DENIED !
-                            Your VPS $ipsaya Has been Banned
-                            Buy access permissions for script
-                                  Contact Your Admin 
-                           Telegram : https://t.me/heruahmad" | lolcat
+        echo -e ""
+        echo -e "                  • AUTOSCRIPT LITE •"
+        echo -e ""
+        echo -e "                  PERMISSION DENIED !"
+        echo -e "           Your VPS $ipsaya Has been Banned"
+        echo -e "           Buy access permissions for script"
+        echo -e "                    Contact Your Admin "
+        echo -e "            Telegram : https://t.me/heruahmad" 
        exit
     fi
 }
