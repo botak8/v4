@@ -12,12 +12,12 @@ wget -O renewtrgo "https://raw.githubusercontent.com/sasak3/v4/main/xray/renewtr
 wget -O cektrgo "https://raw.githubusercontent.com/sasak3/v4/main/xray/cektrgo.sh" && chmod +x cektrgo
 # menu
 wget -O menu "https://raw.githubusercontent.com/botak8/v4/main/menu/menu.sh"
-wget -O menu-vmess "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/menu2.sh"
-wget -O menu-vless "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/menu3.sh"
+wget -O menu-vmess "https://raw.githubusercontent.com/heruahmad1/backupvpshrvpn/main/menu2.sh"
+wget -O menu-vless "https://raw.githubusercontent.com/heruahmad1/backupvpshrvpn/main/menu3.sh"
 wget -O running "https://raw.githubusercontent.com/botak8/v4/main/menu/running.sh"
 wget -O clearcache "https://raw.githubusercontent.com/botak8/v4/main/menu/clearcache.sh"
-wget -O menu-trgo "https://raw.githubusercontent.com/sasak3/v4/main/menu/menu-trgo.sh"
-wget -O menu-trojan "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/menu4.sh"
+wget -O menu-trgo "https://raw.githubusercontent.com/botak8/v4/main/menu/menu-trgo.sh"
+wget -O menu-trojan "https://raw.githubusercontent.com/heruahmad1/backupvpshrvpn/main/menu4.sh"
 # menu ssh ovpn
 wget -O menu-ssh "https://raw.githubusercontent.com/botak8/v4/main/menu/menush.sh"
 wget -O usernew "https://raw.githubusercontent.com/sasak3/v4/main/ssh/usernew.sh"
