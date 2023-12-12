@@ -19,7 +19,7 @@ wget -O clearcache "https://raw.githubusercontent.com/botak8/v4/main/menu/clearc
 wget -O menu-trgo "https://raw.githubusercontent.com/botak8/v4/main/menu/menu-trgo.sh"
 wget -O menu-trojan "https://raw.githubusercontent.com/heruahmad1/backupvpshrvpn/main/menu4.sh"
 # menu ssh ovpn
-wget -O menu-ssh "https://raw.githubusercontent.com/botak8/v4/main/menu/menuh.sh"
+wget -O menu-ssh "https://raw.githubusercontent.com/botak8/v4/main/menu/menu-ssh.sh"
 wget -O usernew "https://raw.githubusercontent.com/sasak3/v4/main/ssh/usernew.sh"
 wget -O trial "https://raw.githubusercontent.com/sasak3/v4/main/ssh/trial.sh"
 wget -O renew "https://raw.githubusercontent.com/sasak3/v4/main/ssh/renew.sh"
