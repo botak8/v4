@@ -20,16 +20,6 @@ wget -O menu-trgo "https://raw.githubusercontent.com/sasak3/v4/main/menu/menu-tr
 wget -O menu-trojan "https://raw.githubusercontent.com/heruahmad1/v4/main/menu/menu4.sh"
 # menu ssh ovpn
 wget -O menu-ssh "https://raw.githubusercontent.com/botak8/v4/main/menu/menush.sh"
-wget -O usernew "https://raw.githubusercontent.com/sasak3/v4/main/ssh/usernew.sh"
-wget -O trial "https://raw.githubusercontent.com/sasak3/v4/main/ssh/trial.sh"
-wget -O renew "https://raw.githubusercontent.com/sasak3/v4/main/ssh/renew.sh"
-wget -O hapus "https://raw.githubusercontent.com/sasak3/v4/main/ssh/hapus.sh"
-wget -O cek "https://raw.githubusercontent.com/sasak3/v4/main/ssh/cek.sh"
-wget -O member "https://raw.githubusercontent.com/sasak3/v4/main/ssh/member.sh"
-wget -O delete "https://raw.githubusercontent.com/sasak3/v4/main/ssh/delete.sh"
-wget -O autokill "https://raw.githubusercontent.com/botak8/v4/main/ssh/autokill.sh"
-wget -O ceklim "https://raw.githubusercontent.com/botak8/v4/main/ssh/ceklim.sh"
-wget -O tendang "https://raw.githubusercontent.com/botak8/v4/main/ssh/tendang.sh"
 
 # menu system
 wget -O menu-set "https://raw.githubusercontent.com/botak8/v4/main/menu/menu-set.sh"
