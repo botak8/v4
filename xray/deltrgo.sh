@@ -16,16 +16,22 @@ LIGHT='\033[0;37m'
 clear
 NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/trojan-go/akun.conf")
 	if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
-		echo ""
-		echo "You have no existing clients!"
-		exit 1
+		echo -e " $COLOR1┌─────────────────────────────────────────┐${NC}"
+                echo -e " $COLOR1│$NC   \e[33m     • DELETE TROJAN-GO ACOUNT •       ${NC}"
+                echo -e " $COLOR1└─────────────────────────────────────────┘${NC}"
+                echo -e " $COLOR1┌─────────────────────────────────────────┐${NC}"
+                echo -e "$COLOR1 │$NC   \e[33m     • You Dont have any existing clients!"
+                echo -e "$COLOR1 └─────────────────────────────────────────┘${NC}" 
+                echo ""
+read -n 1 -s -r -p "   Press any key to back on menu"
+        menu
 	fi
 
-	echo ""
-	echo " Select the existing client you want to remove"
-	echo " Press CTRL+C to return"
-	echo " ==============================="
-	echo "     No  Expired   User"
+	echo -e " $COLOR1┌─────────────────────────────────────────┐${NC}"
+        echo -e " $COLOR1│$NC   \e[33m     • DELETE TROJAN-GO ACOUNT •       ${NC}"
+        echo -e " $COLOR1└─────────────────────────────────────────┘${NC}"
+	echo "   User       Expired  " 
+	echo -e " $COLOR1└─────────────────────────────────────────┘${NC}"
 	grep -E "^### " "/etc/trojan-go/akun.conf" | cut -d ' ' -f 2-3 | nl -s ') '
 	until [[ ${CLIENT_NUMBER} -ge 1 && ${CLIENT_NUMBER} -le ${NUMBER_OF_CLIENTS} ]]; do
 		if [[ ${CLIENT_NUMBER} == '1' ]]; then
@@ -42,11 +48,16 @@ sed -i '/^,"'"$user"'"$/d' /etc/trojan-go/config.json
 systemctl restart trojan-go.service
 service cron restart
 clear
+echo -e " $COLOR1┌─────────────────────────────────────────┐${NC}"
+echo -e " $COLOR1│$NC   \e[33m    • DELETE TROJAN-GO ACOUNT •       ${NC}"
+echo -e " $COLOR1└─────────────────────────────────────────┘${NC}"
+echo -e "$COLOR1 ┌─────────────────────────────────────────┐${NC}"
+echo -e "$COLOR1 │${NC} \e[33m    • Accound Delete Successfully${NC}"
+echo -e "$COLOR1 │${NC}"
+echo -e "$COLOR1 │${NC} \e[33m    • Client Name : $user ${NC}"
+echo -e "$COLOR1 │${NC} \e[33m    • Expired On  : $exp ${NC}"
+echo -e "$COLOR1 └─────────────────────────────────────────┘${NC}" 
 echo ""
-echo "============================"
-echo "  TrojanGo Account Deleted  "
-echo "============================"
-echo "Username : $user"
-echo "Expired  : $exp"
-echo "============================"
-echo "Script Mod By ARTA M"
+read -n 1 -s -r -p "   Press any key to back on menu"
+menu
+    fi
