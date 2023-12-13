@@ -70,10 +70,10 @@ TEXT="
 <code>➣Path GRPC: </code> <code>/trojan-grpc</code>
 <code>════════════════════════════════════</code>
 <code>➣ Link TLS  :</code> 
-<code>${trojanlink}</code>
+<code>${trojanlink1}</code>
 <code>════════════════════════════════════</code>
 <code>➣ Link GRPC :</code> 
-<code>${trojanlink1}</code>
+<code>${trojanlink}</code>
 <code>════════════════════════════════════</code>
 <code>📅Expired On : $exp</code>
 🌏@HRstores
@@ -95,10 +95,10 @@ echo -e "Path WSS    : wss://yourbug/trojan-ws"
 echo -e "ServiceName : trojan-grpc" 
 echo -e "\e[33m════════════════════════════════${NC}"
 echo -e "Link WS : "
-echo -e "${trojanlink}" 
+echo -e "${trojanlink1}" 
 echo -e "\e[33m════════════════════════════════${NC}"
 echo -e "Link GRPC : "
-echo -e "${trojanlink1}"
+echo -e "${trojanlink}"
 echo -e "\e[33m════════════════════════════════${NC}"
 echo -e "\e[37m Premium VPN Auto Script Service${NC}" 
 echo "" 
