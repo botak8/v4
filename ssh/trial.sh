@@ -47,14 +47,14 @@ echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
 PID=`ps -ef |grep -v grep | grep sshws |awk '{print $2}'`
 
 TEXT="
-<code>━━━━━━━━━━━━━━━━━━━</code>
-<code>🔰 SSH OVPN Account 🔰   </code>
-<code>━━━━━━━━━━━━━━━━━━━</code>
+<code>════════════════════════════════</code>
+<code>        🔰 SSH OVPN Account 🔰        </code>
+<code>════════════════════════════════</code>
 <code>➣Username   : </code> <code>$Login</code>
 <code>➣Password   : </code> <code>$Pass</code>
 <code>➣HOST       : </code> <code>$domen</code>
 <code>➣HST Slowdns: </code> <code>$sldomain</code>
-<code>━━━━━━━━━━━━━━━━━━━</code>
+<code>════════════════════════════════</code>
 <code>➣IP         : </code> <code>$IP</code>
 <code>➣OpenSSH    : </code> <code>22</code>
 <code>➣Dropbear   : </code> <code>109, 143</code>
@@ -64,15 +64,13 @@ TEXT="
 <code>➣SLOWDNS    : </code> <code>80, 443, 53</code> 
 <code>➣BadVPN UDP : </code> <code>7100, 7300, 7300</code>
 <code>➣Pub Key    : </code> <code> $slkey</code>
-<code>━━━━━━━━━━━━━━━━━━━</code>
-<code>➣SSH UDP VIRAL:</code> 
-<code>$domen:1-65535@$Login:$Pass</code>
-<code>➣HTTP COSTUM  :</code> 
-<code>$domen:80@$Login:$Pass</code>
-<code>━━━━━━━━━━━━━━━━━━━</code>
+<code>════════════════════════════════</code>
 <code>➣Payload WS : </code>
 <code>GET / HTTP/1.1[crlf]Host: [host][crlf]Connection: Upgrade[crlf]User-Agent: [ua][crlf]Upgrade: websocket[crlf][crlf]</code>
-<code>━━━━━━━━━━━━━━━━━━━</code>
+<code>════════════════════════════════</code>
+<code>➣payload ws ssl ( port 443 ) : <code>
+<code>GET-CFRAY wss://[host] HTTP/1.1[crlf]Host: $domen[crlf]Upgrade: ws[crlf][crlf]<code>
+<code>════════════════════════════════</code>
 <code>📆Expired On : $exp</code>
 🌐 @HRstors
 "
@@ -119,38 +117,31 @@ echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━�
 
 else
 
-echo -e "${kuning}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}" | tee -a /etc/log-create-user.log
-echo -e "${cyan}    .::::.  SSH OVPN ACOUNT  .::::.  ${NC}" | tee -a /etc/log-create-user.log
-echo -e "${kuning}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}" | tee -a /etc/log-create-user.log
+echo -e "\e[33m════════════════════════════════${NC}" | tee -a /etc/log-create-user.log
+echo -e "\e[37m     🔰 SSH OVPN Account 🔰     ${NC}" | tee -a /etc/log-create-user.log
+echo -e "\e[33m════════════════════════════════${NC}" | tee -a /etc/log-create-user.log
 echo -e " Username : $Login" | tee -a /etc/log-create-user.log
 echo -e " Password : $Pass" | tee -a /etc/log-create-user.log
 echo -e " Host     : $domen" | tee -a /etc/log-create-user.log
 echo -e " Host NS  : $sldomain" | tee -a /etc/log-create-user.log
-echo -e "${kuning}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}" | tee -a /etc/log-create-user.log
+echo -e "\e[33m════════════════════════════════${NC}"  | tee -a /etc/log-create-user.log
+echo -e " IP       : $IP" | tee -a /etc/log-create-user.log
 echo -e " PubKey   : $slkey" | tee -a /etc/log-create-user.log
 echo -e " Port ws  : 80" | tee -a /etc/log-create-user.log
 echo -e " ws ssl   : 443" | tee -a /etc/log-create-user.log
 echo -e " SSL only : 447 , 777" | tee -a /etc/log-create-user.log
 echo -e " SlowDNS  : 53,5300,443" 
-echo -e " UDPGW    : 7200 = suport vc" | tee -a /etc/log-create-user.log
-echo -e "${kuning}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}" | tee -a /etc/log-create-user.log
+echo -e " UDPGW    : 7100-7300" | tee -a /etc/log-create-user.log
+echo -e " SSH-UDP  : 1-65535" | tee -a /etc/log-create-user.log
+echo -e "\e[33m════════════════════════════════${NC}"  | tee -a /etc/log-create-user.log
 echo -e " Payload Websocket ( port 80 )" | tee -a /etc/log-create-user.log
 echo -e "GET / HTTP/1.1[crlf]Host: [host][crlf]Connection: Upgrade[crlf]User-Agent: [ua][crlf]Upgrade: websocket[crlf][crlf]" | tee -a /etc/log-create-user.log
-echo -e "${kuning}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}" | tee -a /etc/log-create-user.log
+echo -e "\e[33m════════════════════════════════${NC}"  | tee -a /etc/log-create-user.log
 echo -e "payload ws ssl ( port 443 )"
 echo -e "GET-CFRAY wss://[host] HTTP/1.1[crlf]Host: $domen[crlf]Upgrade: ws[crlf][crlf] " | tee -a /etc/log-create-user.log
-echo -e "${kuning}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}" | tee -a /etc/log-create-user.log
-echo -e "payload opok Telkomsel"
-echo -e "GET http://tsel.me/worryfree/ HTTP/1.1[crlf]Host: 
-$domen[crlf][crlf]
-" | tee -a /etc/log-create-user.log
-echo -e "${kuning}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}" | tee -a /etc/log-create-user.log
-echo -e " Expired On : $exp" | tee -a /etc/log-create-user.log
-echo -e "🌏 @HRstores" | tee -a /etc/log-create-user.log
+echo -e "\e[33m════════════════════════════════${NC}" | tee -a /etc/log-create-user.log
+echo -e "\e[37m Premium VPN Auto Script Service${NC}" | tee -a /etc/log-create-user.log
 fi
 echo "" | tee -a /etc/log-create-user.log
-read -n 1 -s -r -p "Press enter to menu"
-fi
-echo ""
-read -n 1 -s -r -p "Press enter to menu"
+read -n 1 -s -r -p "Press any key to back on menu"
 menu
