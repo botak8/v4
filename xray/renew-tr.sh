@@ -15,22 +15,21 @@ clear
 NUMBER_OF_CLIENTS=$(grep -c -E "^#! " "/etc/xray/config.json")
 	if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
 		clear
-        echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-        echo -e "\E[40;1;37m          ⇱ Renew Trojan ⇲         \E[0m"
-        echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-		echo ""
-		echo "You have no existing clients!"
-		echo ""
-		echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-        echo ""
-        read -n 1 -s -r -p "Press any key to back on menu"
-        menu
+echo -e " $COLOR1┌─────────────────────────────────────────┐${NC}"
+echo -e " $COLOR1│$NC   \e[33m     • RENEW TROJAN ACOUNT •       ${NC}"
+echo -e " $COLOR1└─────────────────────────────────────────┘${NC}"
+echo -e " $COLOR1┌─────────────────────────────────────────┐${NC}"
+echo -e "$COLOR1 │$NC   \e[33m     • You Dont have any existing clients!"
+echo -e "$COLOR1 └─────────────────────────────────────────┘${NC}" 
+echo ""
+read -n 1 -s -r -p "   Press any key to back on menu"
+menu
 	fi
 
 	clear
-	echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo -e "\E[40;1;37m          ⇱ Renew Trojan ⇲         \E[0m"
-    echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e " $COLOR1┌─────────────────────────────────────────┐${NC}"
+echo -e " $COLOR1│$NC   \e[33m     • RENEW TROJAN ACOUNT •       ${NC}"
+echo -e " $COLOR1└─────────────────────────────────────────┘${NC}"
     echo ""
   	grep -E "^#! " "/etc/xray/config.json" | cut -d ' ' -f 2-3 | column -t | sort | uniq
     echo ""
@@ -51,14 +50,15 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^#! " "/etc/xray/config.json")
     sed -i "/#! $user/c\#! $user $exp4" /etc/xray/config.json
     systemctl restart xray > /dev/null 2>&1
     clear
-    echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo " Trojan Account Was Successfully Renewed"
-    echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-    echo ""
-    echo " Client Name : $user"
-    echo " Expired On  : $exp4"
-    echo ""
-    echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e " $COLOR1┌─────────────────────────────────────────┐${NC}"
+echo -e " $COLOR1│$NC   \e[33m     • RENEW TROJAN ACOUNT •       ${NC}"
+echo -e " $COLOR1└─────────────────────────────────────────┘${NC}"
+echo -e "$COLOR1 ┌─────────────────────────────────────────┐${NC}"
+echo -e "$COLOR1 │${NC} \e[33m    • Accound Renew Successfully${NC}"
+echo -e "$COLOR1 │${NC}"
+echo -e "$COLOR1 │${NC} \e[33m    • Client Name : $user ${NC}"
+echo -e "$COLOR1 │${NC} \e[33m    • Expired On  : $exp ${NC}"
+echo -e "$COLOR1 └─────────────────────────────────────────┘${NC}" 
     echo ""
     read -n 1 -s -r -p "Press any key to back on menu"
     menu
