@@ -12,13 +12,14 @@ checking_sc() {
         echo -ne
     else
         echo -e ""
-        echo -e "                  • AUTOSCRIPT LITE •"
+        echo -e "                  • AUTOSCRIPT LITE •" | lolcat
         echo -e ""
-        echo -e "                  PERMISSION DENIED !"
-        echo -e "           Your VPS $ipsaya Has been Banned"
-        echo -e "           Buy access permissions for script"
-        echo -e "                    Contact Your Admin "
-        echo -e "            Telegram : https://t.me/heruahmad" 
+        echo -e "                  PERMISSION DENIED ! |" lolcat
+        echo -e "           Your VPS $ipsaya Has been Banned" | lolcat
+        echo -e "           Buy access permissions for script" | lolcat
+        echo -e "                    Contact Your Admin " | lolcat
+        echo -e "            Telegram : https://t.me/heruahmad" | lolcat
+        sleep 7
        exit
     fi
 }
@@ -106,8 +107,6 @@ sleep 2
 wget -q https://raw.githubusercontent.com/sasak3/v4/main/dep.sh;chmod +x dep.sh;./dep.sh
 rm dep.sh
 clear
-clear
-echo ""
   echo -e "\e[32m      ┌───────────────────────────────────────────────┐\033[0m"
   echo -e "\e[32m   ───│                                               │───\033[0m"
   echo -e "\e[32m   ───│    ┌─┐┬ ┬┌┬┐┌─┐┌─┐┌─┐┬─┐┬┌─┐┌┬┐  ┬  ┬┌┬┐┌─┐   │───\033[0m"
@@ -115,30 +114,51 @@ echo ""
   echo -e "\e[32m   ───│    ┴ ┴└─┘ ┴ └─┘└─┘└─┘┴└─┴┴   ┴   ┴─┘┴ ┴ └─┘   │───\033[0m"
   echo -e "\e[32m      │\033[0m  \e[33m      HR-vpn (C)https://t.me/HRstores      \033[0m \e[32m │\033[0m"
   echo -e "\e[32m      └───────────────────────────────────────────────┘\033[0m"
+#echo " "
+#read -rp "Input ur domain : " -e pp
+   # if [ -z $pp ]; then
+   #     echo -e "
+   #     Nothing input for domain!
+    #    Then a random domain will be created"
+   #else
+   #     echo "$pp" > /root/scdomain
+#	echo "$pp" > /etc/xray/scdomain
+#	echo "$pp" > /etc/xray/domain
+#	echo "$pp" > /etc/v2ray/domain
+#	echo $pp > /root/domain
+ #       echo "IP=$pp" > /var/lib/SIJA/ipvps.conf
+  #  fi
+    
     echo -e "${red}                ♦️ CUSTOM SETUP DOMAIN VPS ♦️   ${NC}"
     echo -e "\e[32m      ┌───────────────────────────────────────────────┐\033[0m"
-    echo "          1. Gunakan Domain Dari Script"
-    echo "          2. Pilih Domain Sendiri"
+    echo "          1. Gunakan Domain Dari Script 1"
+    echo "          2. Gunakan Domain Dari Script 2"
+    echo "          3. Pilih Domain Sendiri"
     echo -e "\e[32m      └───────────────────────────────────────────────┘\033[0m"
     read -rp " Tentukan domain anda : " dom 
 
 if test $dom -eq 1; then
 clear
-wget -q -O /root/cf.sh "https://raw.githubusercontent.com/sasak3/v4/main/slowdns/cf.sh"
+wget -q -O /root/cf.sh "https://raw.githubusercontent.com/sasak3/v4/main/sowdns/cf.sh"
 chmod +x /root/cf.sh
 ./cf.sh
 elif test $dom -eq 2; then
+wget -q -O /root/cf1.sh "https://raw.githubusercontent.com/sasak3/v4/main/sowdns/cf1.sh"
+chmod +x /root/cf1.sh
+./cf1.sh
+elif test $dom -eq 3; then
 read -rp "Domain/Host: " -e host
 echo "IP=$host" >> /var/lib/SIJA/ipvps.conf
  "IP=$host" >> /etc/xray/domain
-
+ 
 fi
-echo -e "${GREEN}Done.${NC}"
+echo -e "${GREEN}Done!${NC}"
 sleep 2
 clear
 echo "IP=$host" >> /var/lib/SIJA/ipvps.conf
 #echo "IP=$host" >> /var/lib/scrz-prem/ipvps.conf
 echo "$host" >> /root/domain
+#clear
 domain=$(cat /root/domain)
 CITY=$(curl -s ipinfo.io/city )
 WKT=$(curl -s ipinfo.io/timezone )
