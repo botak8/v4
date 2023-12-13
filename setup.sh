@@ -173,17 +173,18 @@ CHATID="5807961610"
 KEY="6210655575:AAH4TkHoDco4ShhlrD6HZMUIfpTWHKIVdog"
 TIME="10"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
-TEXT="Installasi VPN Script HR-vpn
-============================
-<code>Domain     :</code> <code>$domain</code>
-<code>IP Vps     :</code> <code>$IPVPS</code>
-<code>User Script:</code> <code>$Name</code>
-<code>Exp Script :</code> <code>$useexp</code>
-<code>Location   :</code> <code>$CITY</code>
-<code>Timezone   :</code> <code>$WKT</code>
-============================
-Multi Port By HR-vpn
-============================
+TEXT=" Update
+    ============================
+       ‼️ Registrasi Script ‼️
+    ============================
+    <code>Tanggal    :</code> <code>$tanggal</code>
+    <code>IP Vps     :</code> <code>$MYIP</code>
+    <code>OS Vps     :</code> <code>$OS_Name</code>
+    <code>Domain     :</code> <code>$domain</code>
+    <code>User Script:</code> <code>$username</code>
+    <code>Exp Script :</code> <code>$exp</code>
+    ============================
+    Auto Massage from BOT Registered 
 "
 curl -s --max-time $TIME -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 clear
