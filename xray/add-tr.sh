@@ -21,7 +21,7 @@ echo -e " $COLOR1┌────────────────────
 echo -e " $COLOR1│$NC   \e[33m     • ADD TROJAN ACOUNT •       ${NC}"
 echo -e " $COLOR1└─────────────────────────────────────────┘${NC}"
 echo -e ""
-		read -rp "  User: " -e user
+		read -rp "   User: " -e user
 		user_EXISTS=$(grep -w $user /etc/xray/config.json | wc -l)
 
 		if [[ ${user_EXISTS} == '1' ]]; then
@@ -30,9 +30,9 @@ echo -e " $COLOR1┌────────────────────
 echo -e " $COLOR1│$NC   \e[33m     • ADD TROJAN ACOUNT •       ${NC}"
 echo -e " $COLOR1└─────────────────────────────────────────┘${NC}"
 			echo ""
-			echo "  A client with the specified name was already created, please choose another name."
+			echo "    A client with the specified name was already created, please choose another name."
 			echo ""
-			echo -e "\e[33m─────────────────────────────────────\033[0m"
+			echo -e " $COLOR1└─────────────────────────────────────────┘${NC}"
 			read -n 1 -s -r -p "Press any key to back on menu"
 			menu-trojan
 		fi
