@@ -42,7 +42,7 @@ read -n 1 -s -r -p "   Press any key to back on menu"
     systemctl restart xray > /dev/null 2>&1
     clear
 echo -e " $COLOR1┌─────────────────────────────────────────┐${NC}"
-echo -e " $COLOR1│$NC   \e[33m     • SCESS DELETE TROJAN ACOUNT •       ${NC}"
+echo -e " $COLOR1│$NC   \e[33m     • DELETE TROJAN ACOUNT •       ${NC}"
 echo -e " $COLOR1└─────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1 ┌─────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1 │${NC} \e[33m    • Accound Delete Successfully${NC}"
